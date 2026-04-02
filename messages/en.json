@@ -1,4 +1,8 @@
 {
+  "nav": {
+    "gemini": "Gemini",
+    "doubao": "Doubao"
+  },
   "home": {
     "title": "Gemini Watermark Remover",
     "subtitle": "Remove Gemini AI watermarks from generated images instantly. 100% free, no registration required.",
@@ -44,6 +48,19 @@
     "title": "Chrome Extension",
     "description": "Remove watermarks with one click - right from your browser",
     "install": "Install Extension"
+  },
+  "doubao": {
+    "title": "Doubao Watermark Remover",
+    "subtitle": "Remove Doubao AI watermarks from generated images instantly. 100% free, no registration required.",
+    "upload": {
+      "title": "Drop your image here",
+      "or": "or",
+      "browse": "Browse files",
+      "supported": "Supports JPG, PNG, WebP"
+    },
+    "processing": "Processing...",
+    "download": "Download",
+    "tryAnother": "Try another image"
   },
   "privacy": {
     "title": "Privacy Policy",

@@ -1,4 +1,8 @@
 {
+  "nav": {
+    "gemini": "Gemini",
+    "doubao": "豆包"
+  },
   "home": {
     "title": "Gemini 水印去除工具",
     "subtitle": "即时去除 Gemini AI 生成图片的水印。完全免费，无需注册。",
@@ -44,6 +48,19 @@
     "title": "Chrome 扩展",
     "description": "一键去除水印 - 直接在浏览器中使用",
     "install": "安装扩展"
+  },
+  "doubao": {
+    "title": "豆包水印去除工具",
+    "subtitle": "即时去除豆包 AI 生成图片的水印。完全免费，无需注册。",
+    "upload": {
+      "title": "拖放图片到这里",
+      "or": "或",
+      "browse": "浏览文件",
+      "supported": "支持 JPG、PNG、WebP"
+    },
+    "processing": "处理中...",
+    "download": "下载",
+    "tryAnother": "处理另一张图片"
   },
   "privacy": {
     "title": "隐私政策",

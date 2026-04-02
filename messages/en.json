@@ -1,0 +1,35 @@
+{
+  "home": {
+    "title": "CleanMark - Free Watermark Remover",
+    "subtitle": "Remove Gemini watermarks from AI-generated images instantly",
+    "description": "100% client-side processing. Your images never leave your browser.",
+    "upload": {
+      "title": "Drop your image here",
+      "or": "or",
+      "browse": "Browse files",
+      "supported": "Supports JPG, PNG, WebP"
+    },
+    "processing": "Processing...",
+    "download": "Download",
+    "tryAnother": "Try another image",
+    "features": {
+      "privacy": {
+        "title": "Privacy First",
+        "description": "All processing happens in your browser"
+      },
+      "free": {
+        "title": "100% Free",
+        "description": "No registration, no limits"
+      },
+      "fast": {
+        "title": "Lightning Fast",
+        "description": "Instant watermark removal"
+      }
+    }
+  },
+  "footer": {
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "github": "GitHub"
+  }
+}

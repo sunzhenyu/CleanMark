@@ -1,8 +1,8 @@
 {
   "home": {
     "title": "CleanMark - 免费水印去除工具",
-    "subtitle": "即时去除 Gemini AI 生成图片的水印",
-    "description": "100% 客户端处理，您的图片不会离开浏览器",
+    "subtitle": "即时去除 AI 图片水印",
+    "description": "免费、快速、易用，无需注册",
     "upload": {
       "title": "拖放图片到这里",
       "or": "或",
@@ -25,6 +25,16 @@
         "title": "极速处理",
         "description": "即时去除水印"
       }
+    },
+    "supported": {
+      "title": "支持的水印类型",
+      "gemini": "Gemini AI",
+      "notebooklm": "NotebookLM"
+    },
+    "example": {
+      "title": "效果对比",
+      "before": "处理前",
+      "after": "处理后"
     }
   },
   "footer": {

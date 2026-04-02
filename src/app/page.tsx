@@ -10,7 +10,10 @@ export default function HomePage() {
       {/* Header */}
       <header className="border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <h1 className="text-2xl font-bold text-gray-900">CleanMark</h1>
+          <div className="flex items-center gap-3">
+            <img src="/favicon.svg" alt="CleanMark Logo" className="w-8 h-8" />
+            <h1 className="text-2xl font-bold text-gray-900">CleanMark</h1>
+          </div>
           <LanguageSwitcher />
         </div>
       </header>
@@ -29,6 +32,42 @@ export default function HomePage() {
 
         {/* Main Component */}
         <WatermarkRemover />
+      </section>
+
+      {/* Supported Watermarks */}
+      <section className="max-w-4xl mx-auto px-4 py-12">
+        <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+          {t('supported.title')}
+        </h3>
+        <div className="flex justify-center gap-6 flex-wrap">
+          <div className="px-6 py-3 bg-blue-50 border border-blue-200 rounded-lg">
+            <span className="text-blue-700 font-medium">{t('supported.gemini')}</span>
+          </div>
+          <div className="px-6 py-3 bg-green-50 border border-green-200 rounded-lg">
+            <span className="text-green-700 font-medium">{t('supported.notebooklm')}</span>
+          </div>
+        </div>
+      </section>
+
+      {/* Example */}
+      <section className="max-w-6xl mx-auto px-4 py-12 bg-gray-50">
+        <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+          {t('example.title')}
+        </h3>
+        <div className="grid md:grid-cols-2 gap-8">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-red-50 px-4 py-2 border-b border-red-200">
+              <span className="text-red-700 font-medium">{t('example.before')}</span>
+            </div>
+            <img src="/source_pic.png" alt="Before" className="w-full h-auto" />
+          </div>
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className="bg-green-50 px-4 py-2 border-b border-green-200">
+              <span className="text-green-700 font-medium">{t('example.after')}</span>
+            </div>
+            <img src="/clean_pic.png" alt="After" className="w-full h-auto" />
+          </div>
+        </div>
       </section>
 
       {/* Features */}

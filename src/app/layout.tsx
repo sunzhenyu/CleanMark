@@ -5,6 +5,10 @@ import './globals.css';
 export const metadata = {
   title: 'CleanMark - Free Watermark Remover',
   description: 'Remove Gemini watermarks from AI-generated images instantly. 100% free, privacy-first, client-side processing.',
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/logo.svg',
+  },
 };
 
 export default async function RootLayout({

@@ -37,22 +37,6 @@ export default function HomePage() {
         <WatermarkRemover />
       </section>
 
-      {/* Chrome Extension Section */}
-      <section className="max-w-4xl mx-auto px-4 py-12">
-        <div className="bg-gray-900 rounded-2xl p-8 text-center text-white">
-          <h3 className="text-2xl font-bold mb-3">{t('extension.title')}</h3>
-          <p className="text-gray-300 mb-6">{t('extension.description')}</p>
-          <a
-            href="https://chromewebstore.google.com/detail/cleanmark"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-white text-gray-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition"
-          >
-            {t('extension.install')}
-          </a>
-        </div>
-      </section>
-
       {/* Footer */}
       <footer className="border-t border-gray-200 mt-16">
         <div className="max-w-6xl mx-auto px-4 py-8">
@@ -61,17 +45,12 @@ export default function HomePage() {
               © 2026 CleanMark. All rights reserved.
             </div>
             <div className="flex gap-6 text-sm">
-              <Link href="/privacy" className="text-gray-600 hover:text-gray-900 transition">
+              <Link
+                href="/privacy"
+                className="text-blue-600 hover:text-blue-700 hover:underline transition"
+              >
                 {t('footer.privacy')}
               </Link>
-              <a
-                href="https://github.com/sunzhenyu/CleanMark"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-900 transition"
-              >
-                {t('footer.github')}
-              </a>
             </div>
           </div>
         </div>

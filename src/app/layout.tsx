@@ -4,8 +4,8 @@ import './globals.css';
 
 export const metadata = {
   title: 'Gemini Watermark Remover - Free & Privacy-First | CleanMark',
-  description: 'Remove Gemini AI watermarks from generated images instantly. 100% free, privacy-first, client-side processing. No registration required.',
-  keywords: 'Gemini watermark remover, remove Gemini watermark, AI watermark remover, Gemini AI, watermark removal tool, free watermark remover',
+  description: 'Remove Gemini AI watermarks from images instantly. Free online tool with client-side processing. No registration, no uploads. Works with Google Gemini generated images.',
+  keywords: 'Gemini watermark remover, remove Gemini watermark, Gemini AI watermark removal, Google Gemini watermark remover, AI watermark remover, watermark removal tool, free watermark remover, online watermark remover',
   authors: [{ name: 'CleanMark' }],
   openGraph: {
     title: 'Gemini Watermark Remover - Free & Privacy-First',

@@ -49,7 +49,7 @@ export default function HomePage() {
                 href="/privacy"
                 className="text-blue-600 hover:text-blue-700 hover:underline transition"
               >
-                {t('footer.privacy')}
+                Privacy Policy
               </Link>
             </div>
           </div>

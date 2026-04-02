@@ -1,6 +1,7 @@
 import { useTranslations } from 'next-intl';
 import WatermarkRemover from '@/components/WatermarkRemover';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import Link from 'next/link';
 
 export default function HomePage() {
   const t = useTranslations('home');
@@ -34,21 +35,6 @@ export default function HomePage() {
         <WatermarkRemover />
       </section>
 
-      {/* Supported Watermarks */}
-      <section className="max-w-4xl mx-auto px-4 py-12">
-        <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
-          {t('supported.title')}
-        </h3>
-        <div className="flex justify-center gap-6 flex-wrap">
-          <div className="px-6 py-3 bg-blue-50 border border-blue-200 rounded-lg">
-            <span className="text-blue-700 font-medium">{t('supported.gemini')}</span>
-          </div>
-          <div className="px-6 py-3 bg-green-50 border border-green-200 rounded-lg">
-            <span className="text-green-700 font-medium">{t('supported.notebooklm')}</span>
-          </div>
-        </div>
-      </section>
-
       {/* Example */}
       <section className="max-w-6xl mx-auto px-4 py-12 bg-gray-50">
         <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
@@ -67,6 +53,22 @@ export default function HomePage() {
             </div>
             <img src="/clean_pic.png" alt="After" className="w-full h-auto" />
           </div>
+        </div>
+      </section>
+
+      {/* More Tools */}
+      <section className="max-w-4xl mx-auto px-4 py-12">
+        <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+          {t('tools.title')}
+        </h3>
+        <div className="flex justify-center">
+          <Link
+            href="/notebooklm"
+            className="px-8 py-4 bg-white border-2 border-gray-300 rounded-lg hover:border-gray-900 hover:shadow-lg transition text-center"
+          >
+            <div className="text-2xl mb-2">📓</div>
+            <span className="text-gray-900 font-medium">{t('tools.notebooklm')}</span>
+          </Link>
         </div>
       </section>
 

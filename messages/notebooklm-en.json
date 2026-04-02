@@ -1,0 +1,16 @@
+{
+  "notebooklm": {
+    "title": "NotebookLM Watermark Remover",
+    "subtitle": "Remove NotebookLM watermarks instantly",
+    "description": "Free, fast, and easy to use",
+    "upload": {
+      "title": "Drop your NotebookLM image here",
+      "or": "or",
+      "browse": "Browse files",
+      "supported": "Supports JPG, PNG, WebP"
+    },
+    "processing": "Processing...",
+    "download": "Download",
+    "tryAnother": "Try another image"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "notebooklm": {
+    "title": "NotebookLM 水印去除",
+    "subtitle": "即时去除 NotebookLM 水印",
+    "description": "免费、快速、易用",
+    "upload": {
+      "title": "拖放 NotebookLM 图片到这里",
+      "or": "或",
+      "browse": "浏览文件",
+      "supported": "支持 JPG、PNG、WebP"
+    },
+    "processing": "处理中...",
+    "download": "下载",
+    "tryAnother": "处理另一张图片"
+  }
+}

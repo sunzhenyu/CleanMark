@@ -24,36 +24,12 @@ export default function HomePage() {
         <h2 className="text-5xl font-bold text-gray-900 mb-4">
           {t('title')}
         </h2>
-        <p className="text-xl text-gray-600 mb-2">
+        <p className="text-xl text-gray-600 mb-12">
           {t('subtitle')}
-        </p>
-        <p className="text-sm text-gray-500 mb-12">
-          {t('description')}
         </p>
 
         {/* Main Component */}
         <WatermarkRemover />
-      </section>
-
-      {/* Example */}
-      <section className="max-w-6xl mx-auto px-4 py-12 bg-gray-50">
-        <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
-          {t('example.title')}
-        </h3>
-        <div className="grid md:grid-cols-2 gap-8">
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="bg-red-50 px-4 py-2 border-b border-red-200">
-              <span className="text-red-700 font-medium">{t('example.before')}</span>
-            </div>
-            <img src="/source_pic.png" alt="Before" className="w-full h-auto" />
-          </div>
-          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-            <div className="bg-green-50 px-4 py-2 border-b border-green-200">
-              <span className="text-green-700 font-medium">{t('example.after')}</span>
-            </div>
-            <img src="/clean_pic.png" alt="After" className="w-full h-auto" />
-          </div>
-        </div>
       </section>
 
       {/* More Tools */}
@@ -69,39 +45,6 @@ export default function HomePage() {
             <div className="text-2xl mb-2">📓</div>
             <span className="text-gray-900 font-medium">{t('tools.notebooklm')}</span>
           </Link>
-        </div>
-      </section>
-
-      {/* Features */}
-      <section className="max-w-6xl mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-3 gap-8">
-          <div className="text-center">
-            <div className="text-4xl mb-4">🔒</div>
-            <h3 className="text-lg font-semibold mb-2">
-              {t('features.privacy.title')}
-            </h3>
-            <p className="text-gray-600 text-sm">
-              {t('features.privacy.description')}
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl mb-4">💯</div>
-            <h3 className="text-lg font-semibold mb-2">
-              {t('features.free.title')}
-            </h3>
-            <p className="text-gray-600 text-sm">
-              {t('features.free.description')}
-            </p>
-          </div>
-          <div className="text-center">
-            <div className="text-4xl mb-4">⚡</div>
-            <h3 className="text-lg font-semibold mb-2">
-              {t('features.fast.title')}
-            </h3>
-            <p className="text-gray-600 text-sm">
-              {t('features.fast.description')}
-            </p>
-          </div>
         </div>
       </section>
     </main>

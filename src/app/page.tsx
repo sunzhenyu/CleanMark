@@ -31,22 +31,6 @@ export default function HomePage() {
         {/* Main Component */}
         <WatermarkRemover />
       </section>
-
-      {/* More Tools */}
-      <section className="max-w-4xl mx-auto px-4 py-12">
-        <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
-          {t('tools.title')}
-        </h3>
-        <div className="flex justify-center">
-          <Link
-            href="/notebooklm"
-            className="px-8 py-4 bg-white border-2 border-gray-300 rounded-lg hover:border-gray-900 hover:shadow-lg transition text-center"
-          >
-            <div className="text-2xl mb-2">📓</div>
-            <span className="text-gray-900 font-medium">{t('tools.notebooklm')}</span>
-          </Link>
-        </div>
-      </section>
     </main>
   );
 }

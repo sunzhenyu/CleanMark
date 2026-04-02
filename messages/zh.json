@@ -1,7 +1,7 @@
 {
   "home": {
-    "title": "CleanMark - 免费水印去除工具",
-    "subtitle": "即时去除 Gemini AI 水印",
+    "title": "Gemini 水印去除工具 - 免费且注重隐私",
+    "subtitle": "即时去除 Gemini AI 生成图片的水印。完全免费，无需注册。",
     "upload": {
       "title": "拖放图片到这里",
       "or": "或",
@@ -39,5 +39,45 @@
     "privacy": "隐私政策",
     "terms": "服务条款",
     "github": "GitHub"
+  },
+  "extension": {
+    "title": "Chrome 扩展",
+    "description": "一键去除水印 - 直接在浏览器中使用",
+    "install": "安装扩展"
+  },
+  "privacy": {
+    "title": "隐私政策",
+    "lastUpdated": "最后更新：2026年4月2日",
+    "overview": {
+      "title": "概述",
+      "content": "CleanMark 致力于保护您的隐私。本隐私政策说明我们在您使用 Gemini 水印去除服务时如何处理您的数据。"
+    },
+    "dataCollection": {
+      "title": "数据收集",
+      "content": "CleanMark 不收集、存储或传输任何用户数据、图片或个人信息。我们不使用 Cookie、分析工具或任何跟踪技术。"
+    },
+    "localProcessing": {
+      "title": "本地处理",
+      "content": "所有图片处理完全在您的浏览器中使用客户端 JavaScript 进行。您的图片不会离开您的设备，也不会发送到任何服务器。"
+    },
+    "extension": {
+      "title": "Chrome 扩展权限",
+      "content": "我们的 Chrome 扩展需要以下权限：",
+      "permissions": {
+        "webRequest": "webRequest：仅用于拦截来自 Gemini 服务器的图片 URL 以获取完整分辨率图片。不收集或传输任何数据。",
+        "activeTab": "activeTab：仅用于检测 Gemini 页面上的下载操作并注入水印去除功能。",
+        "downloads": "downloads：仅用于将处理后的图片保存到您设备的下载文件夹。"
+      }
+    },
+    "thirdParty": {
+      "title": "第三方服务",
+      "content": "CleanMark 不使用任何第三方分析、跟踪、广告或数据收集服务。我们不与第三方共享任何信息。"
+    },
+    "contact": {
+      "title": "联系我们",
+      "content": "如有关于本隐私政策的问题，请访问 cleanmark.org 或通过 GitHub 联系我们。"
+    },
+    "backToHome": "返回首页"
   }
 }
+

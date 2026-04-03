@@ -3,13 +3,21 @@ import { Link } from '@/i18n/routing';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata = {
   title: 'CleanMark - AI Watermark Removal Tools',
   description: 'Professional watermark removal tools for AI-generated images. Remove Gemini, Doubao watermarks, or use manual eraser and logo overlay.',
 };
 
-export default function HomePage() {
+export default async function HomePage({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = useTranslations('homepage');
 
   const features = [

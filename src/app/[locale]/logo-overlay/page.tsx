@@ -3,6 +3,7 @@ import LogoOverlay from '@/components/LogoOverlay';
 import Navigation from '@/components/Navigation';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Footer from '@/components/Footer';
+import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 
 export const metadata = {
@@ -10,7 +11,14 @@ export const metadata = {
   description: 'Cover watermarks with your own logo. Upload your image and logos, position them to hide unwanted watermarks.',
 };
 
-export default function LogoOverlayPage() {
+export default async function LogoOverlayPage({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = useTranslations('overlay');
 
   return (

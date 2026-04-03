@@ -3,6 +3,7 @@ import ManualEraser from '@/components/ManualEraser';
 import Navigation from '@/components/Navigation';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Footer from '@/components/Footer';
+import { setRequestLocale } from 'next-intl/server';
 import Link from 'next/link';
 
 export const metadata = {
@@ -10,7 +11,14 @@ export const metadata = {
   description: 'Manually erase watermarks from any image with our free brush tool. Select and remove unwanted elements with precision.',
 };
 
-export default function ManualEraserPage() {
+export default async function ManualEraserPage({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = useTranslations('manual');
 
   return (

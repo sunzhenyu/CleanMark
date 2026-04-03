@@ -4,13 +4,21 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata = {
   title: 'Doubao Watermark Remover - Free & Privacy-First | CleanMark',
   description: 'Remove Doubao AI watermarks from generated images instantly. 100% free, privacy-first, client-side processing.',
 };
 
-export default function DoubaoPage() {
+export default async function DoubaoPage({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = useTranslations('doubao');
 
   return (

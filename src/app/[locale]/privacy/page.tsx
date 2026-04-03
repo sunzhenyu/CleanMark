@@ -1,7 +1,10 @@
 import { getTranslations } from 'next-intl/server';
-import Link from 'next/link';
+import { Link } from '@/i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import Navigation from '@/components/Navigation';
+import Footer from '@/components/Footer';
+import LanguageSwitcher from '@/components/LanguageSwitcher';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -27,10 +30,14 @@ export default async function PrivacyPage({
       {/* Header */}
       <header className="border-b border-gray-200">
         <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
-            <img src="/favicon.svg" alt="CleanMark Logo" className="w-8 h-8" />
-            <h1 className="text-2xl font-bold text-gray-900">CleanMark</h1>
-          </Link>
+          <div className="flex items-center gap-8">
+            <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
+              <img src="/logo.svg" alt="CleanMark" className="w-8 h-8" />
+              <h1 className="text-2xl font-bold text-gray-900">CleanMark</h1>
+            </Link>
+            <Navigation />
+          </div>
+          <LanguageSwitcher />
         </div>
       </header>
 
@@ -85,6 +92,8 @@ export default async function PrivacyPage({
           </Link>
         </div>
       </article>
+
+      <Footer />
     </main>
   );
 }

@@ -1,7 +1,7 @@
 import './globals.css';
 
 export const metadata = {
-  title: 'CleanMark - AI Watermark Removal Tools',
+  title: 'CleanMark - AI Watermark Remover Tools',
   description: 'Professional watermark removal tools for AI-generated images. Remove Gemini, Doubao watermarks, or use manual eraser and logo overlay.',
   keywords: 'watermark remover, AI watermark removal, Gemini watermark, Doubao watermark, manual eraser, logo overlay',
   authors: [{ name: 'CleanMark' }],

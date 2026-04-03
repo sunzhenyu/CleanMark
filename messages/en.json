@@ -1,13 +1,13 @@
 {
   "nav": {
     "home": "Home",
-    "gemini": "Gemini",
-    "doubao": "Doubao",
+    "gemini": "Gemini Watermark",
+    "doubao": "Doubao Watermark",
     "manual": "Manual Eraser",
     "overlay": "Logo Overlay"
   },
   "homepage": {
-    "title": "CleanMark - AI Watermark Removal Tools",
+    "title": "CleanMark - AI Watermark Remover Tools",
     "subtitle": "Professional watermark removal tools for AI-generated images",
     "features": {
       "gemini": {
@@ -80,7 +80,7 @@
     },
     "howTo": "How to Remove Gemini Watermark",
     "howToDesc": "Our free Gemini watermark remover tool helps you remove watermarks from Google Gemini AI-generated images quickly and easily. Simply upload your image, and our tool processes it entirely in your browser.",
-    "whyUse": "Why Use Our Gemini Watermark Removal Tool?",
+    "whyUse": "Why Use Our Gemini Watermark Remover?",
     "whyFree": "100% Free:",
     "whyFreeDesc": "No hidden costs or subscription fees",
     "whyPrivacy": "Privacy-First:",
@@ -120,7 +120,7 @@
     "tryAnother": "Try another image",
     "howTo": "How to Remove Doubao Watermark",
     "howToDesc": "Our free Doubao watermark remover tool helps you remove watermarks from Doubao AI-generated images quickly and easily. Simply upload your image, and our tool processes it entirely in your browser.",
-    "whyUse": "Why Use Our Doubao Watermark Removal Tool?",
+    "whyUse": "Why Use Our Doubao Watermark Remover?",
     "whyFree": "100% Free:",
     "whyFreeDesc": "No hidden costs or subscription fees",
     "whyPrivacy": "Privacy-First:",

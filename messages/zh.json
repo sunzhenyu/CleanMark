@@ -1,8 +1,8 @@
 {
   "nav": {
     "home": "首页",
-    "gemini": "Gemini",
-    "doubao": "豆包",
+    "gemini": "Gemini水印",
+    "doubao": "豆包水印",
     "manual": "手动橡皮擦",
     "overlay": "Logo遮罩"
   },

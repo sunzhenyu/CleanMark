@@ -11,7 +11,7 @@ export function generateStaticParams() {
 }
 
 export const metadata = {
-  title: 'CleanMark - AI Watermark Removal Tools',
+  title: 'CleanMark - AI Watermark Remover Tools',
   description: 'Professional watermark removal tools for AI-generated images. Remove Gemini, Doubao watermarks, or use manual eraser and logo overlay.',
 };
 

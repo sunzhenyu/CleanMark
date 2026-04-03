@@ -1,9 +1,47 @@
 {
   "nav": {
+    "home": "首页",
     "gemini": "Gemini",
     "doubao": "豆包",
     "manual": "手动橡皮擦",
     "overlay": "Logo遮罩"
+  },
+  "homepage": {
+    "title": "CleanMark - AI水印去除工具",
+    "subtitle": "专业的AI生成图片水印去除工具",
+    "features": {
+      "gemini": {
+        "title": "Gemini水印去除",
+        "description": "自动去除Google Gemini AI生成图片的水印。我们的工具使用先进算法检测并去除Gemini特有的水印图案，同时保持图片质量。非常适合内容创作者、设计师以及使用Gemini生成图片的用户。",
+        "button": "立即使用",
+        "useCase": "适用于：社交媒体发布、演示文稿、营销素材"
+      },
+      "doubao": {
+        "title": "豆包水印去除",
+        "description": "使用我们的专业工具快速去除豆包AI水印。专门针对豆包水印图案设计，能够干净地去除水印同时保持原图完整性。处理速度快，无质量损失。",
+        "button": "立即使用",
+        "useCase": "适用于：博客配图、商业用途、作品集"
+      },
+      "manual": {
+        "title": "手动橡皮擦",
+        "description": "使用精确的画笔工具完全掌控去除过程。非常适合去除自定义水印、Logo或图片中的任何不需要的元素。可调节画笔大小，适合精细工作或快速去除大面积区域。支持任何图片类型。",
+        "button": "立即使用",
+        "useCase": "适用于：自定义水印、文字去除、照片编辑"
+      },
+      "overlay": {
+        "title": "Logo遮罩",
+        "description": "通过放置自己的Logo或品牌标识来覆盖不需要的水印。支持上传多个Logo，精确调整大小和位置。保持宽高比以获得专业效果。非常适合品牌重塑或为图片添加签名。",
+        "button": "立即使用",
+        "useCase": "适用于：品牌保护、内容署名、水印替换"
+      }
+    },
+    "whyChoose": {
+      "title": "为什么选择CleanMark？",
+      "privacy": "100%隐私保护 - 所有处理都在浏览器中完成",
+      "free": "完全免费 - 无需注册，没有隐藏费用",
+      "fast": "极速处理 - 秒级获得结果",
+      "quality": "高质量 - 不损失图片分辨率"
+    }
   },
   "home": {
     "title": "Gemini 水印去除工具",
@@ -39,12 +77,29 @@
     "tools": {
       "title": "更多工具",
       "notebooklm": "NotebookLM 水印去除"
-    }
+    },
+    "howTo": "如何去除Gemini水印",
+    "howToDesc": "我们的免费Gemini水印去除工具可以快速轻松地去除Google Gemini AI生成图片的水印。只需上传图片，我们的工具会在您的浏览器中完全处理。",
+    "whyUse": "为什么使用我们的Gemini水印去除工具？",
+    "whyFree": "100%免费：",
+    "whyFreeDesc": "没有隐藏费用或订阅费",
+    "whyPrivacy": "隐私优先：",
+    "whyPrivacyDesc": "所有处理都在您的浏览器中进行",
+    "whyNoReg": "无需注册：",
+    "whyNoRegDesc": "立即开始去除水印",
+    "whyFast": "快速处理：",
+    "whyFastDesc": "秒级获得结果",
+    "featuresTitle": "在线水印去除工具的功能",
+    "featuresDesc": "此AI水印去除工具专为Google Gemini生成的图片设计。支持所有图片格式和尺寸，提供清晰的结果且不损失质量。"
   },
   "footer": {
     "privacy": "隐私政策",
     "terms": "服务条款",
-    "github": "GitHub"
+    "github": "GitHub",
+    "about": "关于我们",
+    "contact": "联系我们",
+    "email": "邮箱",
+    "twitter": "推特"
   },
   "extension": {
     "title": "Chrome 扩展",
@@ -62,7 +117,20 @@
     },
     "processing": "处理中...",
     "download": "下载",
-    "tryAnother": "处理另一张图片"
+    "tryAnother": "处理另一张图片",
+    "howTo": "如何去除豆包水印",
+    "howToDesc": "我们的免费豆包水印去除工具可以快速轻松地去除豆包AI生成图片的水印。只需上传图片，我们的工具会在您的浏览器中完全处理。",
+    "whyUse": "为什么使用我们的豆包水印去除工具？",
+    "whyFree": "100%免费：",
+    "whyFreeDesc": "没有隐藏费用或订阅费",
+    "whyPrivacy": "隐私优先：",
+    "whyPrivacyDesc": "所有处理都在您的浏览器中进行",
+    "whyNoReg": "无需注册：",
+    "whyNoRegDesc": "立即开始去除水印",
+    "whyFast": "快速处理：",
+    "whyFastDesc": "秒级获得结果",
+    "features": "在线水印去除工具的功能",
+    "featuresDesc": "此AI水印去除工具专为豆包生成的图片设计。支持所有图片格式和尺寸，提供清晰的结果且不损失质量。"
   },
   "manual": {
     "title": "手动橡皮擦",
@@ -76,7 +144,20 @@
     "brushSize": "画笔大小",
     "reset": "重置",
     "download": "下载",
-    "newImage": "新图片"
+    "newImage": "新图片",
+    "howTo": "如何使用手动橡皮擦",
+    "howToDesc": "我们的手动橡皮擦工具让您完全控制水印去除过程。调整画笔大小并涂抹图片中的任何不需要的元素。非常适合自定义水印和精确编辑。",
+    "whyUse": "为什么使用手动橡皮擦？",
+    "whyFree": "100%免费：",
+    "whyFreeDesc": "没有隐藏费用或订阅费",
+    "whyPrivacy": "隐私优先：",
+    "whyPrivacyDesc": "所有处理都在您的浏览器中进行",
+    "whyNoReg": "无需注册：",
+    "whyNoRegDesc": "立即开始去除水印",
+    "whyPrecision": "精确控制：",
+    "whyPrecisionDesc": "可调节画笔大小进行精细工作",
+    "features": "功能特点",
+    "featuresDesc": "可调节画笔大小、实时预览、支持所有图片格式。完全在浏览器中工作，无需上传。"
   },
   "overlay": {
     "title": "Logo遮罩",
@@ -97,7 +178,20 @@
     "selectLogoFirst": "请先选择一个Logo",
     "remove": "移除",
     "download": "下载",
-    "newImage": "新图片"
+    "newImage": "新图片",
+    "howTo": "如何使用Logo遮罩",
+    "howToDesc": "上传您的图片和Logo，然后定位它们以覆盖不需要的水印。精确调整Logo的大小和位置。非常适合在隐藏现有水印的同时添加您的品牌。",
+    "whyUse": "为什么使用Logo遮罩？",
+    "whyFree": "100%免费：",
+    "whyFreeDesc": "没有隐藏费用或订阅费",
+    "whyPrivacy": "隐私优先：",
+    "whyPrivacyDesc": "所有处理都在您的浏览器中进行",
+    "whyNoReg": "无需注册：",
+    "whyNoRegDesc": "立即开始添加Logo",
+    "whyMultiple": "多Logo支持：",
+    "whyMultipleDesc": "一次添加和定位多个Logo",
+    "features": "功能特点",
+    "featuresDesc": "支持多个Logo、拖放定位、保持宽高比、即时预览。所有处理都在浏览器中进行。"
   },
   "privacy": {
     "title": "隐私政策",

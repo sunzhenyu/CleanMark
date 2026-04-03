@@ -1,9 +1,47 @@
 {
   "nav": {
+    "home": "Home",
     "gemini": "Gemini",
     "doubao": "Doubao",
     "manual": "Manual Eraser",
     "overlay": "Logo Overlay"
+  },
+  "homepage": {
+    "title": "CleanMark - AI Watermark Removal Tools",
+    "subtitle": "Professional watermark removal tools for AI-generated images",
+    "features": {
+      "gemini": {
+        "title": "Gemini Watermark Remover",
+        "description": "Automatically remove Google Gemini AI watermarks from generated images. Our tool uses advanced algorithms to detect and remove the distinctive Gemini watermark pattern while preserving image quality. Perfect for content creators, designers, and anyone working with Gemini-generated images.",
+        "button": "Try Now",
+        "useCase": "Ideal for: Social media posts, presentations, marketing materials"
+      },
+      "doubao": {
+        "title": "Doubao Watermark Remover",
+        "description": "Remove Doubao AI watermarks instantly with our specialized tool. Designed specifically for Doubao's watermark pattern, it cleanly removes watermarks while maintaining the original image integrity. Fast processing with no quality loss.",
+        "button": "Try Now",
+        "useCase": "Ideal for: Blog images, commercial use, portfolio work"
+      },
+      "manual": {
+        "title": "Manual Eraser",
+        "description": "Take full control with our precision brush tool. Perfect for removing custom watermarks, logos, or any unwanted elements from your images. Adjust brush size for detailed work or quick removal of larger areas. Works with any image type.",
+        "button": "Try Now",
+        "useCase": "Ideal for: Custom watermarks, text removal, photo editing"
+      },
+      "overlay": {
+        "title": "Logo Overlay",
+        "description": "Cover unwanted watermarks by placing your own logo or branding. Upload multiple logos, resize and position them precisely. Maintains aspect ratio for professional results. Perfect for rebranding or adding your signature to images.",
+        "button": "Try Now",
+        "useCase": "Ideal for: Brand protection, content attribution, watermark replacement"
+      }
+    },
+    "whyChoose": {
+      "title": "Why Choose CleanMark?",
+      "privacy": "100% Privacy - All processing happens in your browser",
+      "free": "Completely Free - No registration or hidden fees",
+      "fast": "Lightning Fast - Instant results in seconds",
+      "quality": "High Quality - No loss in image resolution"
+    }
   },
   "home": {
     "title": "Gemini Watermark Remover",
@@ -39,12 +77,29 @@
     "tools": {
       "title": "More Tools",
       "notebooklm": "NotebookLM Watermark Remover"
-    }
+    },
+    "howTo": "How to Remove Gemini Watermark",
+    "howToDesc": "Our free Gemini watermark remover tool helps you remove watermarks from Google Gemini AI-generated images quickly and easily. Simply upload your image, and our tool processes it entirely in your browser.",
+    "whyUse": "Why Use Our Gemini Watermark Removal Tool?",
+    "whyFree": "100% Free:",
+    "whyFreeDesc": "No hidden costs or subscription fees",
+    "whyPrivacy": "Privacy-First:",
+    "whyPrivacyDesc": "All processing happens in your browser",
+    "whyNoReg": "No Registration:",
+    "whyNoRegDesc": "Start removing watermarks immediately",
+    "whyFast": "Fast Processing:",
+    "whyFastDesc": "Get results in seconds",
+    "featuresTitle": "Features of Our Online Watermark Remover",
+    "featuresDesc": "This AI watermark remover is specifically designed for Google Gemini generated images. It works with all image formats and sizes, providing clean results without quality loss."
   },
   "footer": {
     "privacy": "Privacy Policy",
     "terms": "Terms of Service",
-    "github": "GitHub"
+    "github": "GitHub",
+    "about": "About Us",
+    "contact": "Contact",
+    "email": "Email",
+    "twitter": "Twitter"
   },
   "extension": {
     "title": "Chrome Extension",
@@ -62,7 +117,20 @@
     },
     "processing": "Processing...",
     "download": "Download",
-    "tryAnother": "Try another image"
+    "tryAnother": "Try another image",
+    "howTo": "How to Remove Doubao Watermark",
+    "howToDesc": "Our free Doubao watermark remover tool helps you remove watermarks from Doubao AI-generated images quickly and easily. Simply upload your image, and our tool processes it entirely in your browser.",
+    "whyUse": "Why Use Our Doubao Watermark Removal Tool?",
+    "whyFree": "100% Free:",
+    "whyFreeDesc": "No hidden costs or subscription fees",
+    "whyPrivacy": "Privacy-First:",
+    "whyPrivacyDesc": "All processing happens in your browser",
+    "whyNoReg": "No Registration:",
+    "whyNoRegDesc": "Start removing watermarks immediately",
+    "whyFast": "Fast Processing:",
+    "whyFastDesc": "Get results in seconds",
+    "features": "Features of Our Online Watermark Remover",
+    "featuresDesc": "This AI watermark remover is specifically designed for Doubao generated images. It works with all image formats and sizes, providing clean results without quality loss."
   },
   "manual": {
     "title": "Manual Eraser",
@@ -76,7 +144,20 @@
     "brushSize": "Brush Size",
     "reset": "Reset",
     "download": "Download",
-    "newImage": "New Image"
+    "newImage": "New Image",
+    "howTo": "How to Use Manual Eraser",
+    "howToDesc": "Our manual eraser tool gives you complete control over watermark removal. Adjust the brush size and paint over any unwanted elements in your image. Perfect for custom watermarks and precise editing.",
+    "whyUse": "Why Use Manual Eraser?",
+    "whyFree": "100% Free:",
+    "whyFreeDesc": "No hidden costs or subscription fees",
+    "whyPrivacy": "Privacy-First:",
+    "whyPrivacyDesc": "All processing happens in your browser",
+    "whyNoReg": "No Registration:",
+    "whyNoRegDesc": "Start removing watermarks immediately",
+    "whyPrecision": "Precision Control:",
+    "whyPrecisionDesc": "Adjustable brush size for detailed work",
+    "features": "Features",
+    "featuresDesc": "Adjustable brush size, real-time preview, and support for all image formats. Works entirely in your browser with no uploads required."
   },
   "overlay": {
     "title": "Logo Overlay",
@@ -97,7 +178,20 @@
     "selectLogoFirst": "Select a logo to adjust size",
     "remove": "Remove",
     "download": "Download",
-    "newImage": "New Image"
+    "newImage": "New Image",
+    "howTo": "How to Use Logo Overlay",
+    "howToDesc": "Upload your image and logos, then position them to cover unwanted watermarks. Resize and move logos with precision. Perfect for adding your branding while hiding existing watermarks.",
+    "whyUse": "Why Use Logo Overlay?",
+    "whyFree": "100% Free:",
+    "whyFreeDesc": "No hidden costs or subscription fees",
+    "whyPrivacy": "Privacy-First:",
+    "whyPrivacyDesc": "All processing happens in your browser",
+    "whyNoReg": "No Registration:",
+    "whyNoRegDesc": "Start adding logos immediately",
+    "whyMultiple": "Multiple Logos:",
+    "whyMultipleDesc": "Add and position multiple logos at once",
+    "features": "Features",
+    "featuresDesc": "Multiple logo support, drag-and-drop positioning, aspect ratio preservation, and instant preview. All processing happens in your browser."
   },
   "privacy": {
     "title": "Privacy Policy",

@@ -1,36 +1,46 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
-    {
-      url: 'https://cleanmark.org',
+  const routes = [
+    '',
+    '/gemini-watermark-remover',
+    '/doubao-watermark-remover',
+    '/manual-eraser',
+    '/logo-overlay',
+    '/privacy',
+  ];
+
+  const sitemap: MetadataRoute.Sitemap = [];
+
+  routes.forEach((route) => {
+    // English version
+    sitemap.push({
+      url: `https://cleanmark.org${route}`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 1,
-    },
-    {
-      url: 'https://cleanmark.org/gemini-watermark-remover',
+      priority: route === '' ? 1 : 0.9,
+      alternates: {
+        languages: {
+          en: `https://cleanmark.org${route}`,
+          zh: `https://cleanmark.org/zh${route}`,
+        },
+      },
+    });
+
+    // Chinese version
+    sitemap.push({
+      url: `https://cleanmark.org/zh${route}`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://cleanmark.org/doubao-watermark-remover',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    {
-      url: 'https://cleanmark.org/manual-eraser',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-    {
-      url: 'https://cleanmark.org/logo-overlay',
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.8,
-    },
-  ]
+      priority: route === '' ? 1 : 0.9,
+      alternates: {
+        languages: {
+          en: `https://cleanmark.org${route}`,
+          zh: `https://cleanmark.org/zh${route}`,
+        },
+      },
+    });
+  });
+
+  return sitemap;
 }

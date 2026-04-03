@@ -8,10 +8,23 @@ export default function Navigation() {
   const pathname = usePathname();
   const t = useTranslations('nav');
 
-  const isActive = (path: string) => pathname.includes(path);
+  const isActive = (path: string) => {
+    if (path === '/') return pathname === '/' || pathname === '/en' || pathname === '/zh';
+    return pathname.includes(path);
+  };
 
   return (
     <nav className="flex gap-2 bg-gray-100 rounded-lg p-1">
+      <Link
+        href="/"
+        className={`px-4 py-2 rounded-md transition ${
+          isActive('/')
+            ? 'bg-white text-gray-900 shadow-sm'
+            : 'text-gray-600 hover:text-gray-900'
+        }`}
+      >
+        {t('home')}
+      </Link>
       <Link
         href="/gemini-watermark-remover"
         className={`px-4 py-2 rounded-md transition ${

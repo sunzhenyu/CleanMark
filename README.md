@@ -16,10 +16,12 @@
 
 CleanMark is a free, open-source tool that removes watermarks from AI-generated images. All processing happens directly in your browser - no uploads, no tracking, complete privacy.
 
-### Supported AI Tools
+### All Tools
 
-- ✅ **Google Gemini** - Remove "Made with Google AI" watermarks
-- ✅ **Doubao (豆包)** - Remove "豆包AI生成" watermarks
+- ✅ **Gemini Watermark Remover** - Automatically remove Google Gemini AI watermarks
+- ✅ **Doubao Watermark Remover** - Remove Doubao (豆包) AI watermarks instantly
+- ✅ **Manual Eraser** - Precision brush tool for custom watermark removal
+- ✅ **Logo Overlay** - Cover watermarks with your own logo or branding
 
 ## ✨ Features
 
@@ -29,6 +31,33 @@ CleanMark is a free, open-source tool that removes watermarks from AI-generated 
 - 🌍 **Multilingual** - Full support for English and Chinese
 - 📱 **Responsive** - Works perfectly on desktop and mobile devices
 - 🎨 **High Quality** - Preserves image quality while removing watermarks
+
+## 📖 How to Use
+
+### Simple 3-Step Process
+
+1. **Upload Image** - Select or drag your image to the tool
+2. **Process** - Automatic or manual watermark removal
+3. **Download** - Get your clean image instantly
+
+### Tool-Specific Instructions
+
+#### Gemini & Doubao Watermark Remover
+- Upload your AI-generated image
+- The tool automatically detects and removes the watermark
+- Download the cleaned image
+
+#### Manual Eraser
+- Upload any image with watermarks
+- Adjust brush size for precision
+- Paint over watermarks to remove them
+- Download the result
+
+#### Logo Overlay
+- Upload your base image
+- Add your logo(s) to the library
+- Position and resize logos to cover watermarks
+- Download the final image
 
 ## 🚀 Quick Start
 
@@ -97,22 +126,35 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 website/
 ├── src/
 │   ├── app/
-│   │   ├── gemini-watermark-remover/    # Gemini tool page
-│   │   ├── doubao-watermark-remover/    # Doubao tool page
-│   │   ├── layout.tsx                   # Root layout
-│   │   └── sitemap.ts                   # SEO sitemap
+│   │   ├── [locale]/                        # Localized routes
+│   │   │   ├── gemini-watermark-remover/    # Gemini tool page
+│   │   │   ├── doubao-watermark-remover/    # Doubao tool page
+│   │   │   ├── manual-eraser/               # Manual eraser page
+│   │   │   ├── logo-overlay/                # Logo overlay page
+│   │   │   ├── privacy/                     # Privacy policy
+│   │   │   ├── layout.tsx                   # Locale layout
+│   │   │   └── page.tsx                     # Homepage
+│   │   ├── layout.tsx                       # Root layout
+│   │   └── sitemap.ts                       # SEO sitemap
 │   ├── components/
-│   │   ├── WatermarkRemover.tsx         # Gemini remover component
-│   │   ├── DoubaoWatermarkRemover.tsx   # Doubao remover component
-│   │   ├── Navigation.tsx               # Tool navigation
-│   │   └── LanguageSwitcher.tsx         # Language switcher
+│   │   ├── WatermarkRemover.tsx             # Gemini remover
+│   │   ├── DoubaoWatermarkRemover.tsx       # Doubao remover
+│   │   ├── ManualEraser.tsx                 # Manual eraser tool
+│   │   ├── LogoOverlay.tsx                  # Logo overlay tool
+│   │   ├── Navigation.tsx                   # Navigation bar
+│   │   ├── Footer.tsx                       # Footer component
+│   │   └── LanguageSwitcher.tsx             # Language switcher
+│   ├── i18n/
+│   │   └── routing.ts                       # i18n routing config
 │   ├── lib/
-│   │   └── doubao-watermark-remover/    # Doubao removal logic
-│   └── middleware.ts                    # i18n middleware
+│   │   ├── watermark-remover/               # Gemini removal logic
+│   │   ├── doubao-watermark-remover/        # Doubao removal logic
+│   │   └── metadata.ts                      # SEO metadata helper
+│   └── middleware.ts                        # i18n middleware
 ├── messages/
-│   ├── en.json                          # English translations
-│   └── zh.json                          # Chinese translations
-└── public/                              # Static assets
+│   ├── en.json                              # English translations
+│   └── zh.json                              # Chinese translations
+└── public/                                  # Static assets
 ```
 
 ## 📄 License

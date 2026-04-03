@@ -2,8 +2,16 @@ import { getTranslations } from 'next-intl/server';
 import WatermarkRemover from '@/components/WatermarkRemover';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Link from 'next/link';
+import { setRequestLocale } from 'next-intl/server';
 
-export default function NotebookLMPage() {
+export default async function NotebookLMPage({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations('notebooklm');
 
   return (

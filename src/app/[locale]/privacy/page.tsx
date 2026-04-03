@@ -1,12 +1,20 @@
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
+import { setRequestLocale } from 'next-intl/server';
 
 export const metadata = {
   title: 'Privacy Policy - CleanMark',
   description: 'CleanMark privacy policy. We do not collect, store, or transmit any user data.',
 };
 
-export default function PrivacyPage() {
+export default async function PrivacyPage({
+  params
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  setRequestLocale(locale);
+
   const t = await getTranslations('privacy');
 
   return (

@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useRef, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from '@/i18n/routing';
+import { useLocale } from 'next-intl';
 
 const languages = [
   { code: 'en', name: 'English', flag: '🇺🇸' },
@@ -10,18 +11,10 @@ const languages = [
 
 export default function LanguageSwitcher() {
   const router = useRouter();
+  const pathname = usePathname();
+  const currentLocale = useLocale();
   const [isOpen, setIsOpen] = useState(false);
-  const [currentLocale, setCurrentLocale] = useState('en');
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    // Get current locale from cookie
-    const locale = document.cookie
-      .split('; ')
-      .find(row => row.startsWith('NEXT_LOCALE='))
-      ?.split('=')[1] || 'en';
-    setCurrentLocale(locale);
-  }, []);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -35,13 +28,8 @@ export default function LanguageSwitcher() {
   }, []);
 
   const handleLanguageChange = (locale: string) => {
-    // Set cookie
-    document.cookie = `NEXT_LOCALE=${locale}; path=/; max-age=31536000`;
-    setCurrentLocale(locale);
     setIsOpen(false);
-
-    // Refresh page to apply new locale
-    router.refresh();
+    router.replace(pathname, { locale });
   };
 
   const currentLanguage = languages.find(lang => lang.code === currentLocale) || languages[0];

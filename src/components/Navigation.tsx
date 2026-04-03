@@ -32,6 +32,16 @@ export default function Navigation() {
       >
         {t('doubao')}
       </Link>
+      <Link
+        href="/manual-eraser"
+        className={`px-4 py-2 rounded-md transition ${
+          isActive('manual')
+            ? 'bg-white text-gray-900 shadow-sm'
+            : 'text-gray-600 hover:text-gray-900'
+        }`}
+      >
+        {t('manual')}
+      </Link>
     </nav>
   );
 }

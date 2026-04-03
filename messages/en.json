@@ -1,7 +1,8 @@
 {
   "nav": {
     "gemini": "Gemini",
-    "doubao": "Doubao"
+    "doubao": "Doubao",
+    "manual": "Manual Eraser"
   },
   "home": {
     "title": "Gemini Watermark Remover",

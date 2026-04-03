@@ -1,7 +1,8 @@
 {
   "nav": {
     "gemini": "Gemini",
-    "doubao": "豆包"
+    "doubao": "豆包",
+    "manual": "手动橡皮擦"
   },
   "home": {
     "title": "Gemini 水印去除工具",

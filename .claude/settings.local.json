@@ -10,7 +10,9 @@
       "Bash(mv /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/manual-eraser /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/[locale]/manual-eraser)",
       "Bash(mv /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/logo-overlay /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/[locale]/logo-overlay)",
       "Bash(npm run:*)",
-      "Bash(find:*)"
+      "Bash(find:*)",
+      "Bash(kill:*)",
+      "Bash(lsof:*)"
     ]
   }
 }

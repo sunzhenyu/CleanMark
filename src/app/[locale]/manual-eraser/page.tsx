@@ -4,7 +4,12 @@ import Navigation from '@/components/Navigation';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Footer from '@/components/Footer';
 import { setRequestLocale } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
 import Link from 'next/link';
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export const metadata = {
   title: 'Manual Watermark Eraser - Free Tool | CleanMark',
@@ -19,7 +24,7 @@ export default async function ManualEraserPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations('manual');
+  const t = await getTranslations({ locale, namespace: 'manual' });
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

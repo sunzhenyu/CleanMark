@@ -12,7 +12,9 @@
       "Bash(npm run:*)",
       "Bash(find:*)",
       "Bash(kill:*)",
-      "Bash(lsof:*)"
+      "Bash(lsof:*)",
+      "Bash(node:*)",
+      "Bash(pkill -f \"next dev\")"
     ]
   }
 }

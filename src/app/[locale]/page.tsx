@@ -4,6 +4,11 @@ import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { setRequestLocale } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export const metadata = {
   title: 'CleanMark - AI Watermark Removal Tools',
@@ -18,7 +23,7 @@ export default async function HomePage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations('homepage');
+  const t = await getTranslations({ locale, namespace: 'homepage' });
 
   const features = [
     {

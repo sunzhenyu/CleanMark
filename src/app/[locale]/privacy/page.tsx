@@ -1,6 +1,11 @@
 import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 import { setRequestLocale } from 'next-intl/server';
+import { routing } from '@/i18n/routing';
+
+export function generateStaticParams() {
+  return routing.locales.map((locale) => ({ locale }));
+}
 
 export const metadata = {
   title: 'Privacy Policy - CleanMark',
@@ -15,7 +20,7 @@ export default async function PrivacyPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations('privacy');
+  const t = await getTranslations({ locale, namespace: 'privacy' });
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

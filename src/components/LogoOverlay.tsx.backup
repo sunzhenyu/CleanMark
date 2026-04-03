@@ -1,0 +1,500 @@
+'use client';
+
+import { useState, useRef, useCallback, useEffect } from 'react';
+import { useTranslations } from 'next-intl';
+
+interface Logo {
+  id: string;
+  url: string;
+  name: string;
+  image: HTMLImageElement;
+}
+
+interface PlacedLogo {
+  id: string;
+  logoId: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+}
+
+export default function LogoOverlay() {
+  const t = useTranslations('overlay');
+  const [image, setImage] = useState<HTMLImageElement | null>(null);
+  const [logos, setLogos] = useState<Logo[]>([]);
+  const [placedLogos, setPlacedLogos] = useState<PlacedLogo[]>([]);
+  const [isDragging, setIsDragging] = useState(false);
+  const [selectedLogo, setSelectedLogo] = useState<string | null>(null);
+  const [dragOffset, setDragOffset] = useState({ x: 0, y: 0 });
+
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+  const imageInputRef = useRef<HTMLInputElement>(null);
+  const logoInputRef = useRef<HTMLInputElement>(null);
+
+  // Load logos from localStorage on mount
+  useEffect(() => {
+    const saved = localStorage.getItem('cleanmark-logos');
+    if (saved) {
+      try {
+        const parsed = JSON.parse(saved);
+        const loadedLogos: Logo[] = [];
+
+        parsed.forEach((item: any) => {
+          const img = new Image();
+          img.onload = () => {
+            loadedLogos.push({
+              id: item.id,
+              url: item.url,
+              name: item.name,
+              image: img,
+            });
+            if (loadedLogos.length === parsed.length) {
+              setLogos(loadedLogos);
+            }
+          };
+          img.src = item.url;
+        });
+      } catch (e) {
+        console.error('Failed to load logos:', e);
+      }
+    }
+  }, []);
+
+  // Save logos to localStorage whenever they change
+  useEffect(() => {
+    if (logos.length > 0) {
+      const toSave = logos.map(({ id, url, name }) => ({ id, url, name }));
+      localStorage.setItem('cleanmark-logos', JSON.stringify(toSave));
+    }
+  }, [logos]);
+
+  const loadImage = (file: File) => {
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => setImage(img);
+      img.src = e.target?.result as string;
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) loadImage(file);
+  };
+
+  const handleLogoUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      const img = new Image();
+      img.onload = () => {
+        const logo: Logo = {
+          id: Date.now().toString(),
+          url: e.target?.result as string,
+          name: file.name,
+          image: img,
+        };
+        setLogos([...logos, logo]);
+      };
+      img.src = e.target?.result as string;
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleDrop = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) loadImage(file);
+  }, []);
+
+  const handleDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+  }, []);
+
+  const handleDragLeave = useCallback(() => {
+    setIsDragging(false);
+  }, []);
+
+  const addLogoToCanvas = (logoId: string) => {
+    const placed: PlacedLogo = {
+      id: Date.now().toString(),
+      logoId,
+      x: 100,
+      y: 100,
+      width: 150,
+      height: 150,
+    };
+    setPlacedLogos([...placedLogos, placed]);
+  };
+
+  const getCanvasCoordinates = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    const canvas = canvasRef.current;
+    if (!canvas) return { x: 0, y: 0 };
+
+    const rect = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / rect.width;
+    const scaleY = canvas.height / rect.height;
+
+    return {
+      x: (e.clientX - rect.left) * scaleX,
+      y: (e.clientY - rect.top) * scaleY,
+    };
+  };
+
+  const handleCanvasMouseDown = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    const { x, y } = getCanvasCoordinates(e);
+
+    // Check if clicking on a placed logo
+    for (let i = placedLogos.length - 1; i >= 0; i--) {
+      const logo = placedLogos[i];
+      if (x >= logo.x && x <= logo.x + logo.width && y >= logo.y && y <= logo.y + logo.height) {
+        setSelectedLogo(logo.id);
+        setDragOffset({ x: x - logo.x, y: y - logo.y });
+        return;
+      }
+    }
+    setSelectedLogo(null);
+  };
+
+  const handleCanvasMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (!selectedLogo) return;
+
+    const { x, y } = getCanvasCoordinates(e);
+
+    setPlacedLogos(
+      placedLogos.map((logo) =>
+        logo.id === selectedLogo
+          ? { ...logo, x: x - dragOffset.x, y: y - dragOffset.y }
+          : logo
+      )
+    );
+  };
+
+  const handleCanvasMouseUp = () => {
+    setSelectedLogo(null);
+  };
+
+  const handleWheel = (e: React.WheelEvent<HTMLCanvasElement>) => {
+    if (!selectedLogo) return;
+    e.preventDefault();
+
+    const delta = e.deltaY > 0 ? -10 : 10;
+
+    setPlacedLogos(
+      placedLogos.map((logo) =>
+        logo.id === selectedLogo
+          ? {
+              ...logo,
+              width: Math.max(30, logo.width + delta),
+              height: Math.max(30, logo.height + delta),
+            }
+          : logo
+      )
+    );
+  };
+
+  const renderCanvas = () => {
+    const canvas = canvasRef.current;
+    if (!canvas || !image) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    canvas.width = image.width;
+    canvas.height = image.height;
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(image, 0, 0);
+
+    placedLogos.forEach((placed) => {
+      const logo = logos.find((l) => l.id === placed.logoId);
+      if (logo && logo.image) {
+        ctx.drawImage(logo.image, placed.x, placed.y, placed.width, placed.height);
+
+        // Draw selection border
+        if (placed.id === selectedLogo) {
+          ctx.strokeStyle = '#3b82f6';
+          ctx.lineWidth = 3;
+          ctx.strokeRect(placed.x, placed.y, placed.width, placed.height);
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+    if (image) renderCanvas();
+  }, [image, placedLogos, logos, selectedLogo]);
+
+  const handleDownload = () => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    canvas.toBlob((blob) => {
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'logo-overlay.png';
+      a.click();
+      URL.revokeObjectURL(url);
+    });
+  };
+
+  const removeLogo = (id: string) => {
+    setPlacedLogos(placedLogos.filter((logo) => logo.id !== id));
+    if (selectedLogo === id) setSelectedLogo(null);
+  };
+
+  const deleteLogoFromLibrary = (id: string) => {
+    setLogos(logos.filter((logo) => logo.id !== id));
+    setPlacedLogos(placedLogos.filter((logo) => logo.logoId !== id));
+    if (placedLogos.find((p) => p.logoId === id && p.id === selectedLogo)) {
+      setSelectedLogo(null);
+    }
+  };
+
+  const resizeSelectedLogo = (delta: number) => {
+    if (!selectedLogo) return;
+    setPlacedLogos(
+      placedLogos.map((logo) =>
+        logo.id === selectedLogo
+          ? {
+              ...logo,
+              width: Math.max(30, logo.width + delta),
+              height: Math.max(30, logo.height + delta),
+            }
+          : logo
+      )
+    );
+  };
+
+  const setSelectedLogoSize = (size: number) => {
+    if (!selectedLogo) return;
+    setPlacedLogos(
+      placedLogos.map((logo) =>
+        logo.id === selectedLogo
+          ? { ...logo, width: size, height: size }
+          : logo
+      )
+    );
+  };
+
+  if (!image) {
+    return (
+      <div className="space-y-6">
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+          <div className="lg:col-span-3">
+            <div
+              onDrop={handleDrop}
+              onDragOver={handleDragOver}
+              onDragLeave={handleDragLeave}
+              className={`relative border-2 border-dashed rounded-lg p-12 transition ${
+                isDragging ? 'border-gray-900 bg-gray-50' : 'border-gray-300 hover:border-gray-400'
+              }`}
+            >
+              <div className="text-center">
+                <div className="text-6xl mb-4">🖼️</div>
+                <p className="text-lg text-gray-700 mb-2">{t('upload.title')}</p>
+                <p className="text-sm text-gray-500 mb-4">{t('upload.or')}</p>
+                <label className="inline-block px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition cursor-pointer">
+                  {t('upload.browse')}
+                  <input
+                    ref={imageInputRef}
+                    type="file"
+                    accept="image/*"
+                    onChange={handleImageUpload}
+                    className="hidden"
+                  />
+                </label>
+                <p className="text-xs text-gray-400 mt-4">{t('upload.supported')}</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="space-y-4">
+            <div className="bg-white rounded-lg border border-gray-200 p-4">
+              <h3 className="font-semibold mb-3">{t('logoLibrary')}</h3>
+              <button
+                onClick={() => logoInputRef.current?.click()}
+                className="w-full px-4 py-2 border-2 border-dashed border-gray-300 rounded-lg hover:border-gray-400 transition text-sm"
+              >
+                {t('addLogo')}
+              </button>
+              <input
+                ref={logoInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleLogoUpload}
+                className="hidden"
+              />
+
+              <div className="mt-4 space-y-2 max-h-60 overflow-y-auto">
+                {logos.map((logo) => (
+                  <div key={logo.id} className="flex items-center gap-2 p-2 border rounded hover:bg-gray-50">
+                    <img src={logo.url} alt={logo.name} className="w-10 h-10 object-contain" />
+                    <span className="text-xs flex-1 truncate">{logo.name}</span>
+                    <button
+                      onClick={() => deleteLogoFromLibrary(logo.id)}
+                      className="px-2 py-1 text-xs text-red-600 hover:bg-red-50 rounded"
+                    >
+                      ×
+                    </button>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-6">
+      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
+        <div className="lg:col-span-3">
+          <div className="border border-gray-300 rounded-lg overflow-hidden bg-gray-50">
+            <canvas
+              ref={canvasRef}
+              onMouseDown={handleCanvasMouseDown}
+              onMouseMove={handleCanvasMouseMove}
+              onMouseUp={handleCanvasMouseUp}
+              onMouseLeave={handleCanvasMouseUp}
+              onWheel={handleWheel}
+              className="w-full h-auto cursor-move"
+              style={{ display: 'block', maxWidth: '100%' }}
+            />
+          </div>
+          <p className="text-sm text-gray-500 mt-2 text-center">
+            {t('hint') || 'Click logo to select, drag to move, scroll to resize'}
+          </p>
+        </div>
+
+        <div className="space-y-4">
+          <div className="bg-white rounded-lg border border-gray-200 p-4">
+            <h3 className="font-semibold mb-3">{t('logoLibrary')}</h3>
+            <button
+              onClick={() => logoInputRef.current?.click()}
+              className="w-full px-4 py-2 border-2 border-dashed border-gray-300 rounded-lg hover:border-gray-400 transition text-sm"
+            >
+              {t('addLogo')}
+            </button>
+            <input
+              ref={logoInputRef}
+              type="file"
+              accept="image/*"
+              onChange={handleLogoUpload}
+              className="hidden"
+            />
+
+            <div className="mt-4 space-y-2 max-h-60 overflow-y-auto">
+              {logos.map((logo) => (
+                <div key={logo.id} className="flex items-center gap-2 p-2 border rounded hover:bg-gray-50">
+                  <img src={logo.url} alt={logo.name} className="w-10 h-10 object-contain" />
+                  <span className="text-xs flex-1 truncate">{logo.name}</span>
+                  <button
+                    onClick={() => addLogoToCanvas(logo.id)}
+                    className="px-2 py-1 text-xs bg-blue-600 text-white rounded hover:bg-blue-700"
+                  >
+                    {t('add')}
+                  </button>
+                  <button
+                    onClick={() => deleteLogoFromLibrary(logo.id)}
+                    className="px-2 py-1 text-xs text-red-600 hover:bg-red-50 rounded"
+                  >
+                    ×
+                  </button>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="bg-white rounded-lg border border-gray-200 p-4">
+            <h3 className="font-semibold mb-3">{t('placedLogos')}</h3>
+
+            {selectedLogo && (
+              <div className="mb-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+                <p className="text-xs font-medium text-blue-900 mb-2">{t('sizeControl') || 'Size Control'}</p>
+                <div className="flex gap-2 mb-2">
+                  <button
+                    onClick={() => resizeSelectedLogo(-20)}
+                    className="px-3 py-1 text-sm bg-white border border-gray-300 rounded hover:bg-gray-50"
+                  >
+                    -
+                  </button>
+                  <button
+                    onClick={() => resizeSelectedLogo(20)}
+                    className="px-3 py-1 text-sm bg-white border border-gray-300 rounded hover:bg-gray-50"
+                  >
+                    +
+                  </button>
+                </div>
+                <input
+                  type="range"
+                  min="30"
+                  max="500"
+                  value={placedLogos.find((l) => l.id === selectedLogo)?.width || 150}
+                  onChange={(e) => setSelectedLogoSize(Number(e.target.value))}
+                  className="w-full"
+                />
+                <p className="text-xs text-gray-500 mt-1 text-center">
+                  {placedLogos.find((l) => l.id === selectedLogo)?.width || 0}px
+                </p>
+              </div>
+            )}
+
+            <div className="space-y-2">
+              {placedLogos.length === 0 ? (
+                <p className="text-sm text-gray-400 text-center py-4">{t('noLogos') || 'No logos placed'}</p>
+              ) : (
+                placedLogos.map((placed) => {
+                  const logo = logos.find((l) => l.id === placed.logoId);
+                  return (
+                    <div
+                      key={placed.id}
+                      className={`flex items-center gap-2 p-2 border rounded ${
+                        placed.id === selectedLogo ? 'border-blue-500 bg-blue-50' : ''
+                      }`}
+                    >
+                      {logo && <img src={logo.url} alt="" className="w-8 h-8 object-contain" />}
+                      <button
+                        onClick={() => removeLogo(placed.id)}
+                        className="ml-auto px-2 py-1 text-xs text-red-600 hover:bg-red-50 rounded"
+                      >
+                        {t('remove')}
+                      </button>
+                    </div>
+                  );
+                })
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex gap-3 justify-center">
+        <button
+          onClick={handleDownload}
+          className="px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800"
+        >
+          {t('download')}
+        </button>
+        <button
+          onClick={() => {
+            setImage(null);
+            setPlacedLogos([]);
+            setSelectedLogo(null);
+          }}
+          className="px-6 py-3 border border-gray-300 rounded-lg hover:bg-gray-50"
+        >
+          {t('newImage')}
+        </button>
+      </div>
+    </div>
+  );
+}

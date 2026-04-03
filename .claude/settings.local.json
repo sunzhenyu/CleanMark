@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "mcp__ide__getDiagnostics",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push:*)",
+      "WebSearch",
+      "Bash(mv /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/doubao-watermark-remover /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/[locale]/doubao-watermark-remover)",
+      "Bash(mv /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/manual-eraser /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/[locale]/manual-eraser)",
+      "Bash(mv /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/logo-overlay /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/[locale]/logo-overlay)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

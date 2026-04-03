@@ -1,25 +1,10 @@
-import { NextIntlClientProvider } from 'next-intl';
-import { getMessages } from 'next-intl/server';
 import './globals.css';
 
 export const metadata = {
-  title: 'Gemini Watermark Remover - Free & Privacy-First | CleanMark',
-  description: 'Remove Gemini AI watermarks from images instantly. Free online tool with client-side processing. No registration, no uploads. Works with Google Gemini generated images.',
-  keywords: 'Gemini watermark remover, remove Gemini watermark, Gemini AI watermark removal, Google Gemini watermark remover, AI watermark remover, watermark removal tool, free watermark remover, online watermark remover',
+  title: 'CleanMark - AI Watermark Removal Tools',
+  description: 'Professional watermark removal tools for AI-generated images. Remove Gemini, Doubao watermarks, or use manual eraser and logo overlay.',
+  keywords: 'watermark remover, AI watermark removal, Gemini watermark, Doubao watermark, manual eraser, logo overlay',
   authors: [{ name: 'CleanMark' }],
-  openGraph: {
-    title: 'Gemini Watermark Remover - Free & Privacy-First',
-    description: 'Remove Gemini AI watermarks from generated images instantly. 100% free, no registration required.',
-    url: 'https://cleanmark.org',
-    siteName: 'CleanMark',
-    locale: 'en_US',
-    type: 'website',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Gemini Watermark Remover - Free & Privacy-First',
-    description: 'Remove Gemini AI watermarks from generated images instantly.',
-  },
   icons: {
     icon: '/favicon.svg',
     apple: '/logo.svg',
@@ -30,17 +15,14 @@ export const metadata = {
   },
 };
 
-export default async function RootLayout({
+export default function RootLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const messages = await getMessages();
-
   return (
-    <html lang="en">
+    <html>
       <head>
-        <link rel="canonical" href="https://cleanmark.org" />
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQ6LXDV9FP"></script>
         <script
           dangerouslySetInnerHTML={{
@@ -53,11 +35,7 @@ export default async function RootLayout({
           }}
         />
       </head>
-      <body className="antialiased">
-        <NextIntlClientProvider messages={messages}>
-          {children}
-        </NextIntlClientProvider>
-      </body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

@@ -1,3 +1,4 @@
+import { useTranslations } from 'next-intl';
 import ManualEraser from '@/components/ManualEraser';
 import Navigation from '@/components/Navigation';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
@@ -9,6 +10,8 @@ export const metadata = {
 };
 
 export default function ManualEraserPage() {
+  const t = useTranslations('manual');
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <header className="border-b border-gray-200">
@@ -27,8 +30,8 @@ export default function ManualEraserPage() {
         </div>
 
         <div className="text-center mb-12">
-          <h2 className="text-5xl font-bold text-gray-900 mb-4">Manual Eraser</h2>
-          <p className="text-xl text-gray-600">Brush away watermarks with precision control</p>
+          <h2 className="text-5xl font-bold text-gray-900 mb-4">{t('title')}</h2>
+          <p className="text-xl text-gray-600">{t('subtitle')}</p>
         </div>
 
         <ManualEraser />

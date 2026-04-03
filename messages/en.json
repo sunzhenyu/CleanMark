@@ -63,6 +63,20 @@
     "download": "Download",
     "tryAnother": "Try another image"
   },
+  "manual": {
+    "title": "Manual Eraser",
+    "subtitle": "Brush away watermarks with precision control",
+    "upload": {
+      "title": "Drop your image here",
+      "or": "or",
+      "browse": "Browse files",
+      "supported": "Supports JPG, PNG, WebP"
+    },
+    "brushSize": "Brush Size",
+    "reset": "Reset",
+    "download": "Download",
+    "newImage": "New Image"
+  },
   "privacy": {
     "title": "Privacy Policy",
     "lastUpdated": "Last updated: April 2, 2026",

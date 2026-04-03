@@ -63,6 +63,20 @@
     "download": "下载",
     "tryAnother": "处理另一张图片"
   },
+  "manual": {
+    "title": "手动橡皮擦",
+    "subtitle": "精确控制，轻松擦除水印",
+    "upload": {
+      "title": "拖放图片到这里",
+      "or": "或",
+      "browse": "浏览文件",
+      "supported": "支持 JPG、PNG、WebP"
+    },
+    "brushSize": "画笔大小",
+    "reset": "重置",
+    "download": "下载",
+    "newImage": "新图片"
+  },
   "privacy": {
     "title": "隐私政策",
     "lastUpdated": "最后更新：2026年4月2日",

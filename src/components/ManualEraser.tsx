@@ -1,11 +1,14 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useEffect, useCallback } from 'react';
+import { useTranslations } from 'next-intl';
 
 export default function ManualEraser() {
+  const t = useTranslations('manual');
   const [image, setImage] = useState<HTMLImageElement | null>(null);
   const [brushSize, setBrushSize] = useState(20);
   const [isErasing, setIsErasing] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -17,19 +20,34 @@ export default function ManualEraser() {
 
   const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
-    if (!file) return;
+    if (file) loadImage(file);
+  };
 
+  const loadImage = (file: File) => {
     const reader = new FileReader();
     reader.onload = (event) => {
       const img = new Image();
-      img.onload = () => {
-        setImage(img);
-        drawImageOnCanvas(img);
-      };
+      img.onload = () => setImage(img);
       img.src = event.target?.result as string;
     };
     reader.readAsDataURL(file);
   };
+
+  const handleDrop = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files[0];
+    if (file && file.type.startsWith('image/')) loadImage(file);
+  }, []);
+
+  const handleDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(true);
+  }, []);
+
+  const handleDragLeave = useCallback(() => {
+    setIsDragging(false);
+  }, []);
 
   const drawImageOnCanvas = (img: HTMLImageElement) => {
     const canvas = canvasRef.current;
@@ -136,29 +154,36 @@ export default function ManualEraser() {
 
   return (
     <div className="space-y-6">
-      <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
-        <input
-          ref={fileInputRef}
-          type="file"
-          accept="image/*"
-          onChange={handleImageUpload}
-          className="hidden"
-        />
-
-        {!image ? (
-          <button
-            onClick={() => fileInputRef.current?.click()}
-            className="w-full py-12 border-2 border-dashed border-gray-300 rounded-lg hover:border-blue-500 transition"
-          >
-            <div className="text-center">
-              <div className="text-4xl mb-2">🖼️</div>
-              <div className="text-gray-600">Click to upload image</div>
-            </div>
-          </button>
-        ) : (
+      {!image ? (
+        <div
+          onDrop={handleDrop}
+          onDragOver={handleDragOver}
+          onDragLeave={handleDragLeave}
+          className={`relative border-2 border-dashed rounded-lg p-12 transition ${
+            isDragging ? 'border-gray-900 bg-gray-50' : 'border-gray-300 hover:border-gray-400'
+          }`}
+        >
+          <div className="text-center">
+            <div className="text-6xl mb-4">🖌️</div>
+            <p className="text-lg text-gray-700 mb-2">{t('upload.title')}</p>
+            <p className="text-sm text-gray-500 mb-4">{t('upload.or')}</p>
+            <label className="inline-block px-6 py-3 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition cursor-pointer">
+              {t('upload.browse')}
+              <input
+                ref={fileInputRef}
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                className="hidden"
+              />
+            </label>
+            <p className="text-xs text-gray-400 mt-4">{t('upload.supported')}</p>
+          </div>
+        </div>
+      ) : (
           <div className="space-y-4">
             <div className="flex gap-4 items-center">
-              <label className="text-sm font-medium">Brush Size: {brushSize}px</label>
+              <label className="text-sm font-medium">{t('brushSize')}: {brushSize}px</label>
               <input
                 type="range"
                 min="5"
@@ -183,18 +208,17 @@ export default function ManualEraser() {
 
             <div className="flex gap-3">
               <button onClick={handleReset} className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
-                Reset
+                {t('reset')}
               </button>
-              <button onClick={handleDownload} className="flex-1 px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
-                Download
+              <button onClick={handleDownload} className="flex-1 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800">
+                {t('download')}
               </button>
               <button onClick={() => fileInputRef.current?.click()} className="px-4 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
-                New Image
+                {t('newImage')}
               </button>
             </div>
           </div>
         )}
-      </div>
     </div>
   );
 }

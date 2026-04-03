@@ -2,7 +2,8 @@
   "nav": {
     "gemini": "Gemini",
     "doubao": "Doubao",
-    "manual": "Manual Eraser"
+    "manual": "Manual Eraser",
+    "overlay": "Logo Overlay"
   },
   "home": {
     "title": "Gemini Watermark Remover",
@@ -74,6 +75,27 @@
     },
     "brushSize": "Brush Size",
     "reset": "Reset",
+    "download": "Download",
+    "newImage": "New Image"
+  },
+  "overlay": {
+    "title": "Logo Overlay",
+    "subtitle": "Cover watermarks with your own logo",
+    "upload": {
+      "title": "Drop your image here",
+      "or": "or",
+      "browse": "Browse files",
+      "supported": "Supports JPG, PNG, WebP"
+    },
+    "hint": "Click logo to select, drag to move, scroll to resize",
+    "logoLibrary": "Logo Library",
+    "addLogo": "+ Add Logo",
+    "add": "Add",
+    "placedLogos": "Placed Logos",
+    "noLogos": "No logos placed",
+    "sizeControl": "Size Control",
+    "selectLogoFirst": "Select a logo to adjust size",
+    "remove": "Remove",
     "download": "Download",
     "newImage": "New Image"
   },

@@ -42,6 +42,16 @@ export default function Navigation() {
       >
         {t('manual')}
       </Link>
+      <Link
+        href="/logo-overlay"
+        className={`px-4 py-2 rounded-md transition ${
+          isActive('logo-overlay')
+            ? 'bg-white text-gray-900 shadow-sm'
+            : 'text-gray-600 hover:text-gray-900'
+        }`}
+      >
+        {t('overlay')}
+      </Link>
     </nav>
   );
 }

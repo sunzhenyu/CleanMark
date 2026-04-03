@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import WatermarkRemover from '@/components/WatermarkRemover';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Navigation from '@/components/Navigation';
@@ -19,7 +19,7 @@ export default async function GeminiPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = useTranslations('home');
+  const t = await getTranslations('home');
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

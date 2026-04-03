@@ -1,10 +1,10 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import WatermarkRemover from '@/components/WatermarkRemover';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Link from 'next/link';
 
 export default function NotebookLMPage() {
-  const t = useTranslations('notebooklm');
+  const t = await getTranslations('notebooklm');
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

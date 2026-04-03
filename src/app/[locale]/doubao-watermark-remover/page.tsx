@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import DoubaoWatermarkRemover from '@/components/DoubaoWatermarkRemover';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Navigation from '@/components/Navigation';
@@ -19,7 +19,7 @@ export default async function DoubaoPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = useTranslations('doubao');
+  const t = await getTranslations('doubao');
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import ManualEraser from '@/components/ManualEraser';
 import Navigation from '@/components/Navigation';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
@@ -19,7 +19,7 @@ export default async function ManualEraserPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = useTranslations('manual');
+  const t = await getTranslations('manual');
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

@@ -1,4 +1,4 @@
-import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import Link from 'next/link';
 
 export const metadata = {
@@ -7,7 +7,7 @@ export const metadata = {
 };
 
 export default function PrivacyPage() {
-  const t = useTranslations('privacy');
+  const t = await getTranslations('privacy');
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

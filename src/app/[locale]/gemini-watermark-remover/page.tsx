@@ -6,14 +6,20 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
-
-export const metadata = {
-  title: 'Gemini Watermark Remover - Free & Privacy-First | CleanMark',
-  description: 'Remove Gemini AI watermarks from images instantly. Free online tool with client-side processing. No registration, no uploads. Works with Google Gemini generated images.',
-};
+import { generateMetadata as genMeta } from '@/lib/metadata';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
+}
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return genMeta({
+    title: 'Gemini Watermark Remover - Free & Privacy-First | CleanMark',
+    description: 'Remove Gemini AI watermarks instantly. Free tool with browser processing. No registration or uploads. Perfect for Google Gemini images.',
+    path: '/gemini-watermark-remover',
+    locale,
+  });
 }
 
 export default async function GeminiPage({

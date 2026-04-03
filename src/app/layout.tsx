@@ -2,7 +2,7 @@ import './globals.css';
 
 export const metadata = {
   title: 'CleanMark - AI Watermark Remover Tools',
-  description: 'Professional watermark removal tools for AI-generated images. Remove Gemini, Doubao watermarks, or use manual eraser and logo overlay.',
+  description: 'Remove AI watermarks instantly. Free tools for Gemini, Doubao watermarks, manual eraser, and logo overlay. 100% privacy, no registration required.',
   keywords: 'watermark remover, AI watermark removal, Gemini watermark, Doubao watermark, manual eraser, logo overlay',
   authors: [{ name: 'CleanMark' }],
   icons: {
@@ -13,6 +13,7 @@ export const metadata = {
     index: true,
     follow: true,
   },
+  metadataBase: new URL('https://cleanmark.org'),
 };
 
 export default function RootLayout({

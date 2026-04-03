@@ -6,15 +6,21 @@ import Footer from '@/components/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import Link from 'next/link';
+import { generateMetadata as genMeta } from '@/lib/metadata';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata = {
-  title: 'Manual Watermark Eraser - Free Tool | CleanMark',
-  description: 'Manually erase watermarks from any image with our free brush tool. Select and remove unwanted elements with precision.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return genMeta({
+    title: 'Manual Watermark Eraser - Free Tool | CleanMark',
+    description: 'Manually erase watermarks with precision brush tool. Free, no registration. Remove unwanted elements from any image with full control.',
+    path: '/manual-eraser',
+    locale,
+  });
+}
 
 export default async function ManualEraserPage({
   params

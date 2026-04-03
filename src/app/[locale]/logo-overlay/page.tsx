@@ -6,15 +6,21 @@ import Footer from '@/components/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import Link from 'next/link';
+import { generateMetadata as genMeta } from '@/lib/metadata';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata = {
-  title: 'Logo Overlay - Cover Watermarks | CleanMark',
-  description: 'Cover watermarks with your own logo. Upload your image and logos, position them to hide unwanted watermarks.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return genMeta({
+    title: 'Logo Overlay - Cover Watermarks | CleanMark',
+    description: 'Cover watermarks with your logo. Free tool to upload and position logos over images. No registration, instant results with full control.',
+    path: '/logo-overlay',
+    locale,
+  });
+}
 
 export default async function LogoOverlayPage({
   params

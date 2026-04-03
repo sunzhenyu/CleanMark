@@ -6,15 +6,21 @@ import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import { generateMetadata as genMeta } from '@/lib/metadata';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata = {
-  title: 'Doubao Watermark Remover - Free & Privacy-First | CleanMark',
-  description: 'Remove Doubao AI watermarks from generated images instantly. 100% free, privacy-first, client-side processing.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return genMeta({
+    title: 'Doubao Watermark Remover - Free & Privacy-First | CleanMark',
+    description: 'Remove Doubao AI watermarks instantly. Free tool with browser processing. No registration required. Perfect for Doubao generated images.',
+    path: '/doubao-watermark-remover',
+    locale,
+  });
+}
 
 export default async function DoubaoPage({
   params

@@ -5,15 +5,21 @@ import { routing } from '@/i18n/routing';
 import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import LanguageSwitcher from '@/components/LanguageSwitcher';
+import { generateMetadata as genMeta } from '@/lib/metadata';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata = {
-  title: 'Privacy Policy - CleanMark',
-  description: 'CleanMark privacy policy. We do not collect, store, or transmit any user data.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return genMeta({
+    title: 'Privacy Policy - CleanMark',
+    description: 'CleanMark privacy policy. We do not collect, store, or transmit any user data. All processing happens in your browser with 100% privacy.',
+    path: '/privacy',
+    locale,
+  });
+}
 
 export default async function PrivacyPage({
   params

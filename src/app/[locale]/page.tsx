@@ -5,15 +5,21 @@ import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
+import { generateMetadata as genMeta } from '@/lib/metadata';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
 }
 
-export const metadata = {
-  title: 'CleanMark - AI Watermark Remover Tools',
-  description: 'Professional watermark removal tools for AI-generated images. Remove Gemini, Doubao watermarks, or use manual eraser and logo overlay.',
-};
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+  return genMeta({
+    title: 'CleanMark - AI Watermark Remover Tools',
+    description: 'Remove AI watermarks instantly. Free tools for Gemini, Doubao watermarks, manual eraser, and logo overlay. 100% privacy, no registration required.',
+    path: '',
+    locale,
+  });
+}
 
 export default async function HomePage({
   params
@@ -96,8 +102,29 @@ export default async function HomePage({
           ))}
         </div>
 
+        <div className="mt-16 bg-blue-50 rounded-lg p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">{t('howItWorks.title')}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('howItWorks.step1.title')}</h3>
+              <p className="text-gray-600">{t('howItWorks.step1.description')}</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('howItWorks.step2.title')}</h3>
+              <p className="text-gray-600">{t('howItWorks.step2.description')}</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">{t('howItWorks.step3.title')}</h3>
+              <p className="text-gray-600">{t('howItWorks.step3.description')}</p>
+            </div>
+          </div>
+        </div>
+
         <div className="mt-16 bg-white rounded-lg border border-gray-200 p-8">
-          <h3 className="text-3xl font-bold text-gray-900 mb-8 text-center">{t('whyChoose.title')}</h3>
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">{t('whyChoose.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-4xl mb-3">🔒</div>

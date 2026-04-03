@@ -9,6 +9,21 @@
   "homepage": {
     "title": "CleanMark - AI Watermark Remover Tools",
     "subtitle": "Professional watermark removal tools for AI-generated images",
+    "howItWorks": {
+      "title": "How It Works - Simple 3 Steps",
+      "step1": {
+        "title": "Upload Image",
+        "description": "Select or drag your image"
+      },
+      "step2": {
+        "title": "Process",
+        "description": "Automatic or manual removal"
+      },
+      "step3": {
+        "title": "Download",
+        "description": "Get your clean image instantly"
+      }
+    },
     "features": {
       "gemini": {
         "title": "Gemini Watermark Remover",

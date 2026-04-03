@@ -9,6 +9,21 @@
   "homepage": {
     "title": "CleanMark - AI水印去除工具",
     "subtitle": "专业的AI生成图片水印去除工具",
+    "howItWorks": {
+      "title": "使用方法 - 简单3步",
+      "step1": {
+        "title": "上传图片",
+        "description": "选择或拖放您的图片"
+      },
+      "step2": {
+        "title": "处理",
+        "description": "自动或手动去除水印"
+      },
+      "step3": {
+        "title": "下载",
+        "description": "立即获取干净的图片"
+      }
+    },
     "features": {
       "gemini": {
         "title": "Gemini水印去除",

@@ -170,8 +170,8 @@ export default function ManualEraser() {
                 onMouseMove={handleMouseMove}
                 onMouseUp={handleMouseUp}
                 onMouseLeave={handleMouseUp}
-                className="max-w-full h-auto cursor-crosshair"
-                style={{ display: 'block' }}
+                className="w-full h-auto cursor-crosshair"
+                style={{ display: 'block', maxWidth: '100%' }}
               />
             </div>
 

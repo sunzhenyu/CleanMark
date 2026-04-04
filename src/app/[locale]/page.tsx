@@ -123,6 +123,52 @@ export default async function HomePage({
           </div>
         </div>
 
+        <div className="mt-16 bg-gradient-to-br from-blue-50 to-purple-50 rounded-lg p-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-3 text-center">{t('solutions.title')}</h2>
+          <p className="text-center text-gray-600 mb-8">{t('solutions.subtitle')}</p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <div className="flex items-start gap-3">
+                <div className="text-2xl">🤖</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{t('solutions.gemini.title')}</h3>
+                  <p className="text-gray-600 text-sm">{t('solutions.gemini.description')}</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <div className="flex items-start gap-3">
+                <div className="text-2xl">🤖</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{t('solutions.doubao.title')}</h3>
+                  <p className="text-gray-600 text-sm">{t('solutions.doubao.description')}</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <div className="flex items-start gap-3">
+                <div className="text-2xl">✏️</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{t('solutions.custom.title')}</h3>
+                  <p className="text-gray-600 text-sm">{t('solutions.custom.description')}</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <div className="flex items-start gap-3">
+                <div className="text-2xl">🎨</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{t('solutions.branding.title')}</h3>
+                  <p className="text-gray-600 text-sm">{t('solutions.branding.description')}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="bg-blue-100 border-l-4 border-blue-600 p-4 rounded">
+            <p className="text-gray-700 text-sm">{t('solutions.tip')}</p>
+          </div>
+        </div>
+
         <div className="mt-16 bg-white rounded-lg border border-gray-200 p-8">
           <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">{t('whyChoose.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">

@@ -24,6 +24,27 @@
         "description": "立即获取干净的图片"
       }
     },
+    "solutions": {
+      "title": "完整的水印解决方案",
+      "subtitle": "选择适合您需求的工具 - 我们的4种工具可以处理几乎所有类型的水印",
+      "gemini": {
+        "title": "Gemini 图片",
+        "description": "使用 Gemini 水印去除工具自动检测和去除"
+      },
+      "doubao": {
+        "title": "豆包图片",
+        "description": "使用豆包水印去除工具即时自动去除"
+      },
+      "custom": {
+        "title": "任何自定义水印",
+        "description": "使用手动橡皮擦精确去除任何水印，完全可控"
+      },
+      "branding": {
+        "title": "替换为您的品牌",
+        "description": "使用 Logo 遮罩用您自己的 Logo 或品牌覆盖水印"
+      },
+      "tip": "💡 提示：组合使用工具效果更佳！先使用自动去除，然后用手动橡皮擦修饰，或在上面添加您的 Logo。"
+    },
     "features": {
       "gemini": {
         "title": "Gemini水印去除",

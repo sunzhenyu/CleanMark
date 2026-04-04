@@ -24,6 +24,27 @@
         "description": "Get your clean image instantly"
       }
     },
+    "solutions": {
+      "title": "Complete Watermark Solutions",
+      "subtitle": "Choose the right tool for your needs - our 4 tools can handle virtually any watermark",
+      "gemini": {
+        "title": "Gemini Images",
+        "description": "Use Gemini Watermark Remover for automatic detection and removal"
+      },
+      "doubao": {
+        "title": "Doubao Images",
+        "description": "Use Doubao Watermark Remover for instant automatic removal"
+      },
+      "custom": {
+        "title": "Any Custom Watermark",
+        "description": "Use Manual Eraser to precisely remove any watermark with brush control"
+      },
+      "branding": {
+        "title": "Replace with Your Brand",
+        "description": "Use Logo Overlay to cover watermarks with your own logo or branding"
+      },
+      "tip": "💡 Tip: Combine tools for best results! Use automatic removal first, then manual eraser for touch-ups, or add your logo on top."
+    },
     "features": {
       "gemini": {
         "title": "Gemini Watermark Remover",

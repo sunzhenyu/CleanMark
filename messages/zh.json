@@ -8,7 +8,8 @@
   },
   "homepage": {
     "title": "CleanMark - AI水印去除工具",
-    "subtitle": "专业的AI生成图片水印去除工具",
+    "subtitle": "几秒钟去除水印 — 无需技术，完全免费",
+    "badge": "⚡ 无需注册 · 无需上传 · 直接在浏览器中运行",
     "howItWorks": {
       "title": "使用方法 - 简单3步",
       "step1": {

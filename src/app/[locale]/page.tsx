@@ -80,7 +80,8 @@ export default async function HomePage({
       <section className="max-w-6xl mx-auto px-4 py-16">
         <div className="text-center mb-16">
           <h2 className="text-5xl font-bold text-gray-900 mb-4">{t('title')}</h2>
-          <p className="text-xl text-gray-600">{t('subtitle')}</p>
+          <p className="text-xl text-gray-600 mb-4">{t('subtitle')}</p>
+          <p className="text-sm text-blue-600 bg-blue-50 inline-block px-4 py-2 rounded-full">{t('badge')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">

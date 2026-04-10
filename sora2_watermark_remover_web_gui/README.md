@@ -122,17 +122,9 @@ The platform combines state-of-the-art deep learning models with an intuitive dr
 
 ## 🚀 Installation
 
-### **For setup on Windows & macOS,** 
-The manual process is outlined below. macOS users can opt for the simplified method using the [DMG file](https://github.com/sunzhenyu/CleanMark/releases).
-
-
 ### Quick Start
 
-If you're on Windows or Linux, refer to the guide below; macOS users can use the [DMG file](https://github.com/sunzhenyu/CleanMark/releases).  
-
-
-
-
+**Option 1: Run from Source (All Platforms)**
 
 Check if Git and Python are set up.
 
@@ -141,10 +133,6 @@ Download links: https://git-scm.com/install/windows
 https://www.python.org/ftp/python/3.13.12/python-3.13.12-amd64.exe  
 
 Start GIT CMD mode.
-
-
-
-
 
 ```bash 
 git clone https://github.com/sunzhenyu/CleanMark.git
@@ -158,6 +146,10 @@ py -m pip install -r requirements.txt
 ```bash 
 py main.py
 ```
+
+**Option 2: Build Standalone Executable**
+
+See [BUILD.md](BUILD.md) for instructions on building platform-specific installers (Windows .exe, macOS .dmg, Linux .AppImage).
 
 
 ### Docker Installation

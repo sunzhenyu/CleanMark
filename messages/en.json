@@ -355,17 +355,24 @@
     },
     "localDeploy": {
       "title": "Run Locally — Unlimited & Free",
-      "description": "Want no file size limits, faster processing, and full privacy? Deploy SoraWatermarkCleaner on your own machine.",
-      "features": {
-        "unlimited": "No file size or duration limits",
-        "faster": "GPU-accelerated local processing",
-        "free": "Completely free, no API costs",
-        "privacy": "100% private — files never leave your computer"
+      "description": "No file size limits, GPU-accelerated processing, and full privacy. Three ways to run SoraWatermarkCleaner on your own machine:",
+      "method1": {
+        "title": "Option 1 — Docker (easiest, requires NVIDIA GPU)",
+        "desc": "One command to pull and run. Includes all dependencies and model weights. Requires Docker + NVIDIA Container Toolkit.",
+        "cmd": "docker run --gpus all -p 8501:8501 llinkedlist/sorawm:latest"
+      },
+      "method2": {
+        "title": "Option 2 — Install from source (CPU or GPU)",
+        "desc": "Clone the repo and install with uv. Works on CPU (LAMA model) or GPU (both models). Requires Python 3.10+ and FFmpeg.",
+        "cmd": "git clone https://github.com/sunzhenyu/CleanMark.git\ncd CleanMark/sora_watermark_cleaner\nuv sync && source .venv/bin/activate"
+      },
+      "method3": {
+        "title": "Option 3 — Streamlit UI (after install)",
+        "desc": "Launch the interactive web UI in your browser after completing Option 2.",
+        "cmd": "streamlit run app.py"
       },
       "hfSpace": "Try on Hugging Face Spaces",
-      "github": "View Source on GitHub",
-      "quickStart": "Quick Start (Docker)",
-      "dockerCmd": "docker run -p 8501:8501 -p 5344:5344 llinkedlist/sorawm:latest"
+      "github": "View Source on GitHub"
     },
     "faq": {
       "title": "FAQ",

@@ -100,18 +100,35 @@ export default async function SoraPage({
 
         <div className="mt-8 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-200 p-6">
           <h3 className="text-xl font-bold text-gray-900 mb-2">{t('localDeploy.title')}</h3>
-          <p className="text-gray-600 mb-4">{t('localDeploy.description')}</p>
-          <ul className="space-y-1 text-gray-700 mb-4">
-            {(['unlimited', 'faster', 'free', 'privacy'] as const).map((key) => (
-              <li key={key} className="flex items-center gap-2">
-                <span className="text-green-500">✓</span>
-                <span>{t(`localDeploy.features.${key}`)}</span>
-              </li>
-            ))}
-          </ul>
-          <div className="bg-gray-900 rounded-md p-3 mb-4 font-mono text-sm text-green-400 overflow-x-auto">
-            {t('localDeploy.dockerCmd')}
+          <p className="text-gray-600 mb-6">{t('localDeploy.description')}</p>
+
+          {/* Method 1: Docker */}
+          <div className="mb-5">
+            <h4 className="font-semibold text-gray-800 mb-1">{t('localDeploy.method1.title')}</h4>
+            <p className="text-sm text-gray-600 mb-2">{t('localDeploy.method1.desc')}</p>
+            <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-green-400 overflow-x-auto">
+              {t('localDeploy.method1.cmd')}
+            </div>
           </div>
+
+          {/* Method 2: uv / pip */}
+          <div className="mb-5">
+            <h4 className="font-semibold text-gray-800 mb-1">{t('localDeploy.method2.title')}</h4>
+            <p className="text-sm text-gray-600 mb-2">{t('localDeploy.method2.desc')}</p>
+            <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-green-400 overflow-x-auto whitespace-pre">
+              {t('localDeploy.method2.cmd')}
+            </div>
+          </div>
+
+          {/* Method 3: Streamlit */}
+          <div className="mb-6">
+            <h4 className="font-semibold text-gray-800 mb-1">{t('localDeploy.method3.title')}</h4>
+            <p className="text-sm text-gray-600 mb-2">{t('localDeploy.method3.desc')}</p>
+            <div className="bg-gray-900 rounded-md p-3 font-mono text-sm text-green-400 overflow-x-auto">
+              {t('localDeploy.method3.cmd')}
+            </div>
+          </div>
+
           <div className="flex flex-wrap gap-3">
             <a
               href="https://huggingface.co/spaces/sunhaoyu/SoraWatermarkCleaner"

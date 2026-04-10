@@ -20,6 +20,7 @@ CleanMark is a free, open-source tool that removes watermarks from AI-generated 
 
 - ✅ **Gemini Watermark Remover** - Automatically remove Google Gemini AI watermarks
 - ✅ **Doubao Watermark Remover** - Remove Doubao (豆包) AI watermarks instantly
+- ✅ **Sora Watermark Remover** - Remove Sora AI video watermarks (Desktop & Online)
 - ✅ **Manual Eraser** - Precision brush tool for custom watermark removal
 - ✅ **Logo Overlay** - Cover watermarks with your own logo or branding
 
@@ -46,6 +47,13 @@ CleanMark is a free, open-source tool that removes watermarks from AI-generated 
 - Upload your AI-generated image
 - The tool automatically detects and removes the watermark
 - Download the cleaned image
+
+#### Sora Watermark Remover
+- **Desktop Version** (Recommended): Download and run locally for unlimited processing
+- **Online Version**: Process videos up to 10 seconds directly in browser
+- Upload your Sora-generated video
+- Automatic watermark detection and removal
+- Download the cleaned video
 
 #### Manual Eraser
 - Upload any image with watermarks
@@ -129,16 +137,20 @@ website/
 │   │   ├── [locale]/                        # Localized routes
 │   │   │   ├── gemini-watermark-remover/    # Gemini tool page
 │   │   │   ├── doubao-watermark-remover/    # Doubao tool page
+│   │   │   ├── sora-watermark-remover/      # Sora tool page
 │   │   │   ├── manual-eraser/               # Manual eraser page
 │   │   │   ├── logo-overlay/                # Logo overlay page
 │   │   │   ├── privacy/                     # Privacy policy
 │   │   │   ├── layout.tsx                   # Locale layout
 │   │   │   └── page.tsx                     # Homepage
+│   │   ├── api/
+│   │   │   └── sora/remove/                 # Sora API endpoint
 │   │   ├── layout.tsx                       # Root layout
 │   │   └── sitemap.ts                       # SEO sitemap
 │   ├── components/
 │   │   ├── WatermarkRemover.tsx             # Gemini remover
 │   │   ├── DoubaoWatermarkRemover.tsx       # Doubao remover
+│   │   ├── SoraWatermarkRemover.tsx         # Sora remover
 │   │   ├── ManualEraser.tsx                 # Manual eraser tool
 │   │   ├── LogoOverlay.tsx                  # Logo overlay tool
 │   │   ├── Navigation.tsx                   # Navigation bar
@@ -151,6 +163,12 @@ website/
 │   │   ├── doubao-watermark-remover/        # Doubao removal logic
 │   │   └── metadata.ts                      # SEO metadata helper
 │   └── middleware.ts                        # i18n middleware
+├── sora2_watermark_remover_web_gui/         # Sora desktop application
+│   ├── main.py                              # Desktop app entry point
+│   ├── core/                                # Core server logic
+│   ├── models/                              # AI models
+│   ├── processing/                          # Video processing
+│   └── utils/                               # Utilities
 ├── messages/
 │   ├── en.json                              # English translations
 │   └── zh.json                              # Chinese translations
@@ -165,6 +183,7 @@ MIT License - feel free to use this project for any purpose.
 
 - [gemini-watermark-remover](https://github.com/GargantuaX/gemini-watermark-remover) - Gemini watermark removal algorithm
 - [doubao-watermark-remover](https://github.com/ihmily/doubao-watermark-remover) - Doubao watermark removal algorithm
+- [sora2-watermark-remover-web-gui](https://github.com/tomateo1reg/sora2-watermark-remover-web-gui) - Sora watermark remover desktop application by tomateo1reg and the SORA Video Suite Team
 
 ---
 

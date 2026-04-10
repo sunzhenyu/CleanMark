@@ -266,7 +266,7 @@ export default function SoraWatermarkRemover() {
               <h4 className="text-lg font-bold text-gray-900 mb-4">{t('desktop.download.title')}</h4>
               <div className="flex flex-wrap gap-4">
                 <a
-                  href="https://github.com/sunzhenyu/CleanMark/releases"
+                  href="https://github.com/sunzhenyu/CleanMark/tree/main/website/sora2_watermark_remover_web_gui"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition font-semibold"
@@ -274,7 +274,7 @@ export default function SoraWatermarkRemover() {
                   🪟 {t('desktop.download.windows')}
                 </a>
                 <a
-                  href="https://github.com/sunzhenyu/CleanMark/releases"
+                  href="https://github.com/sunzhenyu/CleanMark/tree/main/website/sora2_watermark_remover_web_gui"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-gray-800 text-white rounded-lg hover:bg-gray-900 transition font-semibold"
@@ -282,7 +282,7 @@ export default function SoraWatermarkRemover() {
                   🍎 {t('desktop.download.mac')}
                 </a>
                 <a
-                  href="https://github.com/sunzhenyu/CleanMark"
+                  href="https://github.com/sunzhenyu/CleanMark/tree/main/website/sora2_watermark_remover_web_gui"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 bg-gray-600 text-white rounded-lg hover:bg-gray-700 transition font-semibold"
@@ -290,7 +290,7 @@ export default function SoraWatermarkRemover() {
                   🐧 {t('desktop.download.linux')}
                 </a>
                 <a
-                  href="https://github.com/sunzhenyu/CleanMark"
+                  href="https://github.com/sunzhenyu/CleanMark/tree/main/website/sora2_watermark_remover_web_gui"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition font-semibold"

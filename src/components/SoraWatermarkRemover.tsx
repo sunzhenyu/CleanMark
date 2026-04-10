@@ -290,7 +290,7 @@ export default function SoraWatermarkRemover() {
                   🐧 {t('desktop.download.linux')}
                 </a>
                 <a
-                  href="https://github.com/sunzhenyu/CleanMark/tree/main/website/sora2_watermark_remover_web_gui"
+                  href="https://github.com/sunzhenyu/CleanMark/tree/main/sora2_watermark_remover_web_gui"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-6 py-3 border-2 border-gray-300 text-gray-700 rounded-lg hover:bg-gray-50 transition font-semibold"

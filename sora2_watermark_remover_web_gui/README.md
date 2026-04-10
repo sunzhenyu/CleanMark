@@ -123,12 +123,12 @@ The platform combines state-of-the-art deep learning models with an intuitive dr
 ## 🚀 Installation
 
 ### **For setup on Windows & macOS,** 
-The manual process is outlined below. macOS users can opt for the simplified method using the [DMG file](../../releases).
+The manual process is outlined below. macOS users can opt for the simplified method using the [DMG file](https://github.com/sunzhenyu/CleanMark/releases).
 
 
 ### Quick Start
 
-If you're on Windows or Linux, refer to the guide below; macOS users can use the [DMG file](../../releases).  
+If you're on Windows or Linux, refer to the guide below; macOS users can use the [DMG file](https://github.com/sunzhenyu/CleanMark/releases).  
 
 
 
@@ -150,7 +150,7 @@ Start GIT CMD mode.
 git clone https://github.com/sunzhenyu/CleanMark.git
 ```
 ```bash 
-cd CleanMark/website/sora2_watermark_remover_web_gui
+cd CleanMark/sora2_watermark_remover_web_gui
 ```
 ```bash 
 py -m pip install -r requirements.txt

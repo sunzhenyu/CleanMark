@@ -347,6 +347,20 @@
       "item4": "Simple workflow: upload and one click to clean",
       "item5": "Temporary processing; we do not retain your videos"
     },
+    "localDeploy": {
+      "title": "Run Locally — Unlimited & Free",
+      "description": "Want no file size limits, faster processing, and full privacy? Deploy SoraWatermarkCleaner on your own machine.",
+      "features": {
+        "unlimited": "No file size or duration limits",
+        "faster": "GPU-accelerated local processing",
+        "free": "Completely free, no API costs",
+        "privacy": "100% private — files never leave your computer"
+      },
+      "hfSpace": "Try on Hugging Face Spaces",
+      "github": "View Source on GitHub",
+      "quickStart": "Quick Start (Docker)",
+      "dockerCmd": "docker run -p 8501:8501 -p 5344:5344 llinkedlist/sorawm:latest"
+    },
     "faq": {
       "title": "FAQ",
       "q1": "Do you store my video?",

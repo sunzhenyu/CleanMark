@@ -1,14 +1,16 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-const REPLICATE_API_TOKEN = process.env.REPLICATE_API_TOKEN;
-const REPLICATE_MODEL_VERSION = '7b636d39f482f129dfa3429fdc7c5c2d4f4ef36e4cbc6d919b701c1d39162797';
+// HF Spaces backend URL — set HF_SPACES_URL env var to your Space's API URL
+// e.g. https://your-username-sorawatermarkcleaner.hf.space
+const HF_SPACES_URL = process.env.HF_SPACES_URL;
+const HF_SPACES_API_BASE = HF_SPACES_URL ? `${HF_SPACES_URL}/api/v1` : null;
 
 export async function POST(request: NextRequest) {
   try {
-    if (!REPLICATE_API_TOKEN) {
+    if (!HF_SPACES_API_BASE) {
       return NextResponse.json(
-        { error: 'Replicate API token not configured' },
-        { status: 500 }
+        { error: 'Sora watermark removal service not configured. Please set HF_SPACES_URL.' },
+        { status: 503 }
       );
     }
 
@@ -16,13 +18,9 @@ export async function POST(request: NextRequest) {
     const file = formData.get('file') as File;
 
     if (!file) {
-      return NextResponse.json(
-        { error: 'No file provided' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'No file provided' }, { status: 400 });
     }
 
-    // Check file size (20MB limit)
     const MAX_SIZE = 20 * 1024 * 1024;
     if (file.size > MAX_SIZE) {
       return NextResponse.json(
@@ -31,84 +29,53 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Convert file to base64 data URI
-    const bytes = await file.arrayBuffer();
-    const buffer = Buffer.from(bytes);
-    const base64 = buffer.toString('base64');
-    const mimeType = file.type || 'video/mp4';
-    const dataUri = `data:${mimeType};base64,${base64}`;
+    // Submit task to HF Spaces FastAPI backend
+    const uploadForm = new FormData();
+    uploadForm.append('video', file, file.name);
 
-    // Call Replicate API
-    const response = await fetch('https://api.replicate.com/v1/predictions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Token ${REPLICATE_API_TOKEN}`,
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({
-        version: REPLICATE_MODEL_VERSION,
-        input: {
-          video: dataUri,
-        },
-      }),
-    });
+    const submitResponse = await fetch(
+      `${HF_SPACES_API_BASE}/submit_remove_task?cleaner_type=lama`,
+      { method: 'POST', body: uploadForm }
+    );
 
-    if (!response.ok) {
-      const error = await response.text();
-      console.error('Replicate API error:', error);
-      console.error('Response status:', response.status);
+    if (!submitResponse.ok) {
+      const error = await submitResponse.text();
+      console.error('HF Spaces submit error:', error);
       return NextResponse.json(
-        { error: `Failed to start processing: ${error}` },
-        { status: response.status }
+        { error: `Failed to submit task: ${error}` },
+        { status: submitResponse.status }
       );
     }
 
-    const prediction = await response.json();
+    const { task_id } = await submitResponse.json();
 
-    // Poll for completion
-    let result = prediction;
-    let attempts = 0;
-    const maxAttempts = 60; // 5 minutes max (5s intervals)
-
-    while (result.status !== 'succeeded' && result.status !== 'failed' && attempts < maxAttempts) {
-      await new Promise(resolve => setTimeout(resolve, 5000)); // Wait 5 seconds
+    // Poll for completion (max 5 minutes, 5s intervals)
+    const maxAttempts = 60;
+    for (let i = 0; i < maxAttempts; i++) {
+      await new Promise(resolve => setTimeout(resolve, 5000));
 
       const statusResponse = await fetch(
-        `https://api.replicate.com/v1/predictions/${result.id}`,
-        {
-          headers: {
-            'Authorization': `Token ${REPLICATE_API_TOKEN}`,
-          },
-        }
+        `${HF_SPACES_API_BASE}/get_results?remove_task_id=${task_id}`
       );
 
-      if (!statusResponse.ok) {
-        break;
+      if (!statusResponse.ok) continue;
+
+      const result = await statusResponse.json();
+
+      if (result.status === 'FINISHED') {
+        const downloadUrl = `${HF_SPACES_API_BASE}/download/${task_id}`;
+        return NextResponse.json({ success: true, output: downloadUrl });
       }
 
-      result = await statusResponse.json();
-      attempts++;
+      if (result.status === 'ERROR') {
+        return NextResponse.json(
+          { error: result.error_message || 'Processing failed' },
+          { status: 500 }
+        );
+      }
     }
 
-    if (result.status === 'failed') {
-      return NextResponse.json(
-        { error: result.error || 'Processing failed' },
-        { status: 500 }
-      );
-    }
-
-    if (result.status !== 'succeeded') {
-      return NextResponse.json(
-        { error: 'Processing timeout' },
-        { status: 504 }
-      );
-    }
-
-    return NextResponse.json({
-      success: true,
-      output: result.output,
-      logs: result.logs || '',
-    });
+    return NextResponse.json({ error: 'Processing timeout' }, { status: 504 });
 
   } catch (error: any) {
     console.error('API error:', error);

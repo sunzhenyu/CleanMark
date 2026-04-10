@@ -347,6 +347,20 @@
       "item4": "简单的工作流程：上传并一键清除",
       "item5": "临时处理；我们不会保留您的视频"
     },
+    "localDeploy": {
+      "title": "本地部署 — 无限制 & 免费",
+      "description": "想要无文件大小限制、更快的处理速度和完全隐私？在自己的机器上部署 SoraWatermarkCleaner。",
+      "features": {
+        "unlimited": "无文件大小或时长限制",
+        "faster": "GPU 加速本地处理",
+        "free": "完全免费，无 API 费用",
+        "privacy": "100% 隐私 — 文件永不离开您的电脑"
+      },
+      "hfSpace": "在 Hugging Face Spaces 上体验",
+      "github": "在 GitHub 上查看源码",
+      "quickStart": "快速开始（Docker）",
+      "dockerCmd": "docker run -p 8501:8501 -p 5344:5344 llinkedlist/sorawm:latest"
+    },
     "faq": {
       "title": "常见问题",
       "q1": "你们会存储我的视频吗？",

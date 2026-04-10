@@ -98,6 +98,40 @@ export default async function SoraPage({
           </ul>
         </div>
 
+        <div className="mt-8 bg-gradient-to-r from-purple-50 to-blue-50 rounded-lg border border-purple-200 p-6">
+          <h3 className="text-xl font-bold text-gray-900 mb-2">{t('localDeploy.title')}</h3>
+          <p className="text-gray-600 mb-4">{t('localDeploy.description')}</p>
+          <ul className="space-y-1 text-gray-700 mb-4">
+            {(['unlimited', 'faster', 'free', 'privacy'] as const).map((key) => (
+              <li key={key} className="flex items-center gap-2">
+                <span className="text-green-500">✓</span>
+                <span>{t(`localDeploy.features.${key}`)}</span>
+              </li>
+            ))}
+          </ul>
+          <div className="bg-gray-900 rounded-md p-3 mb-4 font-mono text-sm text-green-400 overflow-x-auto">
+            {t('localDeploy.dockerCmd')}
+          </div>
+          <div className="flex flex-wrap gap-3">
+            <a
+              href="https://huggingface.co/spaces/sunhaoyu/SoraWatermarkCleaner"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-semibold rounded-lg text-sm transition-colors"
+            >
+              🤗 {t('localDeploy.hfSpace')}
+            </a>
+            <a
+              href="https://github.com/sunzhenyu/CleanMark"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white font-semibold rounded-lg text-sm transition-colors"
+            >
+              ⭐ {t('localDeploy.github')}
+            </a>
+          </div>
+        </div>
+
         <div className="mt-8 bg-blue-50 rounded-lg border border-blue-200 p-6">
           <h3 className="text-xl font-bold text-gray-900 mb-4">{t('faq.title')}</h3>
           <div className="space-y-4">

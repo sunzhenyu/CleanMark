@@ -49,9 +49,10 @@ CleanMark is a free, open-source tool that removes watermarks from AI-generated 
 - Download the cleaned image
 
 #### Sora Watermark Remover
-- Upload your Sora-generated video (max 10 seconds, 20MB)
-- Automatic watermark detection and removal via cloud AI
-- Download the cleaned video
+- Visit the [Sora Watermark Remover page](https://cleanmark.org/sora-watermark-remover)
+- Click "Open on Hugging Face Spaces" to use the free online tool
+- Upload your Sora-generated video and click "Remove Watermark"
+- Download the cleaned video — or run it locally via Docker for unlimited file sizes
 
 #### Manual Eraser
 - Upload any image with watermarks

@@ -1,8 +1,10 @@
 {
   "nav": {
     "home": "Home",
-    "gemini": "Gemini Watermark",
-    "doubao": "Doubao Watermark",
+    "aiRemover": "AI Watermark Remover",
+    "gemini": "Gemini",
+    "doubao": "Doubao",
+    "sora": "Sora",
     "manual": "Manual Eraser",
     "overlay": "Logo Overlay"
   },
@@ -27,7 +29,7 @@
     },
     "solutions": {
       "title": "Complete Watermark Solutions",
-      "subtitle": "Choose the right tool for your needs - our 4 tools can handle virtually any watermark",
+      "subtitle": "Choose the right tool for your needs - our tools can handle virtually any watermark",
       "gemini": {
         "title": "Gemini Images",
         "description": "Use Gemini Watermark Remover for automatic detection and removal"
@@ -35,6 +37,10 @@
       "doubao": {
         "title": "Doubao Images",
         "description": "Use Doubao Watermark Remover for instant automatic removal"
+      },
+      "sora": {
+        "title": "Sora Videos",
+        "description": "Use Sora Watermark Remover for AI-powered video watermark removal"
       },
       "custom": {
         "title": "Any Custom Watermark",
@@ -263,6 +269,98 @@
       "content": "For questions about this privacy policy, please visit cleanmark.org or contact us through GitHub."
     },
     "backToHome": "Back to Home"
+  },
+  "sora": {
+    "title": "Sora Watermark Remover",
+    "subtitle": "Remove Sora AI video watermarks with AI-powered processing. Free, fast, and high-quality.",
+    "tabs": {
+      "online": "Online Version",
+      "desktop": "Desktop Version (Recommended)"
+    },
+    "badges": {
+      "automatic": "100% Automatic",
+      "private": "100% Private",
+      "quality": "HD Quality",
+      "audio": "Preserves Audio",
+      "fast": "Lightning Fast"
+    },
+    "online": {
+      "title": "Online Processing",
+      "description": "Quick processing for small videos. Limited to 30MB for optimal performance.",
+      "note": "💡 For best results and unlimited file size, we recommend using the Desktop Version below."
+    },
+    "desktop": {
+      "title": "Desktop Version - Unlimited & Free",
+      "description": "Download and run locally on your computer. No file size limits, faster processing, and completely free.",
+      "features": {
+        "title": "Why Choose Desktop Version?",
+        "unlimited": "No file size or duration limits",
+        "faster": "Much faster processing with local GPU",
+        "free": "Completely free, no API costs",
+        "offline": "Works offline, no internet required",
+        "privacy": "100% private, files never leave your computer"
+      },
+      "requirements": {
+        "title": "System Requirements",
+        "cpu": "CPU: 4+ cores, 2.5GHz+",
+        "ram": "RAM: 16GB minimum, 32GB recommended",
+        "gpu": "GPU: NVIDIA GTX 1060 6GB or better",
+        "storage": "Storage: 10GB free space",
+        "os": "OS: Windows 10/11, macOS 10.15+, Linux"
+      },
+      "download": {
+        "title": "Download",
+        "windows": "Download for Windows",
+        "mac": "Download for macOS",
+        "linux": "Download for Linux",
+        "github": "View on GitHub"
+      },
+      "instructions": {
+        "title": "How to Use",
+        "step1": "1. Download and install the application",
+        "step2": "2. Launch the app (opens in browser automatically)",
+        "step3": "3. Drag and drop your video file",
+        "step4": "4. Click 'Start Processing' and wait",
+        "step5": "5. Download the processed video"
+      }
+    },
+    "upload": {
+      "title": "Upload Video",
+      "clickOrDrop": "Click to browse or drop the video here",
+      "limits": "MOV/MP4, ≤10s, ≤30MB",
+      "remove": "Remove watermark",
+      "processing": "Processing...",
+      "clear": "Clear"
+    },
+    "result": {
+      "title": "Result",
+      "empty": "Upload a video to start",
+      "download": "Download",
+      "showLogs": "Show details",
+      "hideLogs": "Hide details"
+    },
+    "features": {
+      "title": "Why this watermark remover",
+      "item1": "Purpose-built for Sora video watermark patterns",
+      "item2": "Fast processing via cloud AI inference",
+      "item3": "Preserves visual quality while removing overlays",
+      "item4": "Simple workflow: upload and one click to clean",
+      "item5": "Temporary processing; we do not retain your videos"
+    },
+    "faq": {
+      "title": "FAQ",
+      "q1": "Do you store my video?",
+      "a1": "Converted videos are processed temporarily and not retained.",
+      "q2": "What formats are supported?",
+      "a2": "MOV, MP4 and other common web-playable formats. Keep under 10 seconds and 30MB for online version.",
+      "q3": "How long does processing take?",
+      "a3": "Usually seconds to a few minutes depending on queue."
+    },
+    "errors": {
+      "fileSize": "File too large. Keep under 30MB for online version.",
+      "duration": "Video too long. Keep under 10 seconds.",
+      "noFile": "Please choose a video file."
+    }
   }
 }
 

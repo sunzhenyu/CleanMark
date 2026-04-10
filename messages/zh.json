@@ -1,8 +1,10 @@
 {
   "nav": {
     "home": "首页",
-    "gemini": "Gemini水印",
-    "doubao": "豆包水印",
+    "aiRemover": "AI 水印去除",
+    "gemini": "Gemini",
+    "doubao": "豆包",
+    "sora": "Sora",
     "manual": "手动橡皮擦",
     "overlay": "Logo遮罩"
   },
@@ -27,7 +29,7 @@
     },
     "solutions": {
       "title": "完整的水印解决方案",
-      "subtitle": "选择适合您需求的工具 - 我们的4种工具可以处理几乎所有类型的水印",
+      "subtitle": "选择适合您需求的工具 - 我们的工具可以处理几乎所有类型的水印",
       "gemini": {
         "title": "Gemini 图片",
         "description": "使用 Gemini 水印去除工具自动检测和去除"
@@ -35,6 +37,10 @@
       "doubao": {
         "title": "豆包图片",
         "description": "使用豆包水印去除工具即时自动去除"
+      },
+      "sora": {
+        "title": "Sora 视频",
+        "description": "使用 Sora 水印去除工具进行 AI 驱动的视频水印去除"
       },
       "custom": {
         "title": "任何自定义水印",
@@ -263,6 +269,98 @@
       "content": "如有关于本隐私政策的问题，请访问 cleanmark.org 或通过 GitHub 联系我们。"
     },
     "backToHome": "返回首页"
+  },
+  "sora": {
+    "title": "Sora 水印去除工具",
+    "subtitle": "使用 AI 驱动的处理技术去除 Sora AI 视频水印。免费、快速、高质量。",
+    "tabs": {
+      "online": "在线版本",
+      "desktop": "桌面版本（推荐）"
+    },
+    "badges": {
+      "automatic": "100% 自动",
+      "private": "100% 隐私",
+      "quality": "高清质量",
+      "audio": "保留音频",
+      "fast": "闪电般快速"
+    },
+    "online": {
+      "title": "在线处理",
+      "description": "快速处理小视频。为获得最佳性能，限制为 30MB。",
+      "note": "💡 为获得最佳效果和无限文件大小，我们推荐使用下方的桌面版本。"
+    },
+    "desktop": {
+      "title": "桌面版本 - 无限制且免费",
+      "description": "下载并在您的计算机上本地运行。无文件大小限制，处理更快，完全免费。",
+      "features": {
+        "title": "为什么选择桌面版本？",
+        "unlimited": "无文件大小或时长限制",
+        "faster": "使用本地 GPU 处理速度更快",
+        "free": "完全免费，无 API 费用",
+        "offline": "离线工作，无需互联网",
+        "privacy": "100% 隐私，文件永不离开您的计算机"
+      },
+      "requirements": {
+        "title": "系统要求",
+        "cpu": "CPU：4核以上，2.5GHz+",
+        "ram": "内存：最低 16GB，推荐 32GB",
+        "gpu": "显卡：NVIDIA GTX 1060 6GB 或更好",
+        "storage": "存储：10GB 可用空间",
+        "os": "操作系统：Windows 10/11、macOS 10.15+、Linux"
+      },
+      "download": {
+        "title": "下载",
+        "windows": "下载 Windows 版",
+        "mac": "下载 macOS 版",
+        "linux": "下载 Linux 版",
+        "github": "在 GitHub 上查看"
+      },
+      "instructions": {
+        "title": "使用方法",
+        "step1": "1. 下载并安装应用程序",
+        "step2": "2. 启动应用（自动在浏览器中打开）",
+        "step3": "3. 拖放您的视频文件",
+        "step4": "4. 点击「开始处理」并等待",
+        "step5": "5. 下载处理后的视频"
+      }
+    },
+    "upload": {
+      "title": "上传视频",
+      "clickOrDrop": "点击浏览或将视频拖放到此处",
+      "limits": "MOV/MP4，≤10秒，≤30MB",
+      "remove": "去除水印",
+      "processing": "处理中...",
+      "clear": "清除"
+    },
+    "result": {
+      "title": "结果",
+      "empty": "上传视频开始处理",
+      "download": "下载",
+      "showLogs": "显示详情",
+      "hideLogs": "隐藏详情"
+    },
+    "features": {
+      "title": "为什么选择这个水印去除工具",
+      "item1": "专为 Sora 视频水印模式设计",
+      "item2": "通过云端 AI 推理快速处理",
+      "item3": "在去除水印的同时保持视觉质量",
+      "item4": "简单的工作流程：上传并一键清除",
+      "item5": "临时处理；我们不会保留您的视频"
+    },
+    "faq": {
+      "title": "常见问题",
+      "q1": "你们会存储我的视频吗？",
+      "a1": "转换后的视频仅临时处理，不会保留。",
+      "q2": "支持哪些格式？",
+      "a2": "MOV、MP4 和其他常见的网络播放格式。在线版本请保持在 10 秒和 30MB 以内。",
+      "q3": "处理需要多长时间？",
+      "a3": "通常需要几秒到几分钟，具体取决于队列情况。"
+    },
+    "errors": {
+      "fileSize": "文件太大。在线版本请保持在 30MB 以内。",
+      "duration": "视频太长。请保持在 10 秒以内。",
+      "noFile": "请选择一个视频文件。"
+    }
   }
 }
 

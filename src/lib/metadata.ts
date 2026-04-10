@@ -6,6 +6,7 @@ interface PageMetadata {
   path: string;
   locale: string;
   image?: string;
+  keywords?: string;
 }
 
 export function generateMetadata({
@@ -13,7 +14,8 @@ export function generateMetadata({
   description,
   path,
   locale,
-  image = '/og-image.jpg'
+  image = '/og-image.jpg',
+  keywords
 }: PageMetadata): Metadata {
   const baseUrl = 'https://cleanmark.org';
   const url = locale === 'en' ? `${baseUrl}${path}` : `${baseUrl}/zh${path}`;
@@ -21,6 +23,7 @@ export function generateMetadata({
   return {
     title,
     description,
+    ...(keywords && { keywords }),
     alternates: {
       canonical: url,
       languages: {

@@ -148,6 +148,15 @@ export default async function HomePage({
             </div>
             <div className="bg-white rounded-lg p-6 shadow-sm">
               <div className="flex items-start gap-3">
+                <div className="text-2xl">🎬</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{t('solutions.sora.title')}</h3>
+                  <p className="text-gray-600 text-sm">{t('solutions.sora.description')}</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <div className="flex items-start gap-3">
                 <div className="text-2xl">✏️</div>
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{t('solutions.custom.title')}</h3>

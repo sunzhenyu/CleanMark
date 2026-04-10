@@ -2,9 +2,9 @@
   "nav": {
     "home": "首页",
     "aiRemover": "AI 水印去除",
-    "gemini": "Gemini",
-    "doubao": "豆包",
-    "sora": "Sora",
+    "gemini": "Gemini 水印",
+    "doubao": "豆包水印",
+    "sora": "Sora 水印",
     "manual": "手动橡皮擦",
     "overlay": "Logo遮罩"
   },

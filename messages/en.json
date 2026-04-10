@@ -2,9 +2,9 @@
   "nav": {
     "home": "Home",
     "aiRemover": "AI Watermark Remover",
-    "gemini": "Gemini",
-    "doubao": "Doubao",
-    "sora": "Sora",
+    "gemini": "Gemini Watermark",
+    "doubao": "Doubao Watermark",
+    "sora": "Sora Watermark",
     "manual": "Manual Eraser",
     "overlay": "Logo Overlay"
   },

@@ -347,6 +347,12 @@
       "item4": "简单的工作流程：上传并一键清除",
       "item5": "临时处理；我们不会保留您的视频"
     },
+    "hfSpace": {
+      "title": "在线使用 Sora 水印去除工具",
+      "description": "使用我们免费的 Hugging Face Space，直接在浏览器中去除 Sora 水印，无需安装任何软件。",
+      "button": "在 Hugging Face Spaces 上打开",
+      "note": "由运行在 Hugging Face Spaces 上的 SoraWatermarkCleaner 提供支持"
+    },
     "localDeploy": {
       "title": "本地部署 — 无限制 & 免费",
       "description": "想要无文件大小限制、更快的处理速度和完全隐私？在自己的机器上部署 SoraWatermarkCleaner。",

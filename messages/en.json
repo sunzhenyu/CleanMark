@@ -347,6 +347,12 @@
       "item4": "Simple workflow: upload and one click to clean",
       "item5": "Temporary processing; we do not retain your videos"
     },
+    "hfSpace": {
+      "title": "Try Sora Watermark Remover Online",
+      "description": "Use our free Hugging Face Space to remove Sora watermarks directly in your browser — no installation needed.",
+      "button": "Open on Hugging Face Spaces",
+      "note": "Powered by SoraWatermarkCleaner running on Hugging Face Spaces"
+    },
     "localDeploy": {
       "title": "Run Locally — Unlimited & Free",
       "description": "Want no file size limits, faster processing, and full privacy? Deploy SoraWatermarkCleaner on your own machine.",

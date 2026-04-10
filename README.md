@@ -20,7 +20,7 @@ CleanMark is a free, open-source tool that removes watermarks from AI-generated 
 
 - ✅ **Gemini Watermark Remover** - Automatically remove Google Gemini AI watermarks
 - ✅ **Doubao Watermark Remover** - Remove Doubao (豆包) AI watermarks instantly
-- ✅ **Sora Watermark Remover** - Remove Sora AI video watermarks (Desktop & Online)
+- ✅ **Sora Watermark Remover** - Remove Sora AI video watermarks (Online, up to 10s / 20MB)
 - ✅ **Manual Eraser** - Precision brush tool for custom watermark removal
 - ✅ **Logo Overlay** - Cover watermarks with your own logo or branding
 
@@ -49,10 +49,8 @@ CleanMark is a free, open-source tool that removes watermarks from AI-generated 
 - Download the cleaned image
 
 #### Sora Watermark Remover
-- **Desktop Version** (Recommended): Download and run locally for unlimited processing
-- **Online Version**: Process videos up to 10 seconds directly in browser
-- Upload your Sora-generated video
-- Automatic watermark detection and removal
+- Upload your Sora-generated video (max 10 seconds, 20MB)
+- Automatic watermark detection and removal via cloud AI
 - Download the cleaned video
 
 #### Manual Eraser
@@ -163,12 +161,6 @@ website/
 │   │   ├── doubao-watermark-remover/        # Doubao removal logic
 │   │   └── metadata.ts                      # SEO metadata helper
 │   └── middleware.ts                        # i18n middleware
-├── sora2_watermark_remover_web_gui/         # Sora desktop application
-│   ├── main.py                              # Desktop app entry point
-│   ├── core/                                # Core server logic
-│   ├── models/                              # AI models
-│   ├── processing/                          # Video processing
-│   └── utils/                               # Utilities
 ├── messages/
 │   ├── en.json                              # English translations
 │   └── zh.json                              # Chinese translations
@@ -183,7 +175,7 @@ MIT License - feel free to use this project for any purpose.
 
 - [gemini-watermark-remover](https://github.com/GargantuaX/gemini-watermark-remover) - Gemini watermark removal algorithm
 - [doubao-watermark-remover](https://github.com/ihmily/doubao-watermark-remover) - Doubao watermark removal algorithm
-- [sora2-watermark-remover-web-gui](https://github.com/tomateo1reg/sora2-watermark-remover-web-gui) - Sora watermark remover desktop application by tomateo1reg and the SORA Video Suite Team
+- [sora2-watermark-remover-web-gui](https://github.com/tomateo1reg/sora2-watermark-remover-web-gui) - Sora watermark remover inspiration by tomateo1reg
 
 ---
 

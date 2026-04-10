@@ -5,6 +5,7 @@
     "gemini": "Gemini Watermark",
     "doubao": "Doubao Watermark",
     "sora": "Sora Watermark",
+    "chatgpt": "ChatGPT Watermark",
     "manual": "Manual Eraser",
     "overlay": "Logo Overlay"
   },
@@ -84,6 +85,50 @@
       "free": "Completely Free - No registration or hidden fees",
       "fast": "Lightning Fast - Instant results in seconds",
       "quality": "High Quality - No loss in image resolution"
+    }
+  },
+  "chatgpt": {
+    "title": "ChatGPT Watermark Remover",
+    "subtitle": "Remove hidden Unicode characters from ChatGPT text — instant, free, 100% private",
+    "badges": {
+      "private": "100% Private",
+      "instant": "Instant",
+      "free": "Free"
+    },
+    "inputLabel": "Paste your text",
+    "inputPlaceholder": "Paste text copied from ChatGPT or any AI tool here...",
+    "pasteBtn": "Paste from clipboard",
+    "clearBtn": "Clear",
+    "cleanBtn": "Remove Hidden Characters",
+    "outputLabel": "Cleaned text",
+    "copyBtn": "Copy",
+    "copiedBtn": "Copied!",
+    "removedCount": "Removed {count} hidden character(s)",
+    "noHiddenChars": "No hidden characters found",
+    "whatIsIt": {
+      "title": "What are ChatGPT hidden characters?",
+      "body": "Text copied from ChatGPT often contains invisible Unicode characters — zero-width spaces, narrow no-break spaces, and other control characters that are invisible to the eye but can cause formatting issues, unexpected behavior in code editors, or act as tracking identifiers.",
+      "examplesTitle": "Common hidden characters removed:",
+      "example1": "U+200B — Zero-Width Space (causes word-break issues)",
+      "example2": "U+202F — Narrow No-Break Space (looks like a space but isn't)",
+      "example3": "U+2060 — Word Joiner (invisible formatting control)",
+      "example4": "Em dash (—) and En dash (–) normalized to standard hyphen (-)"
+    },
+    "features": {
+      "title": "Features",
+      "item1": "Removes 30+ categories of invisible Unicode control characters",
+      "item2": "Normalizes Em dash and En dash to standard hyphen",
+      "item3": "Preserves all visible formatting — newlines, spaces, tabs",
+      "item4": "100% client-side — your text never leaves your browser"
+    },
+    "faq": {
+      "title": "FAQ",
+      "q1": "Does this tool send my text anywhere?",
+      "a1": "No. All processing happens entirely in your browser using JavaScript. Your text is never sent to any server.",
+      "q2": "Why does ChatGPT text contain hidden characters?",
+      "a2": "AI models sometimes output Unicode characters that are technically valid but invisible. These may be artifacts of training data, formatting hints, or unintentional inclusions. They can cause issues when pasting into code, documents, or other tools.",
+      "q3": "Will this change the visible content of my text?",
+      "a3": "Only Em dashes (—) and En dashes (–) are converted to standard hyphens (-). All other visible characters, including spaces, newlines, and punctuation, are preserved exactly."
     }
   },
   "home": {

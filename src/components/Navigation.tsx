@@ -15,7 +15,7 @@ export default function Navigation() {
     return pathname.includes(path);
   };
 
-  const isAIActive = isActive('gemini') || isActive('doubao') || isActive('sora');
+  const isAIActive = isActive('gemini') || isActive('doubao') || isActive('sora') || isActive('chatgpt');
 
   return (
     <nav className="flex gap-2 bg-gray-100 rounded-lg p-1">
@@ -79,6 +79,16 @@ export default function Navigation() {
               }`}
             >
               {t('sora')}
+            </Link>
+            <Link
+              href="/chatgpt-watermark-remover"
+              className={`block px-4 py-2 transition ${
+                isActive('chatgpt')
+                  ? 'bg-gray-100 text-gray-900'
+                  : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+              }`}
+            >
+              {t('chatgpt')}
             </Link>
           </div>
         )}

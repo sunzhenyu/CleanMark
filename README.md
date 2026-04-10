@@ -175,7 +175,7 @@ MIT License - feel free to use this project for any purpose.
 
 - [gemini-watermark-remover](https://github.com/GargantuaX/gemini-watermark-remover) - Gemini watermark removal algorithm
 - [doubao-watermark-remover](https://github.com/ihmily/doubao-watermark-remover) - Doubao watermark removal algorithm
-- [sora2-watermark-remover-web-gui](https://github.com/tomateo1reg/sora2-watermark-remover-web-gui) - Sora watermark remover inspiration by tomateo1reg
+- [SoraWatermarkCleaner](https://github.com/linkedlist771/SoraWatermarkCleaner) - Sora video watermark removal by linkedlist771
 
 ---
 

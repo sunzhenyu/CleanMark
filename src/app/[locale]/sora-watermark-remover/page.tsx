@@ -122,7 +122,7 @@ export default async function SoraPage({
               🤗 {t('localDeploy.hfSpace')}
             </a>
             <a
-              href="https://github.com/sunzhenyu/CleanMark"
+              href="https://github.com/sunzhenyu/CleanMark/tree/main/sora_watermark_cleaner"
               target="_blank"
               rel="noopener noreferrer"
               className="px-4 py-2 bg-gray-800 hover:bg-gray-900 text-white font-semibold rounded-lg text-sm transition-colors"

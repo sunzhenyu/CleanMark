@@ -55,7 +55,26 @@ export default async function GeminiPage({
 
         <WatermarkRemover />
 
-        <section className="mt-16 prose prose-lg max-w-none">
+        <div className="mt-8 flex justify-center">
+          <a
+            href="https://chromewebstore.google.com/detail/cleanmark-watermark-remov/omfabachjmfmikmdnnlpfchejphmaiim"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl transition shadow-md"
+          >
+            <svg className="w-7 h-7" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <circle cx="12" cy="12" r="10" fill="white"/>
+              <circle cx="12" cy="12" r="4" fill="#4285F4"/>
+              <path d="M12 8h8.5a10 10 0 0 0-17 0H12z" fill="#EA4335"/>
+              <path d="M5.27 16.5L1.02 9A10 10 0 0 0 9.5 21.9L5.27 16.5z" fill="#34A853"/>
+              <path d="M18.73 16.5L14.5 21.9A10 10 0 0 0 22.98 9L18.73 16.5z" fill="#FBBC05"/>
+            </svg>
+            <div className="text-left">
+              <div className="font-bold text-sm leading-tight">Chrome Extension</div>
+              <div className="text-xs text-blue-200 leading-tight">Ready to install · Auto-remove Gemini watermarks</div>
+            </div>
+          </a>
+        </div>
           <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('howTo')}</h2>
           <p className="text-gray-700 mb-4">{t('howToDesc')}</p>
 

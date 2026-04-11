@@ -95,6 +95,10 @@
         "useCase": "适用于：博客文章、文档、学术写作、内容再利用"
       }
     },
+    "chromeExtension": {
+      "label": "Chrome 扩展",
+      "desc": "一键安装 · 自动去除 Gemini 水印"
+    },
     "whyChoose": {
       "title": "为什么选择CleanMark？",
       "privacy": "100%隐私保护 - 所有处理都在浏览器中完成",

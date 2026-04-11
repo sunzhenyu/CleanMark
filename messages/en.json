@@ -95,6 +95,10 @@
         "useCase": "Ideal for: Blog posts, documents, academic writing, content repurposing"
       }
     },
+    "chromeExtension": {
+      "label": "Chrome Extension",
+      "desc": "Ready to install · Auto-remove Gemini watermarks"
+    },
     "whyChoose": {
       "title": "Why Choose CleanMark?",
       "privacy": "100% Privacy - All processing happens in your browser",

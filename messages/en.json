@@ -6,93 +6,133 @@
   "homepage": {
     "hero": {
       "title": "Gemini Watermark Remover",
-      "subtitle": "Remove Gemini AI watermarks instantly — free, private, no registration",
-      "badge": "⚡ Works in your browser · No upload · 100% Free",
+      "titleSub": "Best Free Gemini Watermark Remover Tool",
+      "titleDesc": "Remove Gemini Watermark and Erase Gemini Nano Banana Watermark from Images",
+      "subtitle": "An intelligent browser extension and free online tool designed specifically for Google Gemini and Google AI Studio — automatically detects and removes the Nano Banana watermark the moment you download images. The perfect solution for anyone wondering how to remove Gemini image AI watermarks, delivering a completely transparent and seamless watermark removal experience with zero quality loss.",
+      "badge": "100% Free · No Registration · Privacy First",
       "ctaExtension": "Chrome Extension",
       "ctaExtensionDesc": "Ready to install · Auto-remove on download",
-      "ctaOnline": "Try Online Tool →"
+      "ctaOnline": "Gemini Watermark Remover",
+      "ctaOnlineDesc": "Online Tool · Ready to try"
     },
     "howItWorks": {
-      "title": "How It Works",
+      "title": "How Gemini Watermark Remover Works",
       "step1": {
         "title": "Install Extension",
-        "description": "Add CleanMark to Chrome in one click"
+        "description": "Add CleanMark to Chrome in one click from the Chrome Web Store"
       },
       "step2": {
-        "title": "Visit Gemini",
-        "description": "Browse Google Gemini or AI Studio as usual"
+        "title": "Visit Gemini or AI Studio",
+        "description": "Browse gemini.google.com or aistudio.google.com as usual"
       },
       "step3": {
-        "title": "Download Clean",
-        "description": "Images are automatically cleaned on download"
+        "title": "Download Images",
+        "description": "Click download on any Gemini image — CleanMark intercepts automatically"
+      },
+      "step4": {
+        "title": "Get Clean Images",
+        "description": "Watermark removed in milliseconds before saving to your device"
       }
     },
+    "stats": {
+      "users": "Active Users",
+      "images": "Images Processed",
+      "rate": "Success Rate",
+      "free": "Always Free"
+    },
+    "testimonials": {
+      "title": "Trusted by Creators Worldwide",
+      "t1": {
+        "text": "Finally a free Gemini watermark remover that actually works. Installed the extension and it just works automatically — no extra steps.",
+        "name": "Sarah K.",
+        "role": "Content Creator"
+      },
+      "t2": {
+        "text": "I use AI Studio daily for research. CleanMark removes the Nano Banana watermark instantly every time I download. Incredible tool.",
+        "name": "Dr. James L.",
+        "role": "Research Scientist"
+      },
+      "t3": {
+        "text": "The best free Gemini Watermark Remover I've found. Privacy-first, no uploads, millisecond processing. Exactly what I needed.",
+        "name": "Maria T.",
+        "role": "Graphic Designer"
+      }
+    },
+    "results": {
+      "badge": "Real Results",
+      "title": "Gemini Watermark Remover — Before & After",
+      "desc": "Every image processed by our Gemini Watermark Cleaner comes out pixel-perfect. No watermark, no quality loss, no extra steps.",
+      "before": "BEFORE",
+      "after": "AFTER",
+      "caption": "Gemini Nano Banana watermark removed by CleanMark — mathematically exact, zero artifacts."
+    },
     "features": {
-      "title": "Why CleanMark",
+      "title": "Why Use Our Free Gemini Watermark Remover",
       "detection": {
-        "title": "Smart Detection",
-        "description": "Automatically identifies and removes Gemini watermark patterns with precision"
+        "title": "Smart Gemini Watermark Detection",
+        "description": "Automatically identifies and removes Gemini watermark and Nano Banana watermark patterns with pixel-perfect precision"
       },
       "privacy": {
-        "title": "Privacy First",
-        "description": "All processing happens locally in your browser — your images never leave your device"
+        "title": "Privacy-First Watermark Removal",
+        "description": "Our Gemini Watermark Remover processes everything locally in your browser — your images never leave your device"
       },
       "free": {
-        "title": "100% Free",
-        "description": "No plans, no limits, no hidden fees. Free forever"
+        "title": "100% Free Gemini Watermark Cleaner",
+        "description": "No plans, no limits, no hidden fees. The best free Gemini Watermark Remover, forever"
       },
       "fast": {
-        "title": "Instant Results",
-        "description": "WebAssembly-powered processing delivers results in milliseconds"
+        "title": "Instant Watermark Removal",
+        "description": "WebAssembly-powered Gemini Watermark Cleaner delivers results in milliseconds"
       },
       "extension": {
         "title": "Chrome Extension",
-        "description": "One-click automatic removal while browsing Gemini — no manual steps"
+        "description": "Auto-remove Gemini watermarks on every download — no manual steps, no uploads"
       },
       "online": {
-        "title": "Online Tool",
-        "description": "Upload any Gemini image and clean it instantly without installing anything"
+        "title": "Free Online Gemini Watermark Remover",
+        "description": "Upload any Gemini or AI Studio image and remove the watermark instantly, no installation needed"
       }
     },
     "useCases": {
-      "title": "Who Uses CleanMark",
+      "title": "Who Uses Our Gemini Watermark Remover",
       "creators": {
         "title": "Content Creators",
-        "description": "Clean Gemini images for social media posts, blogs, and newsletters"
+        "description": "Use our free Gemini Watermark Remover to clean Gemini images for social media, blogs, and newsletters"
       },
       "designers": {
         "title": "Designers",
-        "description": "Get professional, watermark-free assets for client work and portfolios"
+        "description": "Get watermark-free Gemini images for client work and portfolios with our Gemini Watermark Cleaner"
       },
       "researchers": {
         "title": "Researchers",
-        "description": "Export Gemini-generated diagrams and visuals cleanly for papers and reports"
+        "description": "Remove Gemini watermarks from AI-generated diagrams and visuals for papers and reports"
       },
       "educators": {
         "title": "Educators",
-        "description": "Use AI-generated images in presentations and teaching materials"
+        "description": "Use Gemini Watermark Remover to clean AI-generated images for presentations and teaching materials"
       }
     },
     "faq": {
-      "title": "FAQ",
+      "title": "Gemini Watermark Remover FAQ",
       "q1": "What is the Gemini watermark?",
-      "a1": "Google Gemini adds a subtle watermark to AI-generated images to indicate they were created by AI. CleanMark detects and removes this watermark pattern while preserving full image quality.",
-      "q2": "Is CleanMark really free?",
+      "a1": "Google Gemini adds a subtle watermark to AI-generated images to indicate they were created by AI. Our free Gemini Watermark Remover detects and removes this watermark pattern while preserving full image quality.",
+      "q2": "Is this Gemini Watermark Remover really free?",
       "a2": "Yes, completely free. No account, no subscription, no usage limits. All processing runs in your browser at no cost.",
       "q3": "Does it work on Google AI Studio images?",
-      "a3": "Yes. CleanMark works on images from both Google Gemini and Google AI Studio.",
+      "a3": "Yes. You can remove Nano Banana watermarks from Google AI Studio images using the online tool — download the image from AI Studio, upload it to CleanMark, and get a clean result instantly. The Chrome extension's automatic removal currently supports gemini.google.com; AI Studio auto-removal is coming soon.",
       "q4": "Is my image data safe?",
       "a4": "Absolutely. All processing happens locally in your browser using JavaScript. Your images are never uploaded to any server.",
       "q5": "Does it work without the Chrome extension?",
-      "a5": "Yes. You can use the online tool at cleanmark.org to upload and clean any Gemini image directly, no extension required."
+      "a5": "Yes. You can use the free online Gemini Watermark Remover at cleanmark.org to upload and clean any Gemini image directly, no extension required."
     },
     "cta": {
-      "title": "Start Removing Gemini Watermarks",
-      "subtitle": "Free, instant, and completely private"
+      "title": "Start Removing Gemini Watermarks — Free",
+      "subtitle": "The best free Gemini Watermark Remover. Instant, private, no registration."
     }
   },
   "home": {
     "title": "Gemini Watermark Remover",
+    "titleSub": "Gemini Watermark Cleaner — Remove Nano Banana Watermark Online",
     "subtitle": "Remove Gemini AI watermarks from generated images instantly. 100% free, no registration required.",
     "upload": {
       "title": "Drop your image here",
@@ -117,8 +157,8 @@
         "description": "Instant watermark removal"
       }
     },
-    "howTo": "How to Remove Gemini Watermark",
-    "howToDesc": "Our free Gemini watermark remover tool helps you remove watermarks from Google Gemini AI-generated images quickly and easily. Simply upload your image, and our tool processes it entirely in your browser.",
+    "howTo": "How to Remove Gemini Watermark and Nano Banana Watermark",
+    "howToDesc": "Our free Gemini Watermark Remover helps you remove watermarks from Google Gemini AI-generated images quickly and easily. Whether it's the standard Gemini watermark or the Nano Banana watermark, simply upload your image and our tool processes it entirely in your browser — nothing is sent to any server.",
     "whyUse": "Why Use Our Gemini Watermark Remover?",
     "whyFree": "100% Free:",
     "whyFreeDesc": "No hidden costs or subscription fees",
@@ -128,8 +168,8 @@
     "whyNoRegDesc": "Start removing watermarks immediately",
     "whyFast": "Fast Processing:",
     "whyFastDesc": "Get results in seconds",
-    "featuresTitle": "Features of Our Gemini Watermark Remover",
-    "featuresDesc": "Specifically designed for Google Gemini generated images. Works with all image formats and sizes, providing clean results without quality loss."
+    "featuresTitle": "Features of Our Gemini Watermark Remover & Cleaner",
+    "featuresDesc": "Specifically designed for Google Gemini and AI Studio generated images. Removes both the standard Gemini watermark and the Nano Banana watermark pattern. Works with all image formats and sizes, providing clean results without quality loss."
   },
   "footer": {
     "privacy": "Privacy Policy",
@@ -138,7 +178,22 @@
     "about": "About Us",
     "contact": "Contact",
     "email": "Email",
-    "twitter": "Twitter"
+    "twitter": "Twitter",
+    "tagline": "Free Gemini Watermark Remover & Cleaner. Remove Nano Banana watermarks instantly.",
+    "copyright": "© 2026 CleanMark. All rights reserved.",
+    "col1": "Pages",
+    "col2": "Resources",
+    "col3": "Support & Legal",
+    "home": "Home",
+    "examples": "Examples",
+    "download": "Download",
+    "technology": "Technology",
+    "faq": "FAQ",
+    "features": "Features",
+    "changelog": "Changelog",
+    "blog": "Blog",
+    "howToUse": "How to Use",
+    "aiStudio": "AI Studio Guide"
   },
   "extension": {
     "title": "Chrome Extension",

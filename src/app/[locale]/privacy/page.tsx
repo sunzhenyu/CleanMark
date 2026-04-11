@@ -2,10 +2,9 @@ import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
-import Navigation from '@/components/Navigation';
 import Footer from '@/components/Footer';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
 import { generateMetadata as genMeta } from '@/lib/metadata';
+import Header from '@/components/Header';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -34,21 +33,10 @@ export default async function PrivacyPage({
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       {/* Header */}
-      <header className="border-b border-gray-200">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-3 hover:opacity-80 transition">
-              <img src="/logo.svg" alt="CleanMark" className="w-8 h-8" />
-              <h1 className="text-2xl font-bold text-gray-900">CleanMark</h1>
-            </Link>
-            <Navigation />
-          </div>
-          <LanguageSwitcher />
-        </div>
-      </header>
+      <Header />
 
       {/* Content */}
-      <article className="max-w-4xl mx-auto px-4 py-16">
+      <article className="max-w-6xl mx-auto px-4 py-16">
         <h1 className="text-4xl font-bold text-gray-900 mb-4">{t('title')}</h1>
         <p className="text-gray-600 mb-8">{t('lastUpdated')}</p>
 

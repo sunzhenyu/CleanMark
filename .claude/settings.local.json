@@ -27,7 +27,15 @@
       "Bash(rm -rf /Users/sunhaoyu/.claude/skills/cleanmark-jike)",
       "Bash(rm -rf /Users/sunhaoyu/.claude/skills/cleanmark-outreach)",
       "WebFetch(domain:geminiwatermarkcleaner.com)",
-      "Bash(pnpm build:*)"
+      "Bash(pnpm build:*)",
+      "Bash(pnpm dev:*)",
+      "Bash(python3:*)",
+      "Bash(grep -rL \"getTranslations\\\\|useTranslations\" src/app/\\\\[locale\\\\]/*/page.tsx)",
+      "Bash(mv /tmp/examples_fixed.tsx /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/\\\\[locale\\\\]/examples/page.tsx)",
+      "Bash(grep:*)",
+      "Bash(ls /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/public/sitemap*)",
+      "Bash(ls /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/public/robots*)",
+      "Bash(ls /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/\\\\[locale\\\\]/sora*)"
     ]
   }
 }

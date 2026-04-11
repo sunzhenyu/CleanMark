@@ -4,7 +4,28 @@ import createNextIntlPlugin from 'next-intl/plugin';
 const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  async redirects() {
+    const oldPages = [
+      '/doubao-watermark-remover',
+      '/sora-watermark-remover',
+      '/chatgpt-watermark-remover',
+      '/manual-eraser',
+      '/logo-overlay',
+    ];
+
+    return oldPages.flatMap((path) => [
+      {
+        source: path,
+        destination: '/gemini-watermark-remover',
+        permanent: true,
+      },
+      {
+        source: `/zh${path}`,
+        destination: '/zh/gemini-watermark-remover',
+        permanent: true,
+      },
+    ]);
+  },
 };
 
 export default withNextIntl(nextConfig);

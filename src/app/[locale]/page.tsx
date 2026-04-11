@@ -1,11 +1,10 @@
 import { getTranslations } from 'next-intl/server';
 import { Link } from '@/i18n/routing';
-import LanguageSwitcher from '@/components/LanguageSwitcher';
 import Footer from '@/components/Footer';
-import Navigation from '@/components/Navigation';
 import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { generateMetadata as genMeta } from '@/lib/metadata';
+import Header from '@/components/Header';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -14,10 +13,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   return genMeta({
-    title: 'Gemini Watermark Remover — Free & Private | CleanMark',
-    description: 'Remove Gemini AI watermarks instantly. Free Chrome extension and online tool. No registration, no upload, 100% private. Works on Google Gemini and AI Studio images.',
+    title: 'Gemini Watermark Remover & Cleaner — Free | CleanMark',
+    description: 'Remove Gemini watermarks and Nano Banana watermarks free online. Instant Gemini Watermark Cleaner — no registration, 100% private. Chrome extension available.',
     path: '',
     locale,
+    keywords: 'Gemini Watermark Remover, Gemini Watermark Cleaner, remove Gemini watermark, Nano Banana watermark remover, Google AI Studio watermark remover, free watermark remover',
   });
 }
 
@@ -63,30 +63,55 @@ export default async function HomePage({
 
   return (
     <main className="min-h-screen bg-white">
+      {/* Schema.org structured data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'CleanMark',
+              alternateName: ['Gemini Watermark Remover', 'Gemini Watermark Cleaner'],
+              url: 'https://cleanmark.org',
+              logo: 'https://cleanmark.org/logo.svg',
+              description: 'Free Gemini Watermark Remover and Cleaner. Remove Gemini AI watermarks and Nano Banana watermarks from images instantly in your browser.',
+            },
+            {
+              '@context': 'https://schema.org',
+              '@type': 'WebApplication',
+              name: 'Gemini Watermark Remover',
+              alternateName: 'Gemini Watermark Cleaner',
+              url: 'https://cleanmark.org/gemini-watermark-remover',
+              applicationCategory: 'UtilitiesApplication',
+              operatingSystem: 'Web Browser',
+              offers: {
+                '@type': 'Offer',
+                price: '0',
+                priceCurrency: 'USD',
+              },
+              description: 'Remove Gemini watermarks and Nano Banana watermarks from images free online. No registration required.',
+            },
+          ]),
+        }}
+      />
+
       {/* Header */}
-      <header className="border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3">
-            <img src="/logo.svg" alt="CleanMark" className="w-8 h-8" />
-            <span className="text-xl font-bold text-gray-900">CleanMark</span>
-          </Link>
-          <div className="flex items-center gap-3">
-            <Navigation />
-            <LanguageSwitcher />
-          </div>
-        </div>
-      </header>
+      <Header />
 
       {/* Hero */}
-      <section className="bg-gradient-to-b from-blue-50 to-white py-20 px-4">
-        <div className="max-w-3xl mx-auto text-center">
-          <p className="text-sm text-blue-600 bg-blue-100 inline-block px-4 py-1.5 rounded-full mb-6">
-            {t('hero.badge')}
-          </p>
-          <h1 className="text-5xl font-bold text-gray-900 mb-4 leading-tight">
+      <section className="bg-gradient-to-b from-gray-50 to-white py-20 px-4">
+        <div className="max-w-4xl mx-auto text-center">
+          <h1 className="text-5xl font-bold text-blue-600 mb-3 leading-tight">
             {t('hero.title')}
           </h1>
-          <p className="text-xl text-gray-600 mb-10">
+          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+            {t('hero.titleSub')}
+          </h2>
+          <p className="text-lg text-gray-500 font-medium mb-6">
+            {t('hero.titleDesc')}
+          </p>
+          <p className="text-base text-gray-600 mb-10 max-w-2xl mx-auto">
             {t('hero.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -94,7 +119,8 @@ export default async function HomePage({
               href={CHROME_EXTENSION_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3.5 rounded-xl transition shadow-md w-full sm:w-auto justify-center"
+              title="Install CleanMark Chrome Extension — Auto Gemini Watermark Remover"
+              className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-xl transition shadow-md w-full sm:w-64 justify-center"
             >
               <ChromeIcon />
               <div className="text-left">
@@ -104,43 +130,55 @@ export default async function HomePage({
             </a>
             <Link
               href="/gemini-watermark-remover"
-              className="inline-flex items-center gap-2 bg-white border border-gray-200 hover:border-gray-300 text-gray-900 px-6 py-3.5 rounded-xl transition shadow-sm font-medium w-full sm:w-auto justify-center"
+              className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white px-6 py-4 rounded-xl transition shadow-md w-full sm:w-64 justify-center"
             >
-              {t('hero.ctaOnline')}
+              <span className="text-2xl">🌐</span>
+              <div className="text-left">
+                <div className="font-bold text-sm leading-tight">{t('hero.ctaOnline')}</div>
+                <div className="text-xs text-orange-200 leading-tight">{t('hero.ctaOnlineDesc')}</div>
+              </div>
+            </Link>
+          </div>
+          <p className="mt-6 text-sm text-gray-400">{t('hero.badge')}</p>
+
+          {/* Auxiliary links */}
+          <div className="mt-8 inline-flex items-center gap-4 border border-gray-200 rounded-xl px-6 py-3 text-sm bg-white shadow-sm">
+            <Link href="/how-to-use" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition">
+              <span>📖</span> {locale === 'zh' ? '如何去除 Gemini 水印' : 'How to Remove Gemini Watermark'} <span>›</span>
+            </Link>
+            <span className="text-gray-300">|</span>
+            <Link href="/ai-studio-guide" className="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium transition">
+              <span>🎯</span> {locale === 'zh' ? 'AI Studio 水印去除' : 'AI Studio Watermark Remover'} <span>›</span>
             </Link>
           </div>
         </div>
       </section>
 
-      {/* How It Works */}
+      {/* Watermark-Free Results */}
       <section className="py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{t('howItWorks.title')}</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              { num: '1', key: 'step1' },
-              { num: '2', key: 'step2' },
-              { num: '3', key: 'step3' },
-            ].map(({ num, key }) => (
-              <div key={key} className="text-center">
-                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
-                  {num}
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                  {t(`howItWorks.${key}.title` as any)}
-                </h3>
-                <p className="text-gray-600 text-sm">
-                  {t(`howItWorks.${key}.description` as any)}
-                </p>
-              </div>
-            ))}
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-10">
+            <span className="text-xs font-semibold text-blue-600 border border-blue-200 rounded-full px-3 py-1 uppercase tracking-wide">{t('results.badge')}</span>
+            <h2 className="text-3xl font-bold text-gray-900 mt-4 mb-3">{t('results.title')}</h2>
+            <p className="text-gray-600 max-w-xl mx-auto">{t('results.desc')}</p>
           </div>
+          <div className="grid grid-cols-2 gap-4">
+            <div className="relative rounded-2xl overflow-hidden">
+              <span className="absolute top-3 left-3 bg-gray-800 text-white text-xs font-bold px-3 py-1 rounded-full z-10">{t('results.before')}</span>
+              <img src="/images/Before.png" alt="Gemini image with watermark" className="w-full h-auto" />
+            </div>
+            <div className="relative rounded-2xl overflow-hidden">
+              <span className="absolute top-3 left-3 bg-blue-600 text-white text-xs font-bold px-3 py-1 rounded-full z-10">{t('results.after')}</span>
+              <img src="/images/After.png" alt="Gemini image with watermark removed" className="w-full h-auto" />
+            </div>
+          </div>
+          <p className="text-center text-sm text-gray-500 mt-4">{t('results.caption')}</p>
         </div>
       </section>
 
       {/* Features */}
       <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
+        <div className="max-w-7xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{t('features.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {features.map(({ icon, key }) => (
@@ -160,7 +198,7 @@ export default async function HomePage({
 
       {/* Use Cases */}
       <section className="py-16 px-4 bg-white">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{t('useCases.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {useCases.map(({ icon, key }) => (
@@ -182,7 +220,7 @@ export default async function HomePage({
 
       {/* FAQ */}
       <section className="py-16 px-4 bg-gray-50">
-        <div className="max-w-3xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{t('faq.title')}</h2>
           <div className="space-y-6">
             {(['q1', 'q2', 'q3', 'q4', 'q5'] as const).map((q) => {
@@ -194,6 +232,33 @@ export default async function HomePage({
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-16 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-12">{t('howItWorks.title')}</h2>
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            {([
+              { num: '1', key: 'step1' },
+              { num: '2', key: 'step2' },
+              { num: '3', key: 'step3' },
+              { num: '4', key: 'step4' },
+            ] as const).map(({ num, key }) => (
+              <div key={key} className="text-center">
+                <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">
+                  {num}
+                </div>
+                <h3 className="text-base font-semibold text-gray-900 mb-2">
+                  {t(`howItWorks.${key}.title` as any)}
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  {t(`howItWorks.${key}.description` as any)}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -215,11 +280,42 @@ export default async function HomePage({
             </a>
             <Link
               href="/gemini-watermark-remover"
-              className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white px-6 py-3.5 rounded-xl transition font-medium w-full sm:w-auto justify-center"
+              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-6 py-3.5 rounded-xl transition font-medium w-full sm:w-auto justify-center"
             >
-              {t('hero.ctaOnline')}
+              {t('hero.ctaOnline')} →
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* SEO text block */}
+      <section className="py-12 px-4 bg-gray-50">
+        <div className="max-w-4xl mx-auto text-center space-y-3 text-sm text-gray-500 leading-relaxed">
+          {locale === 'zh' ? (
+            <>
+              <p>
+                <strong className="text-gray-700">CleanMark</strong> 是目前最好的免费 <strong className="text-gray-700">Gemini Watermark Remover</strong> 和 <strong className="text-gray-700">Gemini Watermark Cleaner</strong>。支持去除任意 Google Gemini 或 AI Studio 图片中的 Gemini 水印和 Nano Banana 水印 — 即时、私密、完全免费。
+              </p>
+              <p>
+                我们的 <strong className="text-gray-700">Gemini Watermark Remover</strong> 使用反向 Alpha 混合算法，从数学上精确还原原始像素值，实现像素级完美结果，零质量损失。与 AI 修复工具不同，CleanMark 不是猜测 — 而是逆向 Google 添加水印时使用的精确运算。
+              </p>
+              <p>
+                提供 <strong className="text-gray-700">Chrome 扩展</strong>（每次 Gemini 下载自动去除水印）和免费在线 <strong className="text-gray-700">Gemini Watermark Cleaner</strong>（直接在浏览器中上传清理任意图片）两种方式。无需注册，不上传到服务器，100% 隐私。
+              </p>
+            </>
+          ) : (
+            <>
+              <p>
+                <strong className="text-gray-700">CleanMark</strong> is the best free <strong className="text-gray-700">Gemini Watermark Remover</strong> and <strong className="text-gray-700">Gemini Watermark Cleaner</strong> available online. Remove Gemini watermarks and Nano Banana watermarks from any Google Gemini or AI Studio image — instantly, privately, and at no cost.
+              </p>
+              <p>
+                Our <strong className="text-gray-700">Gemini Watermark Remover</strong> uses reverse alpha blending to mathematically recover the original pixel values, delivering pixel-perfect results with zero quality loss. Unlike AI inpainting tools, CleanMark doesn't guess — it reverses the exact operation Google uses to apply the watermark.
+              </p>
+              <p>
+                Available as a <strong className="text-gray-700">Chrome Extension</strong> for automatic watermark removal on every Gemini download, and as a free online <strong className="text-gray-700">Gemini Watermark Cleaner</strong> for uploading and cleaning any image directly in your browser. No registration, no server uploads, 100% private.
+              </p>
+            </>
+          )}
         </div>
       </section>
 

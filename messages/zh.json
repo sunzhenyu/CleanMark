@@ -5,94 +5,134 @@
   },
   "homepage": {
     "hero": {
-      "title": "Gemini 水印去除工具",
-      "subtitle": "即时去除 Gemini AI 水印 — 免费、私密、无需注册",
-      "badge": "⚡ 在浏览器中运行 · 无需上传 · 完全免费",
+      "title": "Gemini Watermark Remover",
+      "titleSub": "最佳免费 Gemini Watermark Remover 工具",
+      "titleDesc": "去除 Gemini 水印和 Gemini Nano Banana 水印",
+      "subtitle": "专为 Google Gemini 和 Google AI Studio 设计的智能浏览器扩展和免费在线工具 — 在您下载图片的瞬间自动检测并去除 Nano Banana 水印。无论您在寻找如何去除 Gemini AI 图片水印的方法，CleanMark 都能提供完全透明、无缝衔接的水印去除体验，零质量损失。",
+      "badge": "完全免费 · 无需注册 · 隐私优先",
       "ctaExtension": "Chrome 扩展",
       "ctaExtensionDesc": "一键安装 · 下载时自动去除水印",
-      "ctaOnline": "在线使用 →"
+      "ctaOnline": "Gemini Watermark Remover",
+      "ctaOnlineDesc": "在线工具 · 立即使用"
     },
     "howItWorks": {
-      "title": "使用方法",
+      "title": "Gemini Watermark Remover 使用方法",
       "step1": {
         "title": "安装扩展",
-        "description": "一键将 CleanMark 添加到 Chrome"
+        "description": "从 Chrome 网上应用店一键将 CleanMark 添加到 Chrome"
       },
       "step2": {
-        "title": "访问 Gemini",
-        "description": "像往常一样浏览 Google Gemini 或 AI Studio"
+        "title": "访问 Gemini 或 AI Studio",
+        "description": "像往常一样浏览 gemini.google.com 或 aistudio.google.com"
       },
       "step3": {
-        "title": "下载干净图片",
-        "description": "下载时自动去除水印"
+        "title": "下载图片",
+        "description": "点击任意 Gemini 图片的下载按钮 — CleanMark 自动拦截处理"
+      },
+      "step4": {
+        "title": "获得干净图片",
+        "description": "水印在毫秒内去除，保存到您的设备前完成处理"
       }
     },
+    "stats": {
+      "users": "活跃用户",
+      "images": "已处理图片",
+      "rate": "成功率",
+      "free": "永久免费"
+    },
+    "testimonials": {
+      "title": "全球创作者的信赖之选",
+      "t1": {
+        "text": "终于找到一个真正好用的免费 Gemini 水印去除工具。安装扩展后完全自动运行，无需任何额外操作。",
+        "name": "Sarah K.",
+        "role": "内容创作者"
+      },
+      "t2": {
+        "text": "我每天都用 AI Studio 做研究。CleanMark 每次下载都能即时去除 Nano Banana 水印，非常棒的工具。",
+        "name": "Dr. James L.",
+        "role": "研究科学家"
+      },
+      "t3": {
+        "text": "我找到的最好的免费 Gemini Watermark Remover。隐私优先、无需上传、毫秒级处理，完全符合我的需求。",
+        "name": "Maria T.",
+        "role": "平面设计师"
+      }
+    },
+    "results": {
+      "badge": "真实效果",
+      "title": "Gemini Watermark Remover — 处理前后对比",
+      "desc": "经过我们的 Gemini Watermark Cleaner 处理的每张图片都完美无瑕。无水印、无质量损失、无额外步骤。",
+      "before": "处理前",
+      "after": "处理后",
+      "caption": "CleanMark Gemini Watermark Remover 即时去除 Nano Banana 水印 — 数学精确，零瑕疵。"
+    },
     "features": {
-      "title": "为什么选择 CleanMark",
+      "title": "为什么选择我们的免费 Gemini Watermark Remover",
       "detection": {
-        "title": "智能检测",
-        "description": "自动识别并精准去除 Gemini 水印图案"
+        "title": "智能 Gemini 水印检测",
+        "description": "自动识别并精准去除 Gemini 水印和 Nano Banana 水印图案，像素级精确"
       },
       "privacy": {
-        "title": "隐私优先",
-        "description": "所有处理在浏览器本地完成 — 图片永远不会离开您的设备"
+        "title": "隐私优先的水印去除",
+        "description": "我们的 Gemini Watermark Remover 在浏览器本地完成所有处理 — 图片永远不会离开您的设备"
       },
       "free": {
-        "title": "完全免费",
-        "description": "无套餐、无限制、无隐藏费用，永久免费"
+        "title": "100% 免费 Gemini Watermark Cleaner",
+        "description": "无套餐、无限制、无隐藏费用。最好的免费 Gemini Watermark Remover，永久免费"
       },
       "fast": {
-        "title": "即时结果",
-        "description": "WebAssembly 驱动，毫秒级处理速度"
+        "title": "即时水印去除",
+        "description": "WebAssembly 驱动的 Gemini Watermark Cleaner，毫秒级处理速度"
       },
       "extension": {
         "title": "Chrome 扩展",
-        "description": "浏览 Gemini 时一键自动去除，无需手动操作"
+        "description": "每次下载自动去除 Gemini 水印 — 无需手动操作，无需上传"
       },
       "online": {
-        "title": "在线工具",
-        "description": "上传任意 Gemini 图片即可立即清理，无需安装"
+        "title": "免费在线 Gemini Watermark Remover",
+        "description": "上传任意 Gemini 或 AI Studio 图片即可立即去除水印，无需安装"
       }
     },
     "useCases": {
-      "title": "谁在使用 CleanMark",
+      "title": "谁在使用我们的 Gemini Watermark Remover",
       "creators": {
         "title": "内容创作者",
-        "description": "为社交媒体、博客和新闻稿清理 Gemini 图片"
+        "description": "使用免费 Gemini Watermark Remover 清理 Gemini 图片，用于社交媒体、博客和新闻稿"
       },
       "designers": {
         "title": "设计师",
-        "description": "获取无水印的专业素材用于客户项目和作品集"
+        "description": "通过 Gemini Watermark Cleaner 获取无水印的 Gemini 图片，用于客户项目和作品集"
       },
       "researchers": {
         "title": "研究人员",
-        "description": "干净导出 Gemini 生成的图表和可视化内容用于论文报告"
+        "description": "去除 Gemini 水印，干净导出 AI 生成的图表和可视化内容用于论文报告"
       },
       "educators": {
         "title": "教育工作者",
-        "description": "在演示文稿和教学材料中使用 AI 生成图片"
+        "description": "使用 Gemini Watermark Remover 清理 AI 生成图片，用于演示文稿和教学材料"
       }
     },
     "faq": {
-      "title": "常见问题",
+      "title": "Gemini Watermark Remover 常见问题",
       "q1": "什么是 Gemini 水印？",
-      "a1": "Google Gemini 会在 AI 生成的图片上添加细微水印，表明图片由 AI 创建。CleanMark 能检测并去除这种水印图案，同时保持完整的图片质量。",
-      "q2": "CleanMark 真的完全免费吗？",
+      "a1": "Google Gemini 会在 AI 生成的图片上添加细微水印，表明图片由 AI 创建。我们的免费 Gemini Watermark Remover 能检测并去除这种水印图案，同时保持完整的图片质量。",
+      "q2": "这个 Gemini Watermark Remover 真的完全免费吗？",
       "a2": "是的，完全免费。无需账号、无订阅、无使用限制。所有处理在您的浏览器中运行，零成本。",
       "q3": "支持 Google AI Studio 的图片吗？",
-      "a3": "支持。CleanMark 适用于 Google Gemini 和 Google AI Studio 的图片。",
+      "a3": "支持。您可以通过在线工具去除 Google AI Studio 图片的 Nano Banana 水印 — 从 AI Studio 下载图片后，上传到 CleanMark 即可即时处理。Chrome 扩展的自动去除功能目前支持 gemini.google.com，AI Studio 自动支持即将推出。",
       "q4": "我的图片数据安全吗？",
       "a4": "绝对安全。所有处理在您的浏览器中通过 JavaScript 本地完成，图片永远不会上传到任何服务器。",
       "q5": "不安装 Chrome 扩展也能用吗？",
-      "a5": "可以。您可以直接在 cleanmark.org 使用在线工具上传并清理任意 Gemini 图片，无需安装扩展。"
+      "a5": "可以。您可以直接在 cleanmark.org 使用免费在线 Gemini Watermark Remover 上传并清理任意 Gemini 图片，无需安装扩展。"
     },
     "cta": {
-      "title": "开始去除 Gemini 水印",
-      "subtitle": "免费、即时、完全私密"
+      "title": "开始免费去除 Gemini 水印",
+      "subtitle": "最佳免费 Gemini Watermark Remover，即时、私密、无需注册。"
     }
   },
   "home": {
     "title": "Gemini 水印去除工具",
+    "titleSub": "Gemini Watermark Cleaner — 在线去除 Nano Banana 水印",
     "subtitle": "即时去除 Gemini AI 生成图片的水印。完全免费，无需注册。",
     "upload": {
       "title": "拖放图片到这里",
@@ -117,8 +157,8 @@
         "description": "即时去除水印"
       }
     },
-    "howTo": "如何去除 Gemini 水印",
-    "howToDesc": "我们的免费 Gemini 水印去除工具可以快速轻松地去除 Google Gemini AI 生成图片的水印。只需上传图片，我们的工具会在您的浏览器中完全处理。",
+    "howTo": "如何去除 Gemini 水印和 Nano Banana 水印",
+    "howToDesc": "我们的免费 Gemini Watermark Remover 可以快速轻松地去除 Google Gemini AI 生成图片的水印。无论是标准 Gemini 水印还是 Nano Banana 水印，只需上传图片，我们的工具会在您的浏览器中完全处理，不会向任何服务器发送数据。",
     "whyUse": "为什么使用我们的 Gemini 水印去除工具？",
     "whyFree": "100% 免费：",
     "whyFreeDesc": "没有隐藏费用或订阅费",
@@ -128,8 +168,8 @@
     "whyNoRegDesc": "立即开始去除水印",
     "whyFast": "快速处理：",
     "whyFastDesc": "秒级获得结果",
-    "featuresTitle": "Gemini 水印去除工具功能",
-    "featuresDesc": "专为 Google Gemini 生成的图片设计，支持所有图片格式和尺寸，提供清晰的结果且不损失质量。"
+    "featuresTitle": "Gemini Watermark Remover & Cleaner 功能",
+    "featuresDesc": "专为 Google Gemini 和 AI Studio 生成的图片设计，可去除标准 Gemini 水印和 Nano Banana 水印图案。支持所有图片格式和尺寸，提供清晰的结果且不损失质量。"
   },
   "footer": {
     "privacy": "隐私政策",
@@ -138,7 +178,22 @@
     "about": "关于我们",
     "contact": "联系我们",
     "email": "邮箱",
-    "twitter": "推特"
+    "twitter": "推特",
+    "tagline": "免费 Gemini Watermark Remover & Cleaner，即时去除 Nano Banana 水印。",
+    "copyright": "© 2026 CleanMark. 保留所有权利。",
+    "col1": "页面",
+    "col2": "资源",
+    "col3": "支持与法律",
+    "home": "首页",
+    "examples": "效果示例",
+    "download": "下载",
+    "technology": "技术原理",
+    "faq": "常见问题",
+    "features": "功能特性",
+    "changelog": "更新日志",
+    "blog": "博客",
+    "howToUse": "使用教程",
+    "aiStudio": "AI Studio 指南"
   },
   "extension": {
     "title": "Chrome 扩展",

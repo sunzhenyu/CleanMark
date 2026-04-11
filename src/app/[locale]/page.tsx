@@ -290,37 +290,6 @@ export default async function HomePage({
         </div>
       </section>
 
-      {/* SEO text block */}
-      <section className="py-12 px-4 bg-gray-50">
-        <div className="max-w-4xl mx-auto text-center space-y-3 text-sm text-gray-500 leading-relaxed">
-          {locale === 'zh' ? (
-            <>
-              <p>
-                <strong className="text-gray-700">CleanMark</strong> 是目前最好的免费 <strong className="text-gray-700">Gemini Watermark Remover</strong> 和 <strong className="text-gray-700">Gemini Watermark Cleaner</strong>。支持去除任意 Google Gemini 或 AI Studio 图片中的 Gemini 水印和 Nano Banana 水印 — 即时、私密、完全免费。
-              </p>
-              <p>
-                我们的 <strong className="text-gray-700">Gemini Watermark Remover</strong> 使用反向 Alpha 混合算法，从数学上精确还原原始像素值，实现像素级完美结果，零质量损失。与 AI 修复工具不同，CleanMark 不是猜测 — 而是逆向 Google 添加水印时使用的精确运算。
-              </p>
-              <p>
-                提供 <strong className="text-gray-700">Chrome 扩展</strong>（每次 Gemini 下载自动去除水印）和免费在线 <strong className="text-gray-700">Gemini Watermark Cleaner</strong>（直接在浏览器中上传清理任意图片）两种方式。无需注册，不上传到服务器，100% 隐私。
-              </p>
-            </>
-          ) : (
-            <>
-              <p>
-                <strong className="text-gray-700">CleanMark</strong> is the best free <strong className="text-gray-700">Gemini Watermark Remover</strong> and <strong className="text-gray-700">Gemini Watermark Cleaner</strong> available online. Remove Gemini watermarks and Nano Banana watermarks from any Google Gemini or AI Studio image — instantly, privately, and at no cost.
-              </p>
-              <p>
-                Our <strong className="text-gray-700">Gemini Watermark Remover</strong> uses reverse alpha blending to mathematically recover the original pixel values, delivering pixel-perfect results with zero quality loss. Unlike AI inpainting tools, CleanMark doesn't guess — it reverses the exact operation Google uses to apply the watermark.
-              </p>
-              <p>
-                Available as a <strong className="text-gray-700">Chrome Extension</strong> for automatic watermark removal on every Gemini download, and as a free online <strong className="text-gray-700">Gemini Watermark Cleaner</strong> for uploading and cleaning any image directly in your browser. No registration, no server uploads, 100% private.
-              </p>
-            </>
-          )}
-        </div>
-      </section>
-
       <Footer />
     </main>
   );

@@ -128,8 +128,9 @@ export default async function HomePage({
                 <div className="text-xs text-blue-200 leading-tight">{t('hero.ctaExtensionDesc')}</div>
               </div>
             </a>
-            <Link
-              href="/gemini-watermark-remover"
+            <a
+              href={locale === 'zh' ? '/zh/gemini-watermark-remover' : '/gemini-watermark-remover'}
+              title="Gemini Watermark Remover — Free Online Tool"
               className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white px-6 py-4 rounded-xl transition shadow-md w-full sm:w-64 justify-center"
             >
               <span className="text-2xl">🌐</span>
@@ -137,19 +138,19 @@ export default async function HomePage({
                 <div className="font-bold text-sm leading-tight">{t('hero.ctaOnline')}</div>
                 <div className="text-xs text-orange-200 leading-tight">{t('hero.ctaOnlineDesc')}</div>
               </div>
-            </Link>
+            </a>
           </div>
           <p className="mt-6 text-sm text-gray-400">{t('hero.badge')}</p>
 
           {/* Auxiliary links */}
           <div className="mt-8 inline-flex items-center gap-4 border border-gray-200 rounded-xl px-6 py-3 text-sm bg-white shadow-sm">
-            <Link href="/how-to-use" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition">
+            <a href={locale === 'zh' ? '/zh/how-to-use' : '/how-to-use'} title="How to Remove Gemini Watermarks — Step by Step Guide" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition">
               <span>📖</span> {locale === 'zh' ? '如何去除 Gemini 水印' : 'How to Remove Gemini Watermark'} <span>›</span>
-            </Link>
+            </a>
             <span className="text-gray-300">|</span>
-            <Link href="/ai-studio-guide" className="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium transition">
+            <a href={locale === 'zh' ? '/zh/ai-studio-guide' : '/ai-studio-guide'} title="Google AI Studio Watermark Remover Guide" className="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium transition">
               <span>🎯</span> {locale === 'zh' ? 'AI Studio 水印去除' : 'AI Studio Watermark Remover'} <span>›</span>
-            </Link>
+            </a>
           </div>
         </div>
       </section>
@@ -278,12 +279,13 @@ export default async function HomePage({
               <ChromeIcon />
               <span>{t('hero.ctaExtension')}</span>
             </a>
-            <Link
-              href="/gemini-watermark-remover"
+            <a
+              href={locale === 'zh' ? '/zh/gemini-watermark-remover' : '/gemini-watermark-remover'}
+              title="Gemini Watermark Remover — Free Online Tool"
               className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-6 py-3.5 rounded-xl transition font-medium w-full sm:w-auto justify-center"
             >
               {t('hero.ctaOnline')} →
-            </Link>
+            </a>
           </div>
         </div>
       </section>

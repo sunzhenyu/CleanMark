@@ -1,10 +1,13 @@
 'use client';
 
 import { useTranslations } from 'next-intl';
-import { Link } from '@/i18n/routing';
+import { useLocale } from 'next-intl';
 
 export default function Footer() {
   const t = useTranslations('footer');
+  const locale = useLocale();
+  const isZh = locale === 'zh';
+  const href = (path: string) => isZh ? `/zh${path}` : path;
 
   const columns = [
     {
@@ -31,7 +34,7 @@ export default function Footer() {
       title: t('col3'),
       links: [
         { href: '/how-to-use', label: t('howToUse'), title: 'How to Remove Gemini Watermarks' },
-        { href: '/ai-studio-guide', label: t('aiStudio'), title: 'Google AI Studio Watermark Removal Guide' },
+        { href: '/ai-studio-guide', label: t('aiStudio'), title: 'Google AI Studio Watermark Remover Guide' },
         { href: '/contact', label: t('contact'), title: 'Contact CleanMark' },
         { href: '/privacy', label: t('privacy'), title: 'CleanMark Privacy Policy' },
         { href: '/terms', label: t('terms'), title: 'CleanMark Terms of Service' },
@@ -51,9 +54,9 @@ export default function Footer() {
             </div>
             <p className="text-sm text-gray-400 mb-4">{t('tagline')}</p>
             <div className="flex gap-3">
-              <a href="https://github.com/sunzhenyu/CleanMark" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition text-sm">{t('github')}</a>
-              <a href="https://x.com/DanDan344479" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white transition text-sm">{t('twitter')}</a>
-              <a href="mailto:support@cleanmark.org" className="text-gray-400 hover:text-white transition text-sm">{t('email')}</a>
+              <a href="https://github.com/sunzhenyu/CleanMark" target="_blank" rel="noopener noreferrer" title="CleanMark on GitHub" className="text-gray-400 hover:text-white transition text-sm">{t('github')}</a>
+              <a href="https://x.com/DanDan344479" target="_blank" rel="noopener noreferrer" title="CleanMark on Twitter/X" className="text-gray-400 hover:text-white transition text-sm">{t('twitter')}</a>
+              <a href="mailto:support@cleanmark.org" title="Email CleanMark Support" className="text-gray-400 hover:text-white transition text-sm">{t('email')}</a>
             </div>
           </div>
 
@@ -64,9 +67,9 @@ export default function Footer() {
               <ul className="space-y-2">
                 {col.links.map((link) => (
                   <li key={link.href}>
-                    <Link href={link.href as any} className="text-sm text-gray-400 hover:text-white transition">
+                    <a href={href(link.href)} title={link.title} className="text-sm text-gray-400 hover:text-white transition">
                       {link.label}
-                    </Link>
+                    </a>
                   </li>
                 ))}
               </ul>

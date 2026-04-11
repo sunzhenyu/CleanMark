@@ -75,6 +75,8 @@ export default async function GeminiPage({
             </div>
           </a>
         </div>
+
+        <section className="mt-16 prose prose-lg max-w-none">
           <h2 className="text-3xl font-bold text-gray-900 mb-6">{t('howTo')}</h2>
           <p className="text-gray-700 mb-4">{t('howToDesc')}</p>
 

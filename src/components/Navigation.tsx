@@ -48,7 +48,7 @@ export default function Navigation() {
             : 'text-gray-600 hover:text-gray-900'
         }`}
       >
-        {isZh ? '免费在线工具' : 'Online Free Tool'}
+        {isZh ? '免费在线工具' : 'Free Online Tool'}
       </a>
 
       <a

@@ -43,6 +43,10 @@
         "title": "Sora Videos",
         "description": "Use Sora Watermark Remover for AI-powered video watermark removal"
       },
+      "chatgpt": {
+        "title": "ChatGPT Text",
+        "description": "Use ChatGPT Watermark Remover to strip hidden Unicode characters from AI-generated text"
+      },
       "custom": {
         "title": "Any Custom Watermark",
         "description": "Use Manual Eraser to precisely remove any watermark with brush control"
@@ -77,6 +81,18 @@
         "description": "Cover unwanted watermarks by placing your own logo or branding. Upload multiple logos, resize and position them precisely. Maintains aspect ratio for professional results. Perfect for rebranding or adding your signature to images.",
         "button": "Try Now",
         "useCase": "Ideal for: Brand protection, content attribution, watermark replacement"
+      },
+      "sora": {
+        "title": "Sora Watermark Remover",
+        "description": "Remove OpenAI Sora video watermarks with our specialized tool. Supports MOV and MP4 formats. Powered by AI inpainting to cleanly erase the Sora watermark while preserving video quality. Works online or locally via CLI.",
+        "button": "Try Now",
+        "useCase": "Ideal for: Video content, social media clips, presentations"
+      },
+      "chatgpt": {
+        "title": "ChatGPT Watermark Remover",
+        "description": "Strip hidden Unicode watermark characters embedded in ChatGPT-generated text. Paste your text and get a clean version instantly — no data sent to any server, 100% private and free.",
+        "button": "Try Now",
+        "useCase": "Ideal for: Blog posts, documents, academic writing, content repurposing"
       }
     },
     "whyChoose": {

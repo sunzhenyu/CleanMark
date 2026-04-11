@@ -60,6 +60,20 @@ export default async function HomePage({
       href: '/logo-overlay',
       button: t('features.overlay.button'),
     },
+    {
+      title: t('features.sora.title'),
+      description: t('features.sora.description'),
+      useCase: t('features.sora.useCase'),
+      href: '/sora-watermark-remover',
+      button: t('features.sora.button'),
+    },
+    {
+      title: t('features.chatgpt.title'),
+      description: t('features.chatgpt.description'),
+      useCase: t('features.chatgpt.useCase'),
+      href: '/chatgpt-watermark-remover',
+      button: t('features.chatgpt.button'),
+    },
   ];
 
   return (
@@ -152,6 +166,15 @@ export default async function HomePage({
                 <div>
                   <h3 className="text-lg font-bold text-gray-900 mb-2">{t('solutions.sora.title')}</h3>
                   <p className="text-gray-600 text-sm">{t('solutions.sora.description')}</p>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white rounded-lg p-6 shadow-sm">
+              <div className="flex items-start gap-3">
+                <div className="text-2xl">💬</div>
+                <div>
+                  <h3 className="text-lg font-bold text-gray-900 mb-2">{t('solutions.chatgpt.title')}</h3>
+                  <p className="text-gray-600 text-sm">{t('solutions.chatgpt.description')}</p>
                 </div>
               </div>
             </div>

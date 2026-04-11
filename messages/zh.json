@@ -43,6 +43,10 @@
         "title": "Sora 视频",
         "description": "使用 Sora 水印去除工具进行 AI 驱动的视频水印去除"
       },
+      "chatgpt": {
+        "title": "ChatGPT 文本",
+        "description": "使用 ChatGPT 水印去除工具去除 AI 生成文本中的隐藏 Unicode 字符"
+      },
       "custom": {
         "title": "任何自定义水印",
         "description": "使用手动橡皮擦精确去除任何水印，完全可控"
@@ -77,6 +81,18 @@
         "description": "通过放置自己的Logo或品牌标识来覆盖不需要的水印。支持上传多个Logo，精确调整大小和位置。保持宽高比以获得专业效果。非常适合品牌重塑或为图片添加签名。",
         "button": "立即使用",
         "useCase": "适用于：品牌保护、内容署名、水印替换"
+      },
+      "sora": {
+        "title": "Sora 水印去除",
+        "description": "使用专业工具去除 OpenAI Sora 视频水印。支持 MOV 和 MP4 格式，AI 修复技术干净去除 Sora 水印同时保持视频质量。支持在线使用或本地 CLI 运行。",
+        "button": "立即使用",
+        "useCase": "适用于：视频内容、社交媒体短片、演示文稿"
+      },
+      "chatgpt": {
+        "title": "ChatGPT 水印去除",
+        "description": "去除 ChatGPT 生成文本中嵌入的隐藏 Unicode 水印字符。粘贴文本即可立即获得干净版本 — 数据不上传任何服务器，100% 私密免费。",
+        "button": "立即使用",
+        "useCase": "适用于：博客文章、文档、学术写作、内容再利用"
       }
     },
     "whyChoose": {

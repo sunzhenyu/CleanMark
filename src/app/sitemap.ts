@@ -30,7 +30,7 @@ const blogSlugs = [
   'chrome-extension-vs-online-tool',
 ];
 
-const lastMod = new Date('2026-04-01');
+const lastMod = new Date('2026-04-11');
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const entries: MetadataRoute.Sitemap = [];

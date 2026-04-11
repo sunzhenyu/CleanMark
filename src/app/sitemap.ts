@@ -4,11 +4,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     '',
     '/gemini-watermark-remover',
-    '/doubao-watermark-remover',
-    '/sora-watermark-remover',
-    '/chatgpt-watermark-remover',
-    '/manual-eraser',
-    '/logo-overlay',
     '/privacy',
   ];
 

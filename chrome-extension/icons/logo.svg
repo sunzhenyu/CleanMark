@@ -1,0 +1,14 @@
+<svg width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background Circle -->
+  <circle cx="100" cy="100" r="90" fill="#111827"/>
+
+  <!-- Sparkle/Clean Effect -->
+  <path d="M100 40 L105 70 L135 75 L110 95 L115 125 L100 110 L85 125 L90 95 L65 75 L95 70 Z" fill="#60A5FA" opacity="0.3"/>
+
+  <!-- Check Mark (Clean/Done) -->
+  <path d="M70 100 L90 120 L130 70" stroke="#60A5FA" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Eraser/Clean Tool -->
+  <rect x="115" y="115" width="30" height="15" rx="3" fill="#F3F4F6" transform="rotate(-45 130 122.5)"/>
+  <rect x="120" y="120" width="20" height="10" rx="2" fill="#9CA3AF" transform="rotate(-45 130 125)"/>
+</svg>

@@ -1,154 +1,94 @@
 {
   "nav": {
     "home": "Home",
-    "aiRemover": "AI Watermark Remover",
-    "gemini": "Gemini Watermark",
-    "doubao": "Doubao Watermark",
-    "sora": "Sora Watermark",
-    "chatgpt": "ChatGPT Watermark",
-    "manual": "Manual Eraser",
-    "overlay": "Logo Overlay"
+    "tryNow": "Try Now"
   },
   "homepage": {
-    "title": "CleanMark - AI Watermark Remover Tools",
-    "subtitle": "Remove watermarks in seconds — no skills needed, completely free",
-    "badge": "⚡ No registration · No upload · Works instantly in your browser",
+    "hero": {
+      "title": "Gemini Watermark Remover",
+      "subtitle": "Remove Gemini AI watermarks instantly — free, private, no registration",
+      "badge": "⚡ Works in your browser · No upload · 100% Free",
+      "ctaExtension": "Chrome Extension",
+      "ctaExtensionDesc": "Ready to install · Auto-remove on download",
+      "ctaOnline": "Try Online Tool →"
+    },
     "howItWorks": {
-      "title": "How It Works - Simple 3 Steps",
+      "title": "How It Works",
       "step1": {
-        "title": "Upload Image",
-        "description": "Select or drag your image"
+        "title": "Install Extension",
+        "description": "Add CleanMark to Chrome in one click"
       },
       "step2": {
-        "title": "Process",
-        "description": "Automatic or manual removal"
+        "title": "Visit Gemini",
+        "description": "Browse Google Gemini or AI Studio as usual"
       },
       "step3": {
-        "title": "Download",
-        "description": "Get your clean image instantly"
+        "title": "Download Clean",
+        "description": "Images are automatically cleaned on download"
       }
     },
-    "solutions": {
-      "title": "Complete Watermark Solutions",
-      "subtitle": "Choose the right tool for your needs - our tools can handle virtually any watermark",
-      "gemini": {
-        "title": "Gemini Images",
-        "description": "Use Gemini Watermark Remover for automatic detection and removal"
-      },
-      "doubao": {
-        "title": "Doubao Images",
-        "description": "Use Doubao Watermark Remover for instant automatic removal"
-      },
-      "sora": {
-        "title": "Sora Videos",
-        "description": "Use Sora Watermark Remover for AI-powered video watermark removal"
-      },
-      "chatgpt": {
-        "title": "ChatGPT Text",
-        "description": "Use ChatGPT Watermark Remover to strip hidden Unicode characters from AI-generated text"
-      },
-      "custom": {
-        "title": "Any Custom Watermark",
-        "description": "Use Manual Eraser to precisely remove any watermark with brush control"
-      },
-      "branding": {
-        "title": "Replace with Your Brand",
-        "description": "Use Logo Overlay to cover watermarks with your own logo or branding"
-      },
-      "tip": "💡 Tip: Combine tools for best results! Use automatic removal first, then manual eraser for touch-ups, or add your logo on top."
-    },
     "features": {
-      "gemini": {
-        "title": "Gemini Watermark Remover",
-        "description": "Automatically remove Google Gemini AI watermarks from generated images. Our tool uses advanced algorithms to detect and remove the distinctive Gemini watermark pattern while preserving image quality. Perfect for content creators, designers, and anyone working with Gemini-generated images.",
-        "button": "Try Now",
-        "useCase": "Ideal for: Social media posts, presentations, marketing materials"
+      "title": "Why CleanMark",
+      "detection": {
+        "title": "Smart Detection",
+        "description": "Automatically identifies and removes Gemini watermark patterns with precision"
       },
-      "doubao": {
-        "title": "Doubao Watermark Remover",
-        "description": "Remove Doubao AI watermarks instantly with our specialized tool. Designed specifically for Doubao's watermark pattern, it cleanly removes watermarks while maintaining the original image integrity. Fast processing with no quality loss.",
-        "button": "Try Now",
-        "useCase": "Ideal for: Blog images, commercial use, portfolio work"
+      "privacy": {
+        "title": "Privacy First",
+        "description": "All processing happens locally in your browser — your images never leave your device"
       },
-      "manual": {
-        "title": "Manual Eraser",
-        "description": "Take full control with our precision brush tool. Perfect for removing custom watermarks, logos, or any unwanted elements from your images. Adjust brush size for detailed work or quick removal of larger areas. Works with any image type.",
-        "button": "Try Now",
-        "useCase": "Ideal for: Custom watermarks, text removal, photo editing"
+      "free": {
+        "title": "100% Free",
+        "description": "No plans, no limits, no hidden fees. Free forever"
       },
-      "overlay": {
-        "title": "Logo Overlay",
-        "description": "Cover unwanted watermarks by placing your own logo or branding. Upload multiple logos, resize and position them precisely. Maintains aspect ratio for professional results. Perfect for rebranding or adding your signature to images.",
-        "button": "Try Now",
-        "useCase": "Ideal for: Brand protection, content attribution, watermark replacement"
+      "fast": {
+        "title": "Instant Results",
+        "description": "WebAssembly-powered processing delivers results in milliseconds"
       },
-      "sora": {
-        "title": "Sora Watermark Remover",
-        "description": "Remove OpenAI Sora video watermarks with our specialized tool. Supports MOV and MP4 formats. Powered by AI inpainting to cleanly erase the Sora watermark while preserving video quality. Works online or locally via CLI.",
-        "button": "Try Now",
-        "useCase": "Ideal for: Video content, social media clips, presentations"
+      "extension": {
+        "title": "Chrome Extension",
+        "description": "One-click automatic removal while browsing Gemini — no manual steps"
       },
-      "chatgpt": {
-        "title": "ChatGPT Watermark Remover",
-        "description": "Strip hidden Unicode watermark characters embedded in ChatGPT-generated text. Paste your text and get a clean version instantly — no data sent to any server, 100% private and free.",
-        "button": "Try Now",
-        "useCase": "Ideal for: Blog posts, documents, academic writing, content repurposing"
+      "online": {
+        "title": "Online Tool",
+        "description": "Upload any Gemini image and clean it instantly without installing anything"
       }
     },
-    "chromeExtension": {
-      "label": "Chrome Extension",
-      "desc": "Ready to install · Auto-remove Gemini watermarks"
-    },
-    "whyChoose": {
-      "title": "Why Choose CleanMark?",
-      "privacy": "100% Privacy - All processing happens in your browser",
-      "free": "Completely Free - No registration or hidden fees",
-      "fast": "Lightning Fast - Instant results in seconds",
-      "quality": "High Quality - No loss in image resolution"
-    }
-  },
-  "chatgpt": {
-    "title": "ChatGPT Watermark Remover",
-    "subtitle": "Remove hidden Unicode characters from ChatGPT text — instant, free, 100% private",
-    "badges": {
-      "private": "100% Private",
-      "instant": "Instant",
-      "free": "Free"
-    },
-    "inputLabel": "Paste your text",
-    "inputPlaceholder": "Paste text copied from ChatGPT or any AI tool here...",
-    "pasteBtn": "Paste from clipboard",
-    "clearBtn": "Clear",
-    "cleanBtn": "Remove Hidden Characters",
-    "outputLabel": "Cleaned text",
-    "copyBtn": "Copy",
-    "copiedBtn": "Copied!",
-    "removedCount": "Removed {count} hidden character(s)",
-    "noHiddenChars": "No hidden characters found",
-    "whatIsIt": {
-      "title": "What are ChatGPT hidden characters?",
-      "body": "Text copied from ChatGPT often contains invisible Unicode characters — zero-width spaces, narrow no-break spaces, and other control characters that are invisible to the eye but can cause formatting issues, unexpected behavior in code editors, or act as tracking identifiers.",
-      "examplesTitle": "Common hidden characters removed:",
-      "example1": "U+200B — Zero-Width Space (causes word-break issues)",
-      "example2": "U+202F — Narrow No-Break Space (looks like a space but isn't)",
-      "example3": "U+2060 — Word Joiner (invisible formatting control)",
-      "example4": "Em dash (—) and En dash (–) normalized to standard hyphen (-)"
-    },
-    "features": {
-      "title": "Features",
-      "item1": "Removes 30+ categories of invisible Unicode control characters",
-      "item2": "Normalizes Em dash and En dash to standard hyphen",
-      "item3": "Preserves all visible formatting — newlines, spaces, tabs",
-      "item4": "100% client-side — your text never leaves your browser"
+    "useCases": {
+      "title": "Who Uses CleanMark",
+      "creators": {
+        "title": "Content Creators",
+        "description": "Clean Gemini images for social media posts, blogs, and newsletters"
+      },
+      "designers": {
+        "title": "Designers",
+        "description": "Get professional, watermark-free assets for client work and portfolios"
+      },
+      "researchers": {
+        "title": "Researchers",
+        "description": "Export Gemini-generated diagrams and visuals cleanly for papers and reports"
+      },
+      "educators": {
+        "title": "Educators",
+        "description": "Use AI-generated images in presentations and teaching materials"
+      }
     },
     "faq": {
       "title": "FAQ",
-      "q1": "Does this tool send my text anywhere?",
-      "a1": "No. All processing happens entirely in your browser using JavaScript. Your text is never sent to any server.",
-      "q2": "Why does ChatGPT text contain hidden characters?",
-      "a2": "AI models sometimes output Unicode characters that are technically valid but invisible. These may be artifacts of training data, formatting hints, or unintentional inclusions. They can cause issues when pasting into code, documents, or other tools.",
-      "q3": "Will this change the visible content of my text?",
-      "a3": "Only Em dashes (—) and En dashes (–) are converted to standard hyphens (-). All other visible characters, including spaces, newlines, and punctuation, are preserved exactly."
+      "q1": "What is the Gemini watermark?",
+      "a1": "Google Gemini adds a subtle watermark to AI-generated images to indicate they were created by AI. CleanMark detects and removes this watermark pattern while preserving full image quality.",
+      "q2": "Is CleanMark really free?",
+      "a2": "Yes, completely free. No account, no subscription, no usage limits. All processing runs in your browser at no cost.",
+      "q3": "Does it work on Google AI Studio images?",
+      "a3": "Yes. CleanMark works on images from both Google Gemini and Google AI Studio.",
+      "q4": "Is my image data safe?",
+      "a4": "Absolutely. All processing happens locally in your browser using JavaScript. Your images are never uploaded to any server.",
+      "q5": "Does it work without the Chrome extension?",
+      "a5": "Yes. You can use the online tool at cleanmark.org to upload and clean any Gemini image directly, no extension required."
+    },
+    "cta": {
+      "title": "Start Removing Gemini Watermarks",
+      "subtitle": "Free, instant, and completely private"
     }
   },
   "home": {
@@ -177,15 +117,6 @@
         "description": "Instant watermark removal"
       }
     },
-    "example": {
-      "title": "Before & After",
-      "before": "With Watermark",
-      "after": "Watermark Removed"
-    },
-    "tools": {
-      "title": "More Tools",
-      "notebooklm": "NotebookLM Watermark Remover"
-    },
     "howTo": "How to Remove Gemini Watermark",
     "howToDesc": "Our free Gemini watermark remover tool helps you remove watermarks from Google Gemini AI-generated images quickly and easily. Simply upload your image, and our tool processes it entirely in your browser.",
     "whyUse": "Why Use Our Gemini Watermark Remover?",
@@ -197,8 +128,8 @@
     "whyNoRegDesc": "Start removing watermarks immediately",
     "whyFast": "Fast Processing:",
     "whyFastDesc": "Get results in seconds",
-    "featuresTitle": "Features of Our Online Watermark Remover",
-    "featuresDesc": "This AI watermark remover is specifically designed for Google Gemini generated images. It works with all image formats and sizes, providing clean results without quality loss."
+    "featuresTitle": "Features of Our Gemini Watermark Remover",
+    "featuresDesc": "Specifically designed for Google Gemini generated images. Works with all image formats and sizes, providing clean results without quality loss."
   },
   "footer": {
     "privacy": "Privacy Policy",
@@ -213,93 +144,6 @@
     "title": "Chrome Extension",
     "description": "Remove watermarks with one click - right from your browser",
     "install": "Install Extension"
-  },
-  "doubao": {
-    "title": "Doubao Watermark Remover",
-    "subtitle": "Remove Doubao AI watermarks from generated images instantly. 100% free, no registration required.",
-    "upload": {
-      "title": "Drop your image here",
-      "or": "or",
-      "browse": "Browse files",
-      "supported": "Supports JPG, PNG, WebP"
-    },
-    "processing": "Processing...",
-    "download": "Download",
-    "tryAnother": "Try another image",
-    "howTo": "How to Remove Doubao Watermark",
-    "howToDesc": "Our free Doubao watermark remover tool helps you remove watermarks from Doubao AI-generated images quickly and easily. Simply upload your image, and our tool processes it entirely in your browser.",
-    "whyUse": "Why Use Our Doubao Watermark Remover?",
-    "whyFree": "100% Free:",
-    "whyFreeDesc": "No hidden costs or subscription fees",
-    "whyPrivacy": "Privacy-First:",
-    "whyPrivacyDesc": "All processing happens in your browser",
-    "whyNoReg": "No Registration:",
-    "whyNoRegDesc": "Start removing watermarks immediately",
-    "whyFast": "Fast Processing:",
-    "whyFastDesc": "Get results in seconds",
-    "features": "Features of Our Online Watermark Remover",
-    "featuresDesc": "This AI watermark remover is specifically designed for Doubao generated images. It works with all image formats and sizes, providing clean results without quality loss."
-  },
-  "manual": {
-    "title": "Manual Eraser",
-    "subtitle": "Brush away watermarks with precision control",
-    "upload": {
-      "title": "Drop your image here",
-      "or": "or",
-      "browse": "Browse files",
-      "supported": "Supports JPG, PNG, WebP"
-    },
-    "brushSize": "Brush Size",
-    "reset": "Reset",
-    "download": "Download",
-    "newImage": "New Image",
-    "howTo": "How to Use Manual Eraser",
-    "howToDesc": "Our manual eraser tool gives you complete control over watermark removal. Adjust the brush size and paint over any unwanted elements in your image. Perfect for custom watermarks and precise editing.",
-    "whyUse": "Why Use Manual Eraser?",
-    "whyFree": "100% Free:",
-    "whyFreeDesc": "No hidden costs or subscription fees",
-    "whyPrivacy": "Privacy-First:",
-    "whyPrivacyDesc": "All processing happens in your browser",
-    "whyNoReg": "No Registration:",
-    "whyNoRegDesc": "Start removing watermarks immediately",
-    "whyPrecision": "Precision Control:",
-    "whyPrecisionDesc": "Adjustable brush size for detailed work",
-    "features": "Features",
-    "featuresDesc": "Adjustable brush size, real-time preview, and support for all image formats. Works entirely in your browser with no uploads required."
-  },
-  "overlay": {
-    "title": "Logo Overlay",
-    "subtitle": "Cover watermarks with your own logo",
-    "upload": {
-      "title": "Drop your image here",
-      "or": "or",
-      "browse": "Browse files",
-      "supported": "Supports JPG, PNG, WebP"
-    },
-    "hint": "Click logo to select, drag to move, scroll to resize",
-    "logoLibrary": "Logo Library",
-    "addLogo": "+ Add Logo",
-    "add": "Add",
-    "placedLogos": "Placed Logos",
-    "noLogos": "No logos placed",
-    "sizeControl": "Size Control",
-    "selectLogoFirst": "Select a logo to adjust size",
-    "remove": "Remove",
-    "download": "Download",
-    "newImage": "New Image",
-    "howTo": "How to Use Logo Overlay",
-    "howToDesc": "Upload your image and logos, then position them to cover unwanted watermarks. Resize and move logos with precision. Perfect for adding your branding while hiding existing watermarks.",
-    "whyUse": "Why Use Logo Overlay?",
-    "whyFree": "100% Free:",
-    "whyFreeDesc": "No hidden costs or subscription fees",
-    "whyPrivacy": "Privacy-First:",
-    "whyPrivacyDesc": "All processing happens in your browser",
-    "whyNoReg": "No Registration:",
-    "whyNoRegDesc": "Start adding logos immediately",
-    "whyMultiple": "Multiple Logos:",
-    "whyMultipleDesc": "Add and position multiple logos at once",
-    "features": "Features",
-    "featuresDesc": "Multiple logo support, drag-and-drop positioning, aspect ratio preservation, and instant preview. All processing happens in your browser."
   },
   "privacy": {
     "title": "Privacy Policy",
@@ -334,125 +178,5 @@
       "content": "For questions about this privacy policy, please visit cleanmark.org or contact us through GitHub."
     },
     "backToHome": "Back to Home"
-  },
-  "sora": {
-    "title": "Sora Watermark Remover",
-    "subtitle": "Remove Sora AI video watermarks with AI-powered processing. Free, fast, and high-quality.",
-    "tabs": {
-      "online": "Online Version",
-      "desktop": "Desktop Version (Recommended)"
-    },
-    "badges": {
-      "automatic": "100% Automatic",
-      "private": "100% Private",
-      "quality": "HD Quality",
-      "audio": "Preserves Audio",
-      "fast": "Lightning Fast"
-    },
-    "online": {
-      "title": "Online Processing",
-      "description": "Quick processing for small videos. Limited to 30MB for optimal performance.",
-      "note": "💡 For best results and unlimited file size, we recommend using the Desktop Version below."
-    },
-    "desktop": {
-      "title": "Desktop Version - Unlimited & Free",
-      "description": "Download and run locally on your computer. No file size limits, faster processing, and completely free.",
-      "features": {
-        "title": "Why Choose Desktop Version?",
-        "unlimited": "No file size or duration limits",
-        "faster": "Much faster processing with local GPU",
-        "free": "Completely free, no API costs",
-        "offline": "Works offline, no internet required",
-        "privacy": "100% private, files never leave your computer"
-      },
-      "requirements": {
-        "title": "System Requirements",
-        "cpu": "CPU: 4+ cores, 2.5GHz+",
-        "ram": "RAM: 16GB minimum, 32GB recommended",
-        "gpu": "GPU: NVIDIA GTX 1060 6GB or better",
-        "storage": "Storage: 10GB free space",
-        "os": "OS: Windows 10/11, macOS 10.15+, Linux"
-      },
-      "download": {
-        "title": "Download",
-        "windows": "Download for Windows",
-        "mac": "Download for macOS",
-        "linux": "Download for Linux",
-        "github": "View on GitHub"
-      },
-      "instructions": {
-        "title": "How to Use",
-        "step1": "1. Download and install the application",
-        "step2": "2. Launch the app (opens in browser automatically)",
-        "step3": "3. Drag and drop your video file",
-        "step4": "4. Click 'Start Processing' and wait",
-        "step5": "5. Download the processed video"
-      }
-    },
-    "upload": {
-      "title": "Upload Video",
-      "clickOrDrop": "Click to browse or drop the video here",
-      "limits": "MOV/MP4, ≤10s, ≤30MB",
-      "remove": "Remove watermark",
-      "processing": "Processing...",
-      "clear": "Clear"
-    },
-    "result": {
-      "title": "Result",
-      "empty": "Upload a video to start",
-      "download": "Download",
-      "showLogs": "Show details",
-      "hideLogs": "Hide details"
-    },
-    "features": {
-      "title": "Why this watermark remover",
-      "item1": "Purpose-built for Sora video watermark patterns",
-      "item2": "Fast processing via cloud AI inference",
-      "item3": "Preserves visual quality while removing overlays",
-      "item4": "Simple workflow: upload and one click to clean",
-      "item5": "Temporary processing; we do not retain your videos"
-    },
-    "hfSpace": {
-      "title": "Try Sora Watermark Remover Online",
-      "description": "Use our free Hugging Face Space to remove Sora watermarks directly in your browser — no installation needed.",
-      "button": "Open on Hugging Face Spaces",
-      "note": "Powered by SoraWatermarkCleaner running on Hugging Face Spaces"
-    },
-    "localDeploy": {
-      "title": "Run Locally — Unlimited & Free",
-      "description": "No file size limits, GPU-accelerated processing, and full privacy. Three ways to run SoraWatermarkCleaner on your own machine:",
-      "method1": {
-        "title": "Option 1 — Docker (easiest, requires NVIDIA GPU)",
-        "desc": "One command to pull and run. Includes all dependencies and model weights. Requires Docker + NVIDIA Container Toolkit.",
-        "cmd": "docker run --gpus all -p 8501:8501 llinkedlist/sorawm:latest"
-      },
-      "method2": {
-        "title": "Option 2 — Install from source (CPU or GPU)",
-        "desc": "Clone the repo and install with uv. Works on CPU (LAMA model) or GPU (both models). Requires Python 3.10+ and FFmpeg.",
-        "cmd": "git clone https://github.com/sunzhenyu/CleanMark.git\ncd CleanMark/sora_watermark_cleaner\nuv sync && source .venv/bin/activate"
-      },
-      "method3": {
-        "title": "Option 3 — Streamlit UI (after install)",
-        "desc": "Launch the interactive web UI in your browser after completing Option 2.",
-        "cmd": "streamlit run app.py"
-      },
-      "hfSpace": "Try on Hugging Face Spaces",
-      "github": "View Source on GitHub"
-    },
-    "faq": {
-      "title": "FAQ",
-      "q1": "Do you store my video?",
-      "a1": "Converted videos are processed temporarily and not retained.",
-      "q2": "What formats are supported?",
-      "a2": "MOV, MP4 and other common web-playable formats. Keep under 10 seconds and 30MB for online version.",
-      "q3": "How long does processing take?",
-      "a3": "Usually seconds to a few minutes depending on queue."
-    },
-    "errors": {
-      "fileSize": "File too large. Keep under 30MB for online version.",
-      "duration": "Video too long. Keep under 10 seconds.",
-      "noFile": "Please choose a video file."
-    }
   }
 }
-

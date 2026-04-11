@@ -17,7 +17,17 @@
       "Bash(pkill -f \"next dev\")",
       "Bash(for img:*)",
       "Bash(do sips:*)",
-      "Bash(done)"
+      "Bash(done)",
+      "Bash(mkdir -p /Users/sunhaoyu/.claude/skills/cleanmark-jike)",
+      "Bash(mkdir -p /Users/sunhaoyu/.claude/skills/cleanmark-outreach)",
+      "Bash(mkdir -p /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/.claude/skills/cleanmark-jike)",
+      "Bash(mkdir -p /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/.claude/skills/cleanmark-outreach)",
+      "Bash(cp /Users/sunhaoyu/.claude/skills/cleanmark-jike/skill.md /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/.claude/skills/cleanmark-jike/skill.md)",
+      "Bash(cp /Users/sunhaoyu/.claude/skills/cleanmark-outreach/skill.md /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/.claude/skills/cleanmark-outreach/skill.md)",
+      "Bash(rm -rf /Users/sunhaoyu/.claude/skills/cleanmark-jike)",
+      "Bash(rm -rf /Users/sunhaoyu/.claude/skills/cleanmark-outreach)",
+      "WebFetch(domain:geminiwatermarkcleaner.com)",
+      "Bash(pnpm build:*)"
     ]
   }
 }

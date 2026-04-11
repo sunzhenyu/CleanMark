@@ -1,154 +1,94 @@
 {
   "nav": {
     "home": "首页",
-    "aiRemover": "AI 水印去除",
-    "gemini": "Gemini 水印",
-    "doubao": "豆包水印",
-    "sora": "Sora 水印",
-    "chatgpt": "ChatGPT 水印",
-    "manual": "手动橡皮擦",
-    "overlay": "Logo遮罩"
+    "tryNow": "立即使用"
   },
   "homepage": {
-    "title": "CleanMark - AI水印去除工具",
-    "subtitle": "几秒钟去除水印 — 无需技术，完全免费",
-    "badge": "⚡ 无需注册 · 无需上传 · 直接在浏览器中运行",
+    "hero": {
+      "title": "Gemini 水印去除工具",
+      "subtitle": "即时去除 Gemini AI 水印 — 免费、私密、无需注册",
+      "badge": "⚡ 在浏览器中运行 · 无需上传 · 完全免费",
+      "ctaExtension": "Chrome 扩展",
+      "ctaExtensionDesc": "一键安装 · 下载时自动去除水印",
+      "ctaOnline": "在线使用 →"
+    },
     "howItWorks": {
-      "title": "使用方法 - 简单3步",
+      "title": "使用方法",
       "step1": {
-        "title": "上传图片",
-        "description": "选择或拖放您的图片"
+        "title": "安装扩展",
+        "description": "一键将 CleanMark 添加到 Chrome"
       },
       "step2": {
-        "title": "处理",
-        "description": "自动或手动去除水印"
+        "title": "访问 Gemini",
+        "description": "像往常一样浏览 Google Gemini 或 AI Studio"
       },
       "step3": {
-        "title": "下载",
-        "description": "立即获取干净的图片"
+        "title": "下载干净图片",
+        "description": "下载时自动去除水印"
       }
     },
-    "solutions": {
-      "title": "完整的水印解决方案",
-      "subtitle": "选择适合您需求的工具 - 我们的工具可以处理几乎所有类型的水印",
-      "gemini": {
-        "title": "Gemini 图片",
-        "description": "使用 Gemini 水印去除工具自动检测和去除"
-      },
-      "doubao": {
-        "title": "豆包图片",
-        "description": "使用豆包水印去除工具即时自动去除"
-      },
-      "sora": {
-        "title": "Sora 视频",
-        "description": "使用 Sora 水印去除工具进行 AI 驱动的视频水印去除"
-      },
-      "chatgpt": {
-        "title": "ChatGPT 文本",
-        "description": "使用 ChatGPT 水印去除工具去除 AI 生成文本中的隐藏 Unicode 字符"
-      },
-      "custom": {
-        "title": "任何自定义水印",
-        "description": "使用手动橡皮擦精确去除任何水印，完全可控"
-      },
-      "branding": {
-        "title": "替换为您的品牌",
-        "description": "使用 Logo 遮罩用您自己的 Logo 或品牌覆盖水印"
-      },
-      "tip": "💡 提示：组合使用工具效果更佳！先使用自动去除，然后用手动橡皮擦修饰，或在上面添加您的 Logo。"
-    },
     "features": {
-      "gemini": {
-        "title": "Gemini水印去除",
-        "description": "自动去除Google Gemini AI生成图片的水印。我们的工具使用先进算法检测并去除Gemini特有的水印图案，同时保持图片质量。非常适合内容创作者、设计师以及使用Gemini生成图片的用户。",
-        "button": "立即使用",
-        "useCase": "适用于：社交媒体发布、演示文稿、营销素材"
+      "title": "为什么选择 CleanMark",
+      "detection": {
+        "title": "智能检测",
+        "description": "自动识别并精准去除 Gemini 水印图案"
       },
-      "doubao": {
-        "title": "豆包水印去除",
-        "description": "使用我们的专业工具快速去除豆包AI水印。专门针对豆包水印图案设计，能够干净地去除水印同时保持原图完整性。处理速度快，无质量损失。",
-        "button": "立即使用",
-        "useCase": "适用于：博客配图、商业用途、作品集"
+      "privacy": {
+        "title": "隐私优先",
+        "description": "所有处理在浏览器本地完成 — 图片永远不会离开您的设备"
       },
-      "manual": {
-        "title": "手动橡皮擦",
-        "description": "使用精确的画笔工具完全掌控去除过程。非常适合去除自定义水印、Logo或图片中的任何不需要的元素。可调节画笔大小，适合精细工作或快速去除大面积区域。支持任何图片类型。",
-        "button": "立即使用",
-        "useCase": "适用于：自定义水印、文字去除、照片编辑"
+      "free": {
+        "title": "完全免费",
+        "description": "无套餐、无限制、无隐藏费用，永久免费"
       },
-      "overlay": {
-        "title": "Logo遮罩",
-        "description": "通过放置自己的Logo或品牌标识来覆盖不需要的水印。支持上传多个Logo，精确调整大小和位置。保持宽高比以获得专业效果。非常适合品牌重塑或为图片添加签名。",
-        "button": "立即使用",
-        "useCase": "适用于：品牌保护、内容署名、水印替换"
+      "fast": {
+        "title": "即时结果",
+        "description": "WebAssembly 驱动，毫秒级处理速度"
       },
-      "sora": {
-        "title": "Sora 水印去除",
-        "description": "使用专业工具去除 OpenAI Sora 视频水印。支持 MOV 和 MP4 格式，AI 修复技术干净去除 Sora 水印同时保持视频质量。支持在线使用或本地 CLI 运行。",
-        "button": "立即使用",
-        "useCase": "适用于：视频内容、社交媒体短片、演示文稿"
+      "extension": {
+        "title": "Chrome 扩展",
+        "description": "浏览 Gemini 时一键自动去除，无需手动操作"
       },
-      "chatgpt": {
-        "title": "ChatGPT 水印去除",
-        "description": "去除 ChatGPT 生成文本中嵌入的隐藏 Unicode 水印字符。粘贴文本即可立即获得干净版本 — 数据不上传任何服务器，100% 私密免费。",
-        "button": "立即使用",
-        "useCase": "适用于：博客文章、文档、学术写作、内容再利用"
+      "online": {
+        "title": "在线工具",
+        "description": "上传任意 Gemini 图片即可立即清理，无需安装"
       }
     },
-    "chromeExtension": {
-      "label": "Chrome 扩展",
-      "desc": "一键安装 · 自动去除 Gemini 水印"
-    },
-    "whyChoose": {
-      "title": "为什么选择CleanMark？",
-      "privacy": "100%隐私保护 - 所有处理都在浏览器中完成",
-      "free": "完全免费 - 无需注册，没有隐藏费用",
-      "fast": "极速处理 - 秒级获得结果",
-      "quality": "高质量 - 不损失图片分辨率"
-    }
-  },
-  "chatgpt": {
-    "title": "ChatGPT 水印去除",
-    "subtitle": "去除 ChatGPT 文本中的隐藏 Unicode 字符 — 即时、免费、100% 私密",
-    "badges": {
-      "private": "100% 私密",
-      "instant": "即时处理",
-      "free": "完全免费"
-    },
-    "inputLabel": "粘贴您的文本",
-    "inputPlaceholder": "将从 ChatGPT 或其他 AI 工具复制的文本粘贴到这里...",
-    "pasteBtn": "从剪贴板粘贴",
-    "clearBtn": "清空",
-    "cleanBtn": "去除隐藏字符",
-    "outputLabel": "清理后的文本",
-    "copyBtn": "复制",
-    "copiedBtn": "已复制！",
-    "removedCount": "已去除 {count} 个隐藏字符",
-    "noHiddenChars": "未发现隐藏字符",
-    "whatIsIt": {
-      "title": "什么是 ChatGPT 隐藏字符？",
-      "body": "从 ChatGPT 复制的文本中经常包含不可见的 Unicode 字符 — 零宽空格、窄不换行空格以及其他控制字符，这些字符肉眼不可见，但可能导致格式问题、代码编辑器中的异常行为，或作为追踪标识符。",
-      "examplesTitle": "常见被去除的隐藏字符：",
-      "example1": "U+200B — 零宽空格（导致断词问题）",
-      "example2": "U+202F — 窄不换行空格（看起来像空格但不是）",
-      "example3": "U+2060 — 词连接符（不可见的格式控制字符）",
-      "example4": "全角破折号（—）和半角破折号（–）统一转换为标准连字符（-）"
-    },
-    "features": {
-      "title": "功能特点",
-      "item1": "去除 30+ 类不可见 Unicode 控制字符",
-      "item2": "将全角破折号和半角破折号统一为标准连字符",
-      "item3": "保留所有可见格式 — 换行、空格、制表符",
-      "item4": "100% 客户端处理 — 您的文本永远不会离开浏览器"
+    "useCases": {
+      "title": "谁在使用 CleanMark",
+      "creators": {
+        "title": "内容创作者",
+        "description": "为社交媒体、博客和新闻稿清理 Gemini 图片"
+      },
+      "designers": {
+        "title": "设计师",
+        "description": "获取无水印的专业素材用于客户项目和作品集"
+      },
+      "researchers": {
+        "title": "研究人员",
+        "description": "干净导出 Gemini 生成的图表和可视化内容用于论文报告"
+      },
+      "educators": {
+        "title": "教育工作者",
+        "description": "在演示文稿和教学材料中使用 AI 生成图片"
+      }
     },
     "faq": {
       "title": "常见问题",
-      "q1": "这个工具会把我的文本发送到任何地方吗？",
-      "a1": "不会。所有处理完全在您的浏览器中通过 JavaScript 完成，您的文本永远不会发送到任何服务器。",
-      "q2": "为什么 ChatGPT 文本中会包含隐藏字符？",
-      "a2": "AI 模型有时会输出技术上有效但不可见的 Unicode 字符。这些可能是训练数据的残留、格式提示或无意包含的字符，在粘贴到代码、文档或其他工具时可能导致问题。",
-      "q3": "这会改变我文本的可见内容吗？",
-      "a3": "只有全角破折号（—）和半角破折号（–）会被转换为标准连字符（-）。所有其他可见字符，包括空格、换行和标点符号，都会完整保留。"
+      "q1": "什么是 Gemini 水印？",
+      "a1": "Google Gemini 会在 AI 生成的图片上添加细微水印，表明图片由 AI 创建。CleanMark 能检测并去除这种水印图案，同时保持完整的图片质量。",
+      "q2": "CleanMark 真的完全免费吗？",
+      "a2": "是的，完全免费。无需账号、无订阅、无使用限制。所有处理在您的浏览器中运行，零成本。",
+      "q3": "支持 Google AI Studio 的图片吗？",
+      "a3": "支持。CleanMark 适用于 Google Gemini 和 Google AI Studio 的图片。",
+      "q4": "我的图片数据安全吗？",
+      "a4": "绝对安全。所有处理在您的浏览器中通过 JavaScript 本地完成，图片永远不会上传到任何服务器。",
+      "q5": "不安装 Chrome 扩展也能用吗？",
+      "a5": "可以。您可以直接在 cleanmark.org 使用在线工具上传并清理任意 Gemini 图片，无需安装扩展。"
+    },
+    "cta": {
+      "title": "开始去除 Gemini 水印",
+      "subtitle": "免费、即时、完全私密"
     }
   },
   "home": {
@@ -177,19 +117,10 @@
         "description": "即时去除水印"
       }
     },
-    "example": {
-      "title": "效果对比",
-      "before": "处理前",
-      "after": "处理后"
-    },
-    "tools": {
-      "title": "更多工具",
-      "notebooklm": "NotebookLM 水印去除"
-    },
-    "howTo": "如何去除Gemini水印",
-    "howToDesc": "我们的免费Gemini水印去除工具可以快速轻松地去除Google Gemini AI生成图片的水印。只需上传图片，我们的工具会在您的浏览器中完全处理。",
-    "whyUse": "为什么使用我们的Gemini水印去除工具？",
-    "whyFree": "100%免费：",
+    "howTo": "如何去除 Gemini 水印",
+    "howToDesc": "我们的免费 Gemini 水印去除工具可以快速轻松地去除 Google Gemini AI 生成图片的水印。只需上传图片，我们的工具会在您的浏览器中完全处理。",
+    "whyUse": "为什么使用我们的 Gemini 水印去除工具？",
+    "whyFree": "100% 免费：",
     "whyFreeDesc": "没有隐藏费用或订阅费",
     "whyPrivacy": "隐私优先：",
     "whyPrivacyDesc": "所有处理都在您的浏览器中进行",
@@ -197,8 +128,8 @@
     "whyNoRegDesc": "立即开始去除水印",
     "whyFast": "快速处理：",
     "whyFastDesc": "秒级获得结果",
-    "featuresTitle": "在线水印去除工具的功能",
-    "featuresDesc": "此AI水印去除工具专为Google Gemini生成的图片设计。支持所有图片格式和尺寸，提供清晰的结果且不损失质量。"
+    "featuresTitle": "Gemini 水印去除工具功能",
+    "featuresDesc": "专为 Google Gemini 生成的图片设计，支持所有图片格式和尺寸，提供清晰的结果且不损失质量。"
   },
   "footer": {
     "privacy": "隐私政策",
@@ -213,93 +144,6 @@
     "title": "Chrome 扩展",
     "description": "一键去除水印 - 直接在浏览器中使用",
     "install": "安装扩展"
-  },
-  "doubao": {
-    "title": "豆包水印去除工具",
-    "subtitle": "即时去除豆包 AI 生成图片的水印。完全免费，无需注册。",
-    "upload": {
-      "title": "拖放图片到这里",
-      "or": "或",
-      "browse": "浏览文件",
-      "supported": "支持 JPG、PNG、WebP"
-    },
-    "processing": "处理中...",
-    "download": "下载",
-    "tryAnother": "处理另一张图片",
-    "howTo": "如何去除豆包水印",
-    "howToDesc": "我们的免费豆包水印去除工具可以快速轻松地去除豆包AI生成图片的水印。只需上传图片，我们的工具会在您的浏览器中完全处理。",
-    "whyUse": "为什么使用我们的豆包水印去除工具？",
-    "whyFree": "100%免费：",
-    "whyFreeDesc": "没有隐藏费用或订阅费",
-    "whyPrivacy": "隐私优先：",
-    "whyPrivacyDesc": "所有处理都在您的浏览器中进行",
-    "whyNoReg": "无需注册：",
-    "whyNoRegDesc": "立即开始去除水印",
-    "whyFast": "快速处理：",
-    "whyFastDesc": "秒级获得结果",
-    "features": "在线水印去除工具的功能",
-    "featuresDesc": "此AI水印去除工具专为豆包生成的图片设计。支持所有图片格式和尺寸，提供清晰的结果且不损失质量。"
-  },
-  "manual": {
-    "title": "手动橡皮擦",
-    "subtitle": "精确控制，轻松擦除水印",
-    "upload": {
-      "title": "拖放图片到这里",
-      "or": "或",
-      "browse": "浏览文件",
-      "supported": "支持 JPG、PNG、WebP"
-    },
-    "brushSize": "画笔大小",
-    "reset": "重置",
-    "download": "下载",
-    "newImage": "新图片",
-    "howTo": "如何使用手动橡皮擦",
-    "howToDesc": "我们的手动橡皮擦工具让您完全控制水印去除过程。调整画笔大小并涂抹图片中的任何不需要的元素。非常适合自定义水印和精确编辑。",
-    "whyUse": "为什么使用手动橡皮擦？",
-    "whyFree": "100%免费：",
-    "whyFreeDesc": "没有隐藏费用或订阅费",
-    "whyPrivacy": "隐私优先：",
-    "whyPrivacyDesc": "所有处理都在您的浏览器中进行",
-    "whyNoReg": "无需注册：",
-    "whyNoRegDesc": "立即开始去除水印",
-    "whyPrecision": "精确控制：",
-    "whyPrecisionDesc": "可调节画笔大小进行精细工作",
-    "features": "功能特点",
-    "featuresDesc": "可调节画笔大小、实时预览、支持所有图片格式。完全在浏览器中工作，无需上传。"
-  },
-  "overlay": {
-    "title": "Logo遮罩",
-    "subtitle": "用自己的Logo遮盖水印",
-    "upload": {
-      "title": "拖放图片到这里",
-      "or": "或",
-      "browse": "浏览文件",
-      "supported": "支持 JPG、PNG、WebP"
-    },
-    "hint": "点击选中Logo，拖动移动，滚动缩放",
-    "logoLibrary": "Logo库",
-    "addLogo": "+ 添加Logo",
-    "add": "添加",
-    "placedLogos": "已放置Logo",
-    "noLogos": "未放置Logo",
-    "sizeControl": "尺寸控制",
-    "selectLogoFirst": "请先选择一个Logo",
-    "remove": "移除",
-    "download": "下载",
-    "newImage": "新图片",
-    "howTo": "如何使用Logo遮罩",
-    "howToDesc": "上传您的图片和Logo，然后定位它们以覆盖不需要的水印。精确调整Logo的大小和位置。非常适合在隐藏现有水印的同时添加您的品牌。",
-    "whyUse": "为什么使用Logo遮罩？",
-    "whyFree": "100%免费：",
-    "whyFreeDesc": "没有隐藏费用或订阅费",
-    "whyPrivacy": "隐私优先：",
-    "whyPrivacyDesc": "所有处理都在您的浏览器中进行",
-    "whyNoReg": "无需注册：",
-    "whyNoRegDesc": "立即开始添加Logo",
-    "whyMultiple": "多Logo支持：",
-    "whyMultipleDesc": "一次添加和定位多个Logo",
-    "features": "功能特点",
-    "featuresDesc": "支持多个Logo、拖放定位、保持宽高比、即时预览。所有处理都在浏览器中进行。"
   },
   "privacy": {
     "title": "隐私政策",
@@ -334,125 +178,5 @@
       "content": "如有关于本隐私政策的问题，请访问 cleanmark.org 或通过 GitHub 联系我们。"
     },
     "backToHome": "返回首页"
-  },
-  "sora": {
-    "title": "Sora 水印去除工具",
-    "subtitle": "使用 AI 驱动的处理技术去除 Sora AI 视频水印。免费、快速、高质量。",
-    "tabs": {
-      "online": "在线版本",
-      "desktop": "桌面版本（推荐）"
-    },
-    "badges": {
-      "automatic": "100% 自动",
-      "private": "100% 隐私",
-      "quality": "高清质量",
-      "audio": "保留音频",
-      "fast": "闪电般快速"
-    },
-    "online": {
-      "title": "在线处理",
-      "description": "快速处理小视频。为获得最佳性能，限制为 30MB。",
-      "note": "💡 为获得最佳效果和无限文件大小，我们推荐使用下方的桌面版本。"
-    },
-    "desktop": {
-      "title": "桌面版本 - 无限制且免费",
-      "description": "下载并在您的计算机上本地运行。无文件大小限制，处理更快，完全免费。",
-      "features": {
-        "title": "为什么选择桌面版本？",
-        "unlimited": "无文件大小或时长限制",
-        "faster": "使用本地 GPU 处理速度更快",
-        "free": "完全免费，无 API 费用",
-        "offline": "离线工作，无需互联网",
-        "privacy": "100% 隐私，文件永不离开您的计算机"
-      },
-      "requirements": {
-        "title": "系统要求",
-        "cpu": "CPU：4核以上，2.5GHz+",
-        "ram": "内存：最低 16GB，推荐 32GB",
-        "gpu": "显卡：NVIDIA GTX 1060 6GB 或更好",
-        "storage": "存储：10GB 可用空间",
-        "os": "操作系统：Windows 10/11、macOS 10.15+、Linux"
-      },
-      "download": {
-        "title": "下载",
-        "windows": "下载 Windows 版",
-        "mac": "下载 macOS 版",
-        "linux": "下载 Linux 版",
-        "github": "在 GitHub 上查看"
-      },
-      "instructions": {
-        "title": "使用方法",
-        "step1": "1. 下载并安装应用程序",
-        "step2": "2. 启动应用（自动在浏览器中打开）",
-        "step3": "3. 拖放您的视频文件",
-        "step4": "4. 点击「开始处理」并等待",
-        "step5": "5. 下载处理后的视频"
-      }
-    },
-    "upload": {
-      "title": "上传视频",
-      "clickOrDrop": "点击浏览或将视频拖放到此处",
-      "limits": "MOV/MP4，≤10秒，≤30MB",
-      "remove": "去除水印",
-      "processing": "处理中...",
-      "clear": "清除"
-    },
-    "result": {
-      "title": "结果",
-      "empty": "上传视频开始处理",
-      "download": "下载",
-      "showLogs": "显示详情",
-      "hideLogs": "隐藏详情"
-    },
-    "features": {
-      "title": "为什么选择这个水印去除工具",
-      "item1": "专为 Sora 视频水印模式设计",
-      "item2": "通过云端 AI 推理快速处理",
-      "item3": "在去除水印的同时保持视觉质量",
-      "item4": "简单的工作流程：上传并一键清除",
-      "item5": "临时处理；我们不会保留您的视频"
-    },
-    "hfSpace": {
-      "title": "在线使用 Sora 水印去除工具",
-      "description": "使用我们免费的 Hugging Face Space，直接在浏览器中去除 Sora 水印，无需安装任何软件。",
-      "button": "在 Hugging Face Spaces 上打开",
-      "note": "由运行在 Hugging Face Spaces 上的 SoraWatermarkCleaner 提供支持"
-    },
-    "localDeploy": {
-      "title": "本地部署 — 无限制 & 免费",
-      "description": "无文件大小限制、GPU 加速处理、完全隐私。三种方式在本地运行 SoraWatermarkCleaner：",
-      "method1": {
-        "title": "方式一 — Docker（最简单，需要 NVIDIA GPU）",
-        "desc": "一条命令拉取并运行，包含所有依赖和模型权重。需要 Docker + NVIDIA Container Toolkit。",
-        "cmd": "docker run --gpus all -p 8501:8501 llinkedlist/sorawm:latest"
-      },
-      "method2": {
-        "title": "方式二 — 从源码安装（支持 CPU 或 GPU）",
-        "desc": "克隆仓库并用 uv 安装。CPU 可运行 LAMA 模型，GPU 支持两种模型。需要 Python 3.10+ 和 FFmpeg。",
-        "cmd": "git clone https://github.com/sunzhenyu/CleanMark.git\ncd CleanMark/sora_watermark_cleaner\nuv sync && source .venv/bin/activate"
-      },
-      "method3": {
-        "title": "方式三 — Streamlit UI（安装完成后）",
-        "desc": "完成方式二的安装后，在浏览器中启动交互式 Web UI。",
-        "cmd": "streamlit run app.py"
-      },
-      "hfSpace": "在 Hugging Face Spaces 上体验",
-      "github": "在 GitHub 上查看源码"
-    },
-    "faq": {
-      "title": "常见问题",
-      "q1": "你们会存储我的视频吗？",
-      "a1": "转换后的视频仅临时处理，不会保留。",
-      "q2": "支持哪些格式？",
-      "a2": "MOV、MP4 和其他常见的网络播放格式。在线版本请保持在 10 秒和 30MB 以内。",
-      "q3": "处理需要多长时间？",
-      "a3": "通常需要几秒到几分钟，具体取决于队列情况。"
-    },
-    "errors": {
-      "fileSize": "文件太大。在线版本请保持在 30MB 以内。",
-      "duration": "视频太长。请保持在 10 秒以内。",
-      "noFile": "请选择一个视频文件。"
-    }
   }
 }
-

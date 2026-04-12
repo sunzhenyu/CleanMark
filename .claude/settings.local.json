@@ -35,7 +35,8 @@
       "Bash(grep:*)",
       "Bash(ls /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/public/sitemap*)",
       "Bash(ls /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/public/robots*)",
-      "Bash(ls /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/\\\\[locale\\\\]/sora*)"
+      "Bash(ls /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/\\\\[locale\\\\]/sora*)",
+      "WebFetch(domain:tools.cleanmark.org)"
     ]
   }
 }

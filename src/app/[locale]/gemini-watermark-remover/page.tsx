@@ -162,8 +162,11 @@ export default async function GeminiPage({
               </h3>
               <p className="text-gray-600 text-sm mb-4">
                 {locale === 'zh'
-                  ? '快速去除 ChatGPT 生成图片中的水印，支持 DALL-E 3 图片处理，完全免费在线使用。'
-                  : 'Remove watermarks from ChatGPT-generated images. Supports DALL-E 3 images, completely free online tool.'}
+                  ? '去除 ChatGPT 生成文本中嵌入的隐藏 Unicode 水印字符。粘贴文本即可获得干净版本 — 无数据上传，100% 隐私且免费。'
+                  : 'Strip hidden Unicode watermark characters embedded in ChatGPT-generated text. Paste your text and get a clean version instantly — no data sent to any server, 100% private and free.'}
+              </p>
+              <p className="text-xs text-blue-600 mb-4">
+                {locale === 'zh' ? '适用于：博客文章、文档、学术写作、内容再利用' : 'Ideal for: Blog posts, documents, academic writing, content repurposing'}
               </p>
               <a
                 href="https://tools.cleanmark.org/chatgpt-watermark-remover"
@@ -190,8 +193,11 @@ export default async function GeminiPage({
               </h3>
               <p className="text-gray-600 text-sm mb-4">
                 {locale === 'zh'
-                  ? '专为 OpenAI Sora 视频水印设计的去除工具，支持批量处理，保持视频原始质量。'
-                  : 'Specialized tool for removing OpenAI Sora video watermarks. Batch processing supported, maintains original quality.'}
+                  ? '使用专业工具去除 OpenAI Sora 视频水印。支持 MOV 和 MP4 格式。采用 AI 修复技术干净擦除 Sora 水印，同时保持视频质量。支持在线或本地 CLI 使用。'
+                  : 'Remove OpenAI Sora video watermarks with our specialized tool. Supports MOV and MP4 formats. Powered by AI inpainting to cleanly erase the Sora watermark while preserving video quality. Works online or locally via CLI.'}
+              </p>
+              <p className="text-xs text-blue-600 mb-4">
+                {locale === 'zh' ? '适用于：视频内容、社交媒体片段、演示文稿' : 'Ideal for: Video content, social media clips, presentations'}
               </p>
               <a
                 href="https://tools.cleanmark.org/sora-watermark-remover"
@@ -214,12 +220,15 @@ export default async function GeminiPage({
                 </svg>
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-2">
-                {locale === 'zh' ? '手动橡皮擦工具' : 'Manual Eraser Tool'}
+                {locale === 'zh' ? '手动橡皮擦工具' : 'Manual Eraser'}
               </h3>
               <p className="text-gray-600 text-sm mb-4">
                 {locale === 'zh'
-                  ? '精确控制的手动水印擦除工具，适用于任意图片水印，支持画笔调节和实时预览。'
-                  : 'Precision manual watermark eraser for any image. Adjustable brush size with real-time preview.'}
+                  ? '使用精确画笔工具完全控制。非常适合从图片中去除自定义水印、徽标或任何不需要的元素。可调节画笔大小，适用于细节工作或快速去除大面积区域。支持任何图片类型。'
+                  : 'Take full control with our precision brush tool. Perfect for removing custom watermarks, logos, or any unwanted elements from your images. Adjust brush size for detailed work or quick removal of larger areas. Works with any image type.'}
+              </p>
+              <p className="text-xs text-blue-600 mb-4">
+                {locale === 'zh' ? '适用于：自定义水印、文字去除、照片编辑' : 'Ideal for: Custom watermarks, text removal, photo editing'}
               </p>
               <a
                 href="https://tools.cleanmark.org/manual-eraser"

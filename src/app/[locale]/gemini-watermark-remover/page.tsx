@@ -143,6 +143,98 @@ export default async function GeminiPage({
           <h3 className="text-xl font-semibold text-gray-900 mt-8 mb-3">{t('featuresTitle')}</h3>
           <p className="text-gray-700">{t('featuresDesc')}</p>
         </section>
+
+        {/* More Watermark Removal Products */}
+        <section className="mt-16 py-12 bg-gray-50 rounded-2xl">
+          <h2 className="text-3xl font-bold text-gray-900 text-center mb-10">
+            {locale === 'zh' ? '更多水印去除工具' : 'More Watermark Removal Products'}
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 px-6">
+            {/* ChatGPT Watermark Remover */}
+            <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+              <div className="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                {locale === 'zh' ? 'ChatGPT 水印去除工具' : 'ChatGPT Watermark Remover'}
+              </h3>
+              <p className="text-gray-600 text-sm mb-4">
+                {locale === 'zh'
+                  ? '快速去除 ChatGPT 生成图片中的水印，支持 DALL-E 3 图片处理，完全免费在线使用。'
+                  : 'Remove watermarks from ChatGPT-generated images. Supports DALL-E 3 images, completely free online tool.'}
+              </p>
+              <a
+                href="https://tools.cleanmark.org/chatgpt-watermark-remover"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm"
+              >
+                {locale === 'zh' ? '了解更多' : 'Learn More'}
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Sora Watermark Remover */}
+            <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+              <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-purple-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                {locale === 'zh' ? 'Sora 水印去除工具' : 'Sora Watermark Remover'}
+              </h3>
+              <p className="text-gray-600 text-sm mb-4">
+                {locale === 'zh'
+                  ? '专为 OpenAI Sora 视频水印设计的去除工具，支持批量处理，保持视频原始质量。'
+                  : 'Specialized tool for removing OpenAI Sora video watermarks. Batch processing supported, maintains original quality.'}
+              </p>
+              <a
+                href="https://tools.cleanmark.org/sora-watermark-remover"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm"
+              >
+                {locale === 'zh' ? '了解更多' : 'Learn More'}
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+
+            {/* Manual Eraser */}
+            <div className="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition">
+              <div className="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center mb-4">
+                <svg className="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-2">
+                {locale === 'zh' ? '手动橡皮擦工具' : 'Manual Eraser Tool'}
+              </h3>
+              <p className="text-gray-600 text-sm mb-4">
+                {locale === 'zh'
+                  ? '精确控制的手动水印擦除工具，适用于任意图片水印，支持画笔调节和实时预览。'
+                  : 'Precision manual watermark eraser for any image. Adjustable brush size with real-time preview.'}
+              </p>
+              <a
+                href="https://tools.cleanmark.org/manual-eraser"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium text-sm"
+              >
+                {locale === 'zh' ? '了解更多' : 'Learn More'}
+                <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </a>
+            </div>
+          </div>
+        </section>
       </section>
 
       <Footer />

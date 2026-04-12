@@ -308,7 +308,7 @@ async function processAndDownloadImage(img, fullSizeUrl, isBlobUrl = false) {
 
     console.log('[CleanMark] Starting watermark removal...');
     const result = await removeWatermarkFromImage(newImg, {
-      alphaGain: 1.5,  // 进一步增强水印去除效果
+      // 让算法自动选择最佳 alphaGain 值（会尝试 1.05 到 2.6 之间的多个值）
       multiPass: true  // 启用多次处理以彻底去除水印
     });
 

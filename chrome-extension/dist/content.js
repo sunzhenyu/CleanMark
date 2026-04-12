@@ -2896,9 +2896,12 @@
         if (img && img.src) {
           console.log("[CleanMark] Image found:", img.src.substring(0, 100));
           console.log("[CleanMark] Image size:", img.naturalWidth, "x", img.naturalHeight);
+          if (img.__fullSizeUrl) {
+            console.log("[CleanMark] Found full size URL from DOM:", img.__fullSizeUrl.substring(0, 100));
+          }
           e.preventDefault();
           e.stopPropagation();
-          let fullSizeUrl = img.src;
+          let fullSizeUrl = img.__fullSizeUrl || img.src;
           let isBlobUrl = fullSizeUrl.startsWith("blob:");
           if (isBlobUrl) {
             const realUrl = img.dataset.src || img.dataset.originalSrc || img.dataset.fullSrc || img.getAttribute("data-src") || img.getAttribute("data-original-src") || img.getAttribute("data-full-src");
@@ -3007,6 +3010,33 @@
             Array.from(selectedImg.parentElement.attributes).forEach((attr) => {
               console.log(`  ${attr.name}: ${attr.value.substring(0, 300)}`);
             });
+          }
+          let fullSizeUrl = null;
+          const parentStyle = selectedImg.parentElement?.style?.backgroundImage;
+          if (parentStyle && parentStyle.includes("url(")) {
+            const match = parentStyle.match(/url\(['"]?([^'"]+)['"]?\)/);
+            if (match && match[1]) {
+              console.log("[CleanMark] Found URL in parent background-image:", match[1].substring(0, 100));
+              fullSizeUrl = match[1];
+            }
+          }
+          const picture = selectedImg.closest("picture");
+          if (picture) {
+            const sources = picture.querySelectorAll("source[srcset]");
+            if (sources.length > 0) {
+              const lastSource = sources[sources.length - 1];
+              const srcset = lastSource.getAttribute("srcset");
+              if (srcset) {
+                const urls = srcset.split(",").map((s) => s.trim().split(" ")[0]);
+                if (urls.length > 0) {
+                  fullSizeUrl = urls[urls.length - 1];
+                  console.log("[CleanMark] Found URL in picture source:", fullSizeUrl.substring(0, 100));
+                }
+              }
+            }
+          }
+          if (fullSizeUrl) {
+            selectedImg.__fullSizeUrl = fullSizeUrl;
           }
           return selectedImg;
         }

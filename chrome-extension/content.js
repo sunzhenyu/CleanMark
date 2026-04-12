@@ -52,11 +52,17 @@ function setupDownloadListener() {
       if (img && img.src) {
         console.log('[CleanMark] Image found:', img.src.substring(0, 100));
         console.log('[CleanMark] Image size:', img.naturalWidth, 'x', img.naturalHeight);
+
+        // 检查是否有从 DOM 中提取的完整 URL
+        if (img.__fullSizeUrl) {
+          console.log('[CleanMark] Found full size URL from DOM:', img.__fullSizeUrl.substring(0, 100));
+        }
+
         e.preventDefault();
         e.stopPropagation();
 
         // 获取完整尺寸的图片 URL
-        let fullSizeUrl = img.src;
+        let fullSizeUrl = img.__fullSizeUrl || img.src;
         let isBlobUrl = fullSizeUrl.startsWith('blob:');
 
         // 如果是 blob URL，尝试从图片元素的 data 属性中获取真实 URL
@@ -204,6 +210,41 @@ function findImageToDownload(button) {
           Array.from(selectedImg.parentElement.attributes).forEach(attr => {
             console.log(`  ${attr.name}: ${attr.value.substring(0, 300)}`);
           });
+        }
+
+        // 尝试从父元素的 style 或其他属性中提取完整 URL
+        let fullSizeUrl = null;
+        const parentStyle = selectedImg.parentElement?.style?.backgroundImage;
+        if (parentStyle && parentStyle.includes('url(')) {
+          const match = parentStyle.match(/url\(['"]?([^'"]+)['"]?\)/);
+          if (match && match[1]) {
+            console.log('[CleanMark] Found URL in parent background-image:', match[1].substring(0, 100));
+            fullSizeUrl = match[1];
+          }
+        }
+
+        // 检查 picture 元素中的 source
+        const picture = selectedImg.closest('picture');
+        if (picture) {
+          const sources = picture.querySelectorAll('source[srcset]');
+          if (sources.length > 0) {
+            // 获取最后一个 source（通常是最高分辨率）
+            const lastSource = sources[sources.length - 1];
+            const srcset = lastSource.getAttribute('srcset');
+            if (srcset) {
+              // srcset 格式: "url 1x, url 2x" 或 "url 100w, url 200w"
+              const urls = srcset.split(',').map(s => s.trim().split(' ')[0]);
+              if (urls.length > 0) {
+                fullSizeUrl = urls[urls.length - 1];
+                console.log('[CleanMark] Found URL in picture source:', fullSizeUrl.substring(0, 100));
+              }
+            }
+          }
+        }
+
+        // 将完整 URL 附加到图片对象上
+        if (fullSizeUrl) {
+          selectedImg.__fullSizeUrl = fullSizeUrl;
         }
 
         return selectedImg;

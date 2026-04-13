@@ -9,6 +9,7 @@ export default function Navigation() {
   const locale = useLocale();
   const isZh = locale === 'zh';
   const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const isActive = (path: string) => pathname.includes(path);
   const isDropdownActive = (items: { href: string }[]) =>
@@ -38,85 +39,164 @@ export default function Navigation() {
   };
 
   return (
-    <nav className="flex items-center gap-1">
-      <a
-        href={href('/gemini-watermark-remover')}
-        title="Gemini Watermark Remover — Free Online Tool"
-        className={`px-3 py-2 text-sm rounded-md transition font-medium ${
-          isActive('/gemini-watermark-remover')
-            ? 'text-blue-600 bg-blue-50'
-            : 'text-gray-600 hover:text-gray-900'
-        }`}
-      >
-        {isZh ? '免费在线工具' : 'Free Online Tool'}
-      </a>
-
-      <a
-        href={href('/examples')}
-        title="Gemini Watermark Remover Examples"
-        className={`px-3 py-2 text-sm rounded-md transition ${
-          isActive('/examples')
-            ? 'text-blue-600 bg-blue-50'
-            : 'text-gray-600 hover:text-gray-900'
-        }`}
-      >
-        {isZh ? '效果示例' : 'Examples'}
-      </a>
-
-      <a
-        href={href('/download')}
-        title="Download Gemini Watermark Remover Chrome Extension"
-        className={`px-3 py-2 text-sm rounded-md transition ${
-          isActive('/download')
-            ? 'text-blue-600 bg-blue-50'
-            : 'text-gray-600 hover:text-gray-900'
-        }`}
-      >
-        {isZh ? '下载' : 'Download'}
-      </a>
-
-      {(Object.entries(dropdowns) as [keyof typeof dropdowns, { label: string; items: { href: string; label: string; title: string }[] }][]).map(([key, { label, items }]) => (
-        <div
-          key={key}
-          className="relative"
-          onMouseEnter={() => setOpenMenu(key)}
-          onMouseLeave={() => setOpenMenu(null)}
+    <>
+      {/* Desktop Navigation */}
+      <nav className="hidden lg:flex items-center gap-1">
+        <a
+          href={href('/gemini-watermark-remover')}
+          title="Gemini Watermark Remover — Free Online Tool"
+          className={`px-3 py-2 text-sm rounded-md transition font-medium ${
+            isActive('/gemini-watermark-remover')
+              ? 'text-blue-600 bg-blue-50'
+              : 'text-gray-600 hover:text-gray-900'
+          }`}
         >
-          <button
-            className={`px-3 py-2 text-sm rounded-md transition flex items-center gap-1 ${
-              isDropdownActive(items)
-                ? 'text-blue-600 bg-blue-50 font-medium'
-                : 'text-gray-600 hover:text-gray-900'
-            }`}
-          >
-            {label}
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </svg>
-          </button>
+          {isZh ? '免费在线工具' : 'Free Online Tool'}
+        </a>
 
-          {openMenu === key && (
-            <div className="absolute top-full left-0 pt-1 z-50">
-              <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-1 min-w-[180px]">
+        <a
+          href={href('/examples')}
+          title="Gemini Watermark Remover Examples"
+          className={`px-3 py-2 text-sm rounded-md transition ${
+            isActive('/examples')
+              ? 'text-blue-600 bg-blue-50'
+              : 'text-gray-600 hover:text-gray-900'
+          }`}
+        >
+          {isZh ? '效果示例' : 'Examples'}
+        </a>
+
+        <a
+          href={href('/download')}
+          title="Download Gemini Watermark Remover Chrome Extension"
+          className={`px-3 py-2 text-sm rounded-md transition ${
+            isActive('/download')
+              ? 'text-blue-600 bg-blue-50'
+              : 'text-gray-600 hover:text-gray-900'
+          }`}
+        >
+          {isZh ? '下载' : 'Download'}
+        </a>
+
+        {(Object.entries(dropdowns) as [keyof typeof dropdowns, { label: string; items: { href: string; label: string; title: string }[] }][]).map(([key, { label, items }]) => (
+          <div
+            key={key}
+            className="relative"
+            onMouseEnter={() => setOpenMenu(key)}
+            onMouseLeave={() => setOpenMenu(null)}
+          >
+            <button
+              className={`px-3 py-2 text-sm rounded-md transition flex items-center gap-1 ${
+                isDropdownActive(items)
+                  ? 'text-blue-600 bg-blue-50 font-medium'
+                  : 'text-gray-600 hover:text-gray-900'
+              }`}
+            >
+              {label}
+              <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {openMenu === key && (
+              <div className="absolute top-full left-0 pt-1 z-50">
+                <div className="bg-white rounded-lg shadow-lg border border-gray-100 py-1 min-w-[180px]">
+                  {items.map((item) => (
+                    <a
+                      key={item.href}
+                      href={href(item.href)}
+                      title={item.title}
+                      className={`block px-4 py-2 text-sm transition ${
+                        isActive(item.href)
+                          ? 'bg-blue-50 text-blue-700'
+                          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                      }`}
+                    >
+                      {item.label}
+                    </a>
+                  ))}
+                </div>
+              </div>
+            )}
+          </div>
+        ))}
+      </nav>
+
+      {/* Mobile Menu Button */}
+      <button
+        onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        className="lg:hidden p-2 text-gray-600 hover:text-gray-900"
+        aria-label="Toggle menu"
+      >
+        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {mobileMenuOpen ? (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+          ) : (
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+          )}
+        </svg>
+      </button>
+
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden absolute top-full left-0 right-0 bg-white border-b border-gray-100 shadow-lg z-50">
+          <div className="px-4 py-3 space-y-1">
+            <a
+              href={href('/gemini-watermark-remover')}
+              className={`block px-3 py-2 text-sm rounded-md ${
+                isActive('/gemini-watermark-remover')
+                  ? 'text-blue-600 bg-blue-50 font-medium'
+                  : 'text-gray-600'
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {isZh ? '免费在线工具' : 'Free Online Tool'}
+            </a>
+            <a
+              href={href('/examples')}
+              className={`block px-3 py-2 text-sm rounded-md ${
+                isActive('/examples')
+                  ? 'text-blue-600 bg-blue-50 font-medium'
+                  : 'text-gray-600'
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {isZh ? '效果示例' : 'Examples'}
+            </a>
+            <a
+              href={href('/download')}
+              className={`block px-3 py-2 text-sm rounded-md ${
+                isActive('/download')
+                  ? 'text-blue-600 bg-blue-50 font-medium'
+                  : 'text-gray-600'
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {isZh ? '下载' : 'Download'}
+            </a>
+
+            {(Object.entries(dropdowns) as [keyof typeof dropdowns, { label: string; items: { href: string; label: string; title: string }[] }][]).map(([key, { label, items }]) => (
+              <div key={key}>
+                <div className="px-3 py-2 text-sm font-medium text-gray-900">{label}</div>
                 {items.map((item) => (
                   <a
                     key={item.href}
                     href={href(item.href)}
-                    title={item.title}
-                    className={`block px-4 py-2 text-sm transition ${
+                    className={`block px-6 py-2 text-sm ${
                       isActive(item.href)
-                        ? 'bg-blue-50 text-blue-700'
-                        : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                        ? 'text-blue-600 bg-blue-50'
+                        : 'text-gray-600'
                     }`}
+                    onClick={() => setMobileMenuOpen(false)}
                   >
                     {item.label}
                   </a>
                 ))}
               </div>
-            </div>
-          )}
+            ))}
+          </div>
         </div>
-      ))}
-    </nav>
+      )}
+    </>
   );
 }

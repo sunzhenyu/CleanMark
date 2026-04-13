@@ -150,6 +150,13 @@
     "processing": "处理中...",
     "download": "下载",
     "tryAnother": "处理另一张图片",
+    "resize": {
+      "title": "调整尺寸（可选）",
+      "original": "原始尺寸",
+      "width": "宽度",
+      "height": "高度",
+      "placeholder": "留空保持原样"
+    },
     "features": {
       "privacy": {
         "title": "隐私优先",

@@ -150,6 +150,13 @@
     "processing": "Processing...",
     "download": "Download",
     "tryAnother": "Try another image",
+    "resize": {
+      "title": "Resize (Optional)",
+      "original": "Original Size",
+      "width": "Width",
+      "height": "Height",
+      "placeholder": "Leave empty to keep original"
+    },
     "features": {
       "privacy": {
         "title": "Privacy First",

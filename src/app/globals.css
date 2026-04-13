@@ -10,16 +10,30 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-  --animate-marquee: marquee 18s linear infinite;
+  --animate-marquee: marquee 20s linear infinite;
 }
 
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
 }
 
-.animate-marquee:hover {
+.marquee-wrapper {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.marquee-wrapper:hover .animate-marquee {
   animation-play-state: paused;
+}
+
+.animate-marquee {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  width: max-content;
+  will-change: transform;
 }
 
 @media (prefers-color-scheme: dark) {

@@ -80,8 +80,8 @@ export default function Footer() {
         {/* Featured On — infinite scroll marquee */}
         <div className="border-t border-gray-800 pt-8 mb-6">
           <p className="text-center text-xs text-gray-500 uppercase tracking-widest mb-5">Featured On</p>
-          <div className="overflow-hidden">
-            <div className="animate-marquee" style={{ display: 'flex', alignItems: 'center', gap: '24px', whiteSpace: 'nowrap' }}>
+          <div className="marquee-wrapper">
+            <div className="animate-marquee">
               {(([
                 { key: 'ph', href: 'https://www.producthunt.com/products/cleanmark-2/launches/cleanmark-2', src: 'https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=cleanmark-2&theme=dark', alt: 'Featured on Product Hunt' },
                 { key: 'dev', href: 'https://dev.to/dan_dan_26ba75efedd611b1f/how-i-built-a-free-browser-based-watermark-remover-using-canvas-api-1if3', src: 'https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg', alt: 'Listed on DEV.to' },

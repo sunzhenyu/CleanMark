@@ -93,6 +93,9 @@ export default function Footer() {
             <a href="https://dofollow.tools" target="_blank" rel="noopener noreferrer">
               <img src="https://dofollow.tools/badge/badge_transparent.svg" alt="Featured on Dofollow.Tools" width={200} height={54} />
             </a>
+            <a href="https://showmebest.ai" target="_blank" rel="noopener noreferrer">
+              <img src="https://showmebest.ai/badge/feature-badge-white.webp" alt="Featured on ShowMeBestAI" width={220} height={60} />
+            </a>
           </div>
         </div>
 

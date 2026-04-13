@@ -117,7 +117,7 @@
       "original": "Original Size",
       "width": "Width",
       "height": "Height",
-      "placeholder": "Leave empty to keep original"
+      "placeholder": "Fill one dimension to auto-calculate the other, or fill both to set exact size. Leave empty to keep original."
     },
     "faq": {
       "title": "Gemini Watermark Remover FAQ",
@@ -155,7 +155,7 @@
       "original": "Original Size",
       "width": "Width",
       "height": "Height",
-      "placeholder": "Leave empty to keep original"
+      "placeholder": "Fill one dimension to auto-calculate the other, or fill both to set exact size. Leave empty to keep original."
     },
     "features": {
       "privacy": {

@@ -117,7 +117,7 @@
       "original": "原始尺寸",
       "width": "宽度",
       "height": "高度",
-      "placeholder": "留空保持原样"
+      "placeholder": "填写一个值自动计算另一个，填写两个值按指定尺寸调整，留空保持原样"
     },
     "faq": {
       "title": "Gemini Watermark Remover 常见问题",
@@ -155,7 +155,7 @@
       "original": "原始尺寸",
       "width": "宽度",
       "height": "高度",
-      "placeholder": "留空保持原样"
+      "placeholder": "填写一个值自动计算另一个，填写两个值按指定尺寸调整，留空保持原样"
     },
     "features": {
       "privacy": {

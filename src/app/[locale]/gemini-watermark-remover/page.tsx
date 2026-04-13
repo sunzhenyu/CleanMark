@@ -32,7 +32,7 @@ export default async function GeminiPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
-  const t = await getTranslations({ locale, namespace: 'homepage.hero' });
+  const t = await getTranslations({ locale, namespace: 'home' });
 
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">

@@ -87,9 +87,6 @@ export default function Footer() {
             <a href="https://dev.to/dan_dan_26ba75efedd611b1f/how-i-built-a-free-browser-based-watermark-remover-using-canvas-api-1if3" target="_blank" rel="noopener noreferrer">
               <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Listed on DEV.to" style={{ height: '54px', width: 'auto' }} />
             </a>
-            <a href="https://techblast.uk" target="_blank" rel="noopener noreferrer">
-              <img src="https://techblast.uk/badge.svg" alt="Listed on TechBlast" style={{ height: '54px', width: 'auto' }} />
-            </a>
             <a href="https://toolfame.com/item/cleanmark-watermark-remover" target="_blank" rel="noopener noreferrer">
               <img src="https://toolfame.com/badge-light.svg" alt="Featured on toolfame.com" style={{ height: '54px', width: 'auto' }} />
             </a>

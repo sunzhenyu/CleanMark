@@ -91,6 +91,10 @@
       "online": {
         "title": "Free Online Gemini Watermark Remover",
         "description": "Upload any Gemini or AI Studio image and remove the watermark instantly, no installation needed"
+      },
+      "resize": {
+        "title": "Custom Output Size",
+        "description": "Resize your image while removing the watermark — fill one dimension to auto-scale, or set both for exact output"
       }
     },
     "useCases": {
@@ -169,6 +173,10 @@
       "fast": {
         "title": "Lightning Fast",
         "description": "Instant watermark removal"
+      },
+      "resize": {
+        "title": "Custom Output Size",
+        "description": "Resize while removing — fill one dimension to auto-scale, or set both for exact output"
       }
     },
     "howTo": "How to Remove Gemini Watermark and Nano Banana Watermark",

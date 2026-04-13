@@ -52,6 +52,7 @@ export default async function HomePage({
     { icon: '⚡', key: 'fast' },
     { icon: '🌐', key: 'extension' },
     { icon: '🖼️', key: 'online' },
+    { icon: '📐', key: 'resize' },
   ] as const;
 
   const useCases = [

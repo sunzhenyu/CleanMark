@@ -91,6 +91,10 @@
       "online": {
         "title": "免费在线 Gemini Watermark Remover",
         "description": "上传任意 Gemini 或 AI Studio 图片即可立即去除水印，无需安装"
+      },
+      "resize": {
+        "title": "自定义输出尺寸",
+        "description": "去除水印的同时调整图片尺寸——填写一个值自动等比缩放，填写两个值按指定尺寸输出"
       }
     },
     "useCases": {
@@ -169,6 +173,10 @@
       "fast": {
         "title": "极速处理",
         "description": "即时去除水印"
+      },
+      "resize": {
+        "title": "自定义输出尺寸",
+        "description": "去除水印同时调整尺寸——填写一个值自动等比缩放，填写两个值按指定尺寸输出"
       }
     },
     "howTo": "如何去除 Gemini 水印和 Nano Banana 水印",

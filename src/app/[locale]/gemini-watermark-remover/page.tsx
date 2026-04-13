@@ -119,8 +119,8 @@ export default async function GeminiPage({
           </div>
         </div>
 
-        <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-4">
-          {(['privacy', 'free', 'fast'] as const).map((key) => (
+        <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-4">
+          {(['privacy', 'free', 'fast', 'resize'] as const).map((key) => (
             <div key={key} className="bg-white rounded-lg p-5 shadow-sm text-center">
               <h3 className="font-semibold text-gray-900 mb-1">{t(`features.${key}.title`)}</h3>
               <p className="text-gray-600 text-sm">{t(`features.${key}.description`)}</p>

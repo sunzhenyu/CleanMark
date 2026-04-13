@@ -77,28 +77,51 @@ export default function Footer() {
           ))}
         </div>
 
-        {/* Featured On */}
+        {/* Featured On — infinite scroll marquee */}
         <div className="border-t border-gray-800 pt-8 mb-6">
           <p className="text-center text-xs text-gray-500 uppercase tracking-widest mb-5">Featured On</p>
-          <div className="flex flex-wrap justify-center items-center gap-3">
-            <a href="https://www.producthunt.com/products/cleanmark-2/launches/cleanmark-2" target="_blank" rel="noopener noreferrer">
-              <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=cleanmark-2&theme=dark" alt="Featured on Product Hunt" style={{ height: '54px', width: 'auto' }} />
-            </a>
-            <a href="https://dev.to/dan_dan_26ba75efedd611b1f/how-i-built-a-free-browser-based-watermark-remover-using-canvas-api-1if3" target="_blank" rel="noopener noreferrer">
-              <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Listed on DEV.to" style={{ height: '54px', width: 'auto' }} />
-            </a>
-            <a href="https://toolfame.com/item/cleanmark-watermark-remover" target="_blank" rel="noopener noreferrer">
-              <img src="https://toolfame.com/badge-light.svg" alt="Featured on toolfame.com" style={{ height: '54px', width: 'auto' }} />
-            </a>
-            <a href="https://dofollow.tools" target="_blank" rel="noopener noreferrer">
-              <img src="https://dofollow.tools/badge/badge_transparent.svg" alt="Featured on Dofollow.Tools" width={200} height={54} />
-            </a>
-            <a href="https://showmebest.ai" target="_blank" rel="noopener noreferrer">
-              <img src="https://showmebest.ai/badge/feature-badge-white.webp" alt="Featured on ShowMeBestAI" width={220} height={60} />
-            </a>
-            <a href="https://turbo0.com/item/clean-watermark-gemini-watermark-remover" target="_blank" rel="noopener noreferrer">
-              <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" style={{ height: '54px', width: 'auto' }} />
-            </a>
+          <div className="overflow-hidden">
+            <div className="flex items-center gap-6 animate-marquee whitespace-nowrap">
+              {[
+                <a key="ph" href="https://www.producthunt.com/products/cleanmark-2/launches/cleanmark-2" target="_blank" rel="noopener noreferrer">
+                  <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=cleanmark-2&theme=dark" alt="Featured on Product Hunt" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+                <a key="dev" href="https://dev.to/dan_dan_26ba75efedd611b1f/how-i-built-a-free-browser-based-watermark-remover-using-canvas-api-1if3" target="_blank" rel="noopener noreferrer">
+                  <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Listed on DEV.to" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+                <a key="tf" href="https://toolfame.com/item/cleanmark-watermark-remover" target="_blank" rel="noopener noreferrer">
+                  <img src="https://toolfame.com/badge-light.svg" alt="Featured on toolfame.com" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+                <a key="df" href="https://dofollow.tools" target="_blank" rel="noopener noreferrer">
+                  <img src="https://dofollow.tools/badge/badge_transparent.svg" alt="Featured on Dofollow.Tools" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+                <a key="smb" href="https://showmebest.ai" target="_blank" rel="noopener noreferrer">
+                  <img src="https://showmebest.ai/badge/feature-badge-white.webp" alt="Featured on ShowMeBestAI" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+                <a key="t0" href="https://turbo0.com/item/clean-watermark-gemini-watermark-remover" target="_blank" rel="noopener noreferrer">
+                  <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+              ].concat([
+                <a key="ph2" href="https://www.producthunt.com/products/cleanmark-2/launches/cleanmark-2" target="_blank" rel="noopener noreferrer">
+                  <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=cleanmark-2&theme=dark" alt="Featured on Product Hunt" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+                <a key="dev2" href="https://dev.to/dan_dan_26ba75efedd611b1f/how-i-built-a-free-browser-based-watermark-remover-using-canvas-api-1if3" target="_blank" rel="noopener noreferrer">
+                  <img src="https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg" alt="Listed on DEV.to" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+                <a key="tf2" href="https://toolfame.com/item/cleanmark-watermark-remover" target="_blank" rel="noopener noreferrer">
+                  <img src="https://toolfame.com/badge-light.svg" alt="Featured on toolfame.com" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+                <a key="df2" href="https://dofollow.tools" target="_blank" rel="noopener noreferrer">
+                  <img src="https://dofollow.tools/badge/badge_transparent.svg" alt="Featured on Dofollow.Tools" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+                <a key="smb2" href="https://showmebest.ai" target="_blank" rel="noopener noreferrer">
+                  <img src="https://showmebest.ai/badge/feature-badge-white.webp" alt="Featured on ShowMeBestAI" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+                <a key="t02" href="https://turbo0.com/item/clean-watermark-gemini-watermark-remover" target="_blank" rel="noopener noreferrer">
+                  <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+              ])}
+            </div>
           </div>
         </div>
 

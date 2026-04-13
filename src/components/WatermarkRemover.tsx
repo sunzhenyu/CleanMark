@@ -168,7 +168,7 @@ export default function WatermarkRemover() {
                 value={resizeWidth}
                 onChange={(e) => setResizeWidth(e.target.value)}
                 placeholder="px"
-                className="w-20 px-2 py-1 border border-gray-300 rounded text-sm text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-28 px-3 py-1.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div className="flex items-center gap-2">
@@ -178,7 +178,7 @@ export default function WatermarkRemover() {
                 value={resizeHeight}
                 onChange={(e) => setResizeHeight(e.target.value)}
                 placeholder="px"
-                className="w-20 px-2 py-1 border border-gray-300 rounded text-sm text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="w-28 px-3 py-1.5 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>

@@ -105,7 +105,7 @@ export default async function ExamplesPage({ params }: { params: Promise<{ local
           </div>
           <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
             <img
-              src="/images/resize-example.png"
+              src="/images/resize-example-new.png"
               alt={isZh ? '去除水印后调整图片尺寸示例' : 'Resize image after watermark removal example'}
               className="w-full h-auto block"
             />

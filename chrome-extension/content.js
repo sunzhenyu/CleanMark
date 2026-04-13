@@ -1,6 +1,9 @@
 // Import watermark removal engine
 import { removeWatermarkFromImage } from './lib/sdk/browser.js';
 
+// Flag: fetch-path already handled this download cycle, skip background blob path
+let _fetchPathHandled = false;
+
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
   if (request.action === 'removeWatermark') {
     processImage(request.imageUrl);
@@ -9,161 +12,109 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
       sendResponse({ success: true, count });
     });
     return true;
+  } else if (request.action === 'processDownloadUrl') {
+    // Skip if fetch-path already handled this download
+    if (_fetchPathHandled) {
+      console.log('[CleanMark] Skipping processDownloadUrl — fetch path already handled');
+      _fetchPathHandled = false;
+      return;
+    }
+    // 来自 background 的下载拦截：直接处理这个 blob URL（全尺寸图片）
+    console.log('[CleanMark] Processing intercepted download URL:', request.url.substring(0, 80));
+    processAndDownloadImage(null, request.url, true);
   }
 });
 
-// 监听 Gemini 页面的下载按钮
+// 拦截 Gemini 页面的下载
+// content-main.js (MAIN world) overrides HTMLAnchorElement.prototype.click and dispatches
+// '__cleanmark_download__' — this ISOLATED world script listens for it.
 function setupDownloadListener() {
   console.log('[CleanMark] Download listener initialized');
 
-  // 使用事件委托监听所有点击事件
-  document.addEventListener('click', async (e) => {
-    const target = e.target;
-    const button = target.closest('button') || target.closest('[role="button"]') || target;
+  // 监听来自 content-main.js (MAIN world) 的 fetch 拦截事件（/gg-dl/ 和 /rd-gg-dl/ URL）
+  window.addEventListener('__cleanmark_fetch_image__', (e) => {
+    const { dataUrl, url } = e.detail;
+    console.log('[CleanMark] Intercepted Gemini fetch image:', url.substring(0, 80));
+    _fetchPathHandled = true; // signal to skip background blob path
+    processAndDownloadFromDataUrl(dataUrl);
+  });
 
-    console.log('[CleanMark] Click detected:', {
-      tagName: button?.tagName,
-      ariaLabel: button?.getAttribute('aria-label'),
-      title: button?.title,
-      className: button?.className
-    });
+  // 监听来自 content-main.js (MAIN world) 的 blob 下载事件
+  window.addEventListener('__cleanmark_download__', (e) => {
+    const { url } = e.detail;
+    console.log('[CleanMark] Intercepted anchor.click() download:', url.substring(0, 80));
+    processAndDownloadImage(null, url, true);
+  });
 
-    // 检查是否是下载按钮（支持中英文）
-    const ariaLabel = button?.getAttribute('aria-label') || '';
-    const title = button?.title || '';
-    const svg = button?.querySelector?.('svg');
-
-    const isDownloadButton = (
-      ariaLabel.includes('下载') ||
-      ariaLabel.toLowerCase().includes('download') ||
-      title.includes('下载') ||
-      title.toLowerCase().includes('download') ||
-      (svg && svg.innerHTML.includes('download'))
-    );
-
-    console.log('[CleanMark] Is download button:', isDownloadButton);
-
-    if (isDownloadButton) {
-      console.log('[CleanMark] Download button clicked, finding image...');
-
-      // 找到对应的图片
-      const img = findImageToDownload(button);
-
-      if (img && img.src) {
-        console.log('[CleanMark] Image found:', img.src.substring(0, 100));
-        console.log('[CleanMark] Image size:', img.naturalWidth, 'x', img.naturalHeight);
-
-        // 检查是否有从 DOM 中提取的完整 URL
-        if (img.__fullSizeUrl) {
-          console.log('[CleanMark] Found full size URL from DOM:', img.__fullSizeUrl.substring(0, 100));
-        }
-
-        e.preventDefault();
-        e.stopPropagation();
-
-        // 获取完整尺寸的图片 URL
-        let fullSizeUrl = img.__fullSizeUrl || img.src;
-        let isBlobUrl = fullSizeUrl.startsWith('blob:');
-
-        // 如果是 blob URL，尝试从图片元素的 data 属性中获取真实 URL
-        if (isBlobUrl) {
-          // 检查常见的 data 属性
-          const realUrl = img.dataset.src ||
-                         img.dataset.originalSrc ||
-                         img.dataset.fullSrc ||
-                         img.getAttribute('data-src') ||
-                         img.getAttribute('data-original-src') ||
-                         img.getAttribute('data-full-src');
-
-          if (realUrl && realUrl.startsWith('http')) {
-            console.log('[CleanMark] Found real URL in data attributes:', realUrl.substring(0, 100));
-            fullSizeUrl = realUrl;
-            isBlobUrl = false;
-          } else {
-            console.log('[CleanMark] No real URL found in data attributes, will use blob URL');
-          }
-        }
-
-        // 如果是 blob URL，尝试从 background 获取最近的完整 URL
-        if (isBlobUrl) {
-          console.log('[CleanMark] Blob URL detected, trying to find real URL from background...');
-          try {
-            const response = await chrome.runtime.sendMessage({
-              action: 'getRecentImageUrls'
-            });
-
-            if (response && response.success && response.urls.length > 0) {
-              console.log(`[CleanMark] Found ${response.urls.length} recent URLs from background`);
-
-              // 尝试最近的几个 URL，找到尺寸最大的（完整图片）
-              const candidateUrls = response.urls.slice(-5); // 最近的 5 个
-              let bestUrl = null;
-              let bestSize = 0;
-
-              for (const url of candidateUrls) {
-                try {
-                  // 快速检查：创建临时 Image 获取尺寸
-                  const testImg = new Image();
-                  const size = await new Promise((resolve, reject) => {
-                    const timeout = setTimeout(() => reject(new Error('timeout')), 2000);
-                    testImg.onload = () => {
-                      clearTimeout(timeout);
-                      resolve(testImg.naturalWidth * testImg.naturalHeight);
-                    };
-                    testImg.onerror = () => {
-                      clearTimeout(timeout);
-                      reject(new Error('load failed'));
-                    };
-                    testImg.src = url;
-                  });
-
-                  console.log(`[CleanMark] Candidate URL size: ${size} pixels`);
-                  if (size > bestSize) {
-                    bestSize = size;
-                    bestUrl = url;
-                  }
-                } catch (error) {
-                  console.log(`[CleanMark] Failed to load candidate URL: ${error.message}`);
-                }
-              }
-
-              if (bestUrl) {
-                console.log('[CleanMark] Selected best URL with size:', bestSize, 'pixels');
-                fullSizeUrl = bestUrl;
-                isBlobUrl = false;
-              } else {
-                console.log('[CleanMark] No valid candidate URLs found, will use blob URL');
-              }
-            } else {
-              console.log('[CleanMark] No recent URLs found in background');
-            }
-          } catch (error) {
-            console.error('[CleanMark] Failed to get recent URLs:', error);
-          }
-        }
-
-        if (!isBlobUrl) {
-          // 对非 blob URL 进行参数处理
-          // Gemini 图片 URL 处理：添加 =s0 参数获取原始尺寸
-          // 移除现有的尺寸参数
-          fullSizeUrl = fullSizeUrl.replace(/=s\d+(-[^?&]*)?(\?.*)?$/, '');
-          fullSizeUrl = fullSizeUrl.replace(/=w\d+-h\d+(-[^?&]*)?(\?.*)?$/, '');
-          // 添加 =s0 参数（0表示原始尺寸）
-          fullSizeUrl = fullSizeUrl + '=s0';
-        }
-
-        console.log('[CleanMark] Original URL:', img.src);
-        console.log('[CleanMark] Full size URL:', fullSizeUrl);
-        console.log('[CleanMark] Original size:', img.naturalWidth, 'x', img.naturalHeight);
-        console.log('[CleanMark] Is blob URL:', isBlobUrl);
-
-        // 处理并下载
-        await processAndDownloadImage(img, fullSizeUrl, isBlobUrl);
-      } else {
-        console.log('[CleanMark] No image found');
-      }
+  // 捕获阶段拦截用户直接点击 <a download> 的情况（跳过已处理的链接）
+  document.addEventListener('click', (e) => {
+    const anchor = e.target.closest('a[download]');
+    if (anchor && anchor.href && anchor.href.startsWith('blob:') && !anchor.__cleanmark_processed) {
+      e.preventDefault();
+      e.stopPropagation();
+      console.log('[CleanMark] Intercepted click on <a download>:', anchor.href.substring(0, 80));
+      processAndDownloadImage(null, anchor.href, true);
     }
   }, true);
+}
+
+// 直接从 dataUrl 处理并下载（用于 fetch 拦截路径）
+async function processAndDownloadFromDataUrl(dataUrl) {
+  try {
+    showProcessingToast();
+
+    // Convert dataUrl back to blob, then use createImageBitmap (avoids cross-origin img restrictions)
+    const res = await fetch(dataUrl);
+    const blob = await res.blob();
+    const bitmap = await createImageBitmap(blob);
+
+    console.log('[CleanMark] Fetch-intercepted image loaded via bitmap:', bitmap.width, 'x', bitmap.height);
+
+    // Draw onto a canvas so removeWatermarkFromImage can work with it
+    const canvas = document.createElement('canvas');
+    canvas.width = bitmap.width;
+    canvas.height = bitmap.height;
+    canvas.getContext('2d').drawImage(bitmap, 0, 0);
+    bitmap.close();
+
+    const newImg = new Image();
+    newImg.src = canvas.toDataURL();
+    await new Promise((resolve, reject) => {
+      newImg.onload = resolve;
+      newImg.onerror = reject;
+    });
+
+    console.log('[CleanMark] Starting watermark removal (fetch path)...');
+    const result = await removeWatermarkFromImage(newImg, { multiPass: true });
+
+    let outBlob;
+    if (result.canvas instanceof HTMLCanvasElement) {
+      outBlob = await new Promise(resolve => result.canvas.toBlob(resolve, 'image/png', 1.0));
+    } else {
+      outBlob = await result.canvas.convertToBlob({ type: 'image/png', quality: 1.0 });
+    }
+
+    // Convert to data URL and send to background for download (avoids user-gesture requirement)
+    const reader = new FileReader();
+    const dataUrlOut = await new Promise((resolve, reject) => {
+      reader.onloadend = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(outBlob);
+    });
+
+    await chrome.runtime.sendMessage({
+      action: 'downloadDataUrl',
+      dataUrl: dataUrlOut,
+      filename: `cleanmark-${Date.now()}.png`
+    });
+
+    hideProcessingToast();
+    console.log('[CleanMark] Download complete (fetch path)!');
+  } catch (error) {
+    console.error('[CleanMark] Failed to process fetch-intercepted image:', error);
+    hideProcessingToast();
+    alert('Failed to remove watermark: ' + error.message);
+  }
 }
 
 // 找到要下载的图片
@@ -365,17 +316,19 @@ async function processAndDownloadImage(img, fullSizeUrl, isBlobUrl = false) {
 
     console.log('[CleanMark] Blob created, size:', blob.size, 'bytes');
 
-    // Download the processed image using blob URL
-    const blobUrl = URL.createObjectURL(blob);
-    const link = document.createElement('a');
-    link.href = blobUrl;
-    link.download = `cleanmark-${Date.now()}.png`;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // Send to background for download (avoids user-gesture requirement)
+    const reader2 = new FileReader();
+    const dataUrlOut2 = await new Promise((resolve, reject) => {
+      reader2.onloadend = () => resolve(reader2.result);
+      reader2.onerror = reject;
+      reader2.readAsDataURL(blob);
+    });
 
-    // Clean up blob URL after a delay
-    setTimeout(() => URL.revokeObjectURL(blobUrl), 1000);
+    await chrome.runtime.sendMessage({
+      action: 'downloadDataUrl',
+      dataUrl: dataUrlOut2,
+      filename: `cleanmark-${Date.now()}.png`
+    });
 
     hideProcessingToast();
     console.log('[CleanMark] Download complete!');
@@ -440,6 +393,8 @@ async function processImage(imageUrl) {
     const link = document.createElement('a');
     link.href = blobUrl;
     link.download = 'cleanmark-removed.png';
+    link.__cleanmark_processed = true; // prevent re-interception
+    link.dataset.cleanmarkProcessed = 'true';
     link.click();
 
     // Clean up blob URL after a delay

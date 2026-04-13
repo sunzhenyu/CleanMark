@@ -7,10 +7,12 @@
   "permissions": [
     "activeTab",
     "contextMenus",
-    "webRequest"
+    "webRequest",
+    "downloads"
   ],
   "host_permissions": [
     "*://gemini.google.com/*",
+    "*://aistudio.google.com/*",
     "*://lh3.googleusercontent.com/*"
   ],
   "action": {
@@ -30,6 +32,12 @@
     "service_worker": "background.js"
   },
   "content_scripts": [
+    {
+      "matches": ["*://gemini.google.com/*", "*://aistudio.google.com/*"],
+      "js": ["content-main.js"],
+      "run_at": "document_start",
+      "world": "MAIN"
+    },
     {
       "matches": ["<all_urls>"],
       "js": ["dist/content.js"]

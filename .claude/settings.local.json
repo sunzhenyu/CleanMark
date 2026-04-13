@@ -36,7 +36,9 @@
       "Bash(ls /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/public/sitemap*)",
       "Bash(ls /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/public/robots*)",
       "Bash(ls /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/\\\\[locale\\\\]/sora*)",
-      "WebFetch(domain:tools.cleanmark.org)"
+      "WebFetch(domain:tools.cleanmark.org)",
+      "Bash(bash:*)",
+      "Bash(cat /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/[locale]/gemini-watermark-remover/page.tsx)"
     ]
   }
 }

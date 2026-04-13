@@ -2864,6 +2864,7 @@
   }
 
   // content.js
+  var _fetchPathHandled = false;
   chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
     if (request.action === "removeWatermark") {
       processImage(request.imageUrl);
@@ -2872,195 +2873,83 @@
         sendResponse({ success: true, count });
       });
       return true;
+    } else if (request.action === "processDownloadUrl") {
+      if (_fetchPathHandled) {
+        console.log("[CleanMark] Skipping processDownloadUrl \u2014 fetch path already handled");
+        _fetchPathHandled = false;
+        return;
+      }
+      console.log("[CleanMark] Processing intercepted download URL:", request.url.substring(0, 80));
+      processAndDownloadImage(null, request.url, true);
     }
   });
   function setupDownloadListener() {
     console.log("[CleanMark] Download listener initialized");
-    document.addEventListener("click", async (e) => {
-      const target = e.target;
-      const button = target.closest("button") || target.closest('[role="button"]') || target;
-      console.log("[CleanMark] Click detected:", {
-        tagName: button?.tagName,
-        ariaLabel: button?.getAttribute("aria-label"),
-        title: button?.title,
-        className: button?.className
-      });
-      const ariaLabel = button?.getAttribute("aria-label") || "";
-      const title = button?.title || "";
-      const svg = button?.querySelector?.("svg");
-      const isDownloadButton = ariaLabel.includes("\u4E0B\u8F7D") || ariaLabel.toLowerCase().includes("download") || title.includes("\u4E0B\u8F7D") || title.toLowerCase().includes("download") || svg && svg.innerHTML.includes("download");
-      console.log("[CleanMark] Is download button:", isDownloadButton);
-      if (isDownloadButton) {
-        console.log("[CleanMark] Download button clicked, finding image...");
-        const img = findImageToDownload(button);
-        if (img && img.src) {
-          console.log("[CleanMark] Image found:", img.src.substring(0, 100));
-          console.log("[CleanMark] Image size:", img.naturalWidth, "x", img.naturalHeight);
-          if (img.__fullSizeUrl) {
-            console.log("[CleanMark] Found full size URL from DOM:", img.__fullSizeUrl.substring(0, 100));
-          }
-          e.preventDefault();
-          e.stopPropagation();
-          let fullSizeUrl = img.__fullSizeUrl || img.src;
-          let isBlobUrl = fullSizeUrl.startsWith("blob:");
-          if (isBlobUrl) {
-            const realUrl = img.dataset.src || img.dataset.originalSrc || img.dataset.fullSrc || img.getAttribute("data-src") || img.getAttribute("data-original-src") || img.getAttribute("data-full-src");
-            if (realUrl && realUrl.startsWith("http")) {
-              console.log("[CleanMark] Found real URL in data attributes:", realUrl.substring(0, 100));
-              fullSizeUrl = realUrl;
-              isBlobUrl = false;
-            } else {
-              console.log("[CleanMark] No real URL found in data attributes, will use blob URL");
-            }
-          }
-          if (isBlobUrl) {
-            console.log("[CleanMark] Blob URL detected, trying to find real URL from background...");
-            try {
-              const response = await chrome.runtime.sendMessage({
-                action: "getRecentImageUrls"
-              });
-              if (response && response.success && response.urls.length > 0) {
-                console.log(`[CleanMark] Found ${response.urls.length} recent URLs from background`);
-                const candidateUrls = response.urls.slice(-5);
-                let bestUrl = null;
-                let bestSize = 0;
-                for (const url of candidateUrls) {
-                  try {
-                    const testImg = new Image();
-                    const size = await new Promise((resolve, reject) => {
-                      const timeout = setTimeout(() => reject(new Error("timeout")), 2e3);
-                      testImg.onload = () => {
-                        clearTimeout(timeout);
-                        resolve(testImg.naturalWidth * testImg.naturalHeight);
-                      };
-                      testImg.onerror = () => {
-                        clearTimeout(timeout);
-                        reject(new Error("load failed"));
-                      };
-                      testImg.src = url;
-                    });
-                    console.log(`[CleanMark] Candidate URL size: ${size} pixels`);
-                    if (size > bestSize) {
-                      bestSize = size;
-                      bestUrl = url;
-                    }
-                  } catch (error) {
-                    console.log(`[CleanMark] Failed to load candidate URL: ${error.message}`);
-                  }
-                }
-                if (bestUrl) {
-                  console.log("[CleanMark] Selected best URL with size:", bestSize, "pixels");
-                  fullSizeUrl = bestUrl;
-                  isBlobUrl = false;
-                } else {
-                  console.log("[CleanMark] No valid candidate URLs found, will use blob URL");
-                }
-              } else {
-                console.log("[CleanMark] No recent URLs found in background");
-              }
-            } catch (error) {
-              console.error("[CleanMark] Failed to get recent URLs:", error);
-            }
-          }
-          if (!isBlobUrl) {
-            fullSizeUrl = fullSizeUrl.replace(/=s\d+(-[^?&]*)?(\?.*)?$/, "");
-            fullSizeUrl = fullSizeUrl.replace(/=w\d+-h\d+(-[^?&]*)?(\?.*)?$/, "");
-            fullSizeUrl = fullSizeUrl + "=s0";
-          }
-          console.log("[CleanMark] Original URL:", img.src);
-          console.log("[CleanMark] Full size URL:", fullSizeUrl);
-          console.log("[CleanMark] Original size:", img.naturalWidth, "x", img.naturalHeight);
-          console.log("[CleanMark] Is blob URL:", isBlobUrl);
-          await processAndDownloadImage(img, fullSizeUrl, isBlobUrl);
-        } else {
-          console.log("[CleanMark] No image found");
-        }
+    window.addEventListener("__cleanmark_fetch_image__", (e) => {
+      const { dataUrl, url } = e.detail;
+      console.log("[CleanMark] Intercepted Gemini fetch image:", url.substring(0, 80));
+      _fetchPathHandled = true;
+      processAndDownloadFromDataUrl(dataUrl);
+    });
+    window.addEventListener("__cleanmark_download__", (e) => {
+      const { url } = e.detail;
+      console.log("[CleanMark] Intercepted anchor.click() download:", url.substring(0, 80));
+      processAndDownloadImage(null, url, true);
+    });
+    document.addEventListener("click", (e) => {
+      const anchor = e.target.closest("a[download]");
+      if (anchor && anchor.href && anchor.href.startsWith("blob:") && !anchor.__cleanmark_processed) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log("[CleanMark] Intercepted click on <a download>:", anchor.href.substring(0, 80));
+        processAndDownloadImage(null, anchor.href, true);
       }
     }, true);
   }
-  function findImageToDownload(button) {
-    console.log("[CleanMark] Starting image search...");
-    let parent = button.parentElement;
-    for (let i = 0; i < 10; i++) {
-      if (!parent)
-        break;
-      const allImgs = parent.querySelectorAll("img[src]");
-      console.log(`[CleanMark] Level ${i}: Found ${allImgs.length} images in container`);
-      if (allImgs.length > 0) {
-        const validImgs = Array.from(allImgs).filter(
-          (img) => img.naturalWidth > 200 && img.naturalHeight > 200
-        );
-        console.log(`[CleanMark] Level ${i}: ${validImgs.length} valid images (>200x200)`);
-        if (validImgs.length > 0) {
-          const sortedImgs = validImgs.sort(
-            (a, b) => b.naturalWidth * b.naturalHeight - a.naturalWidth * a.naturalHeight
-          );
-          const selectedImg = sortedImgs[0];
-          console.log("[CleanMark] Selected image attributes:");
-          Array.from(selectedImg.attributes).forEach((attr) => {
-            console.log(`  ${attr.name}: ${attr.value}`);
-          });
-          console.log("[CleanMark] Selected image dataset:");
-          for (const key in selectedImg.dataset) {
-            console.log(`  data-${key}: ${selectedImg.dataset[key]}`);
-          }
-          console.log("[CleanMark] Parent element:", selectedImg.parentElement?.tagName);
-          if (selectedImg.parentElement) {
-            console.log("[CleanMark] Parent attributes:");
-            Array.from(selectedImg.parentElement.attributes).forEach((attr) => {
-              console.log(`  ${attr.name}: ${attr.value.substring(0, 300)}`);
-            });
-          }
-          let fullSizeUrl = null;
-          const parentStyle = selectedImg.parentElement?.style?.backgroundImage;
-          if (parentStyle && parentStyle.includes("url(")) {
-            const match = parentStyle.match(/url\(['"]?([^'"]+)['"]?\)/);
-            if (match && match[1]) {
-              console.log("[CleanMark] Found URL in parent background-image:", match[1].substring(0, 100));
-              fullSizeUrl = match[1];
-            }
-          }
-          const picture = selectedImg.closest("picture");
-          if (picture) {
-            const sources = picture.querySelectorAll("source[srcset]");
-            if (sources.length > 0) {
-              const lastSource = sources[sources.length - 1];
-              const srcset = lastSource.getAttribute("srcset");
-              if (srcset) {
-                const urls = srcset.split(",").map((s) => s.trim().split(" ")[0]);
-                if (urls.length > 0) {
-                  fullSizeUrl = urls[urls.length - 1];
-                  console.log("[CleanMark] Found URL in picture source:", fullSizeUrl.substring(0, 100));
-                }
-              }
-            }
-          }
-          if (fullSizeUrl) {
-            selectedImg.__fullSizeUrl = fullSizeUrl;
-          }
-          return selectedImg;
-        }
-      }
-      parent = parent.parentElement;
-    }
-    console.log("[CleanMark] Trying fallback: searching all images in document");
-    const allDocImgs = Array.from(document.querySelectorAll("img[src]"));
-    const validDocImgs = allDocImgs.filter(
-      (img) => img.naturalWidth > 200 && img.naturalHeight > 200
-    );
-    if (validDocImgs.length > 0) {
-      const sortedImgs = validDocImgs.sort(
-        (a, b) => b.naturalWidth * b.naturalHeight - a.naturalWidth * a.naturalHeight
-      );
-      const selectedImg = sortedImgs[0];
-      console.log("[CleanMark] Fallback: Selected largest image in document:", {
-        src: selectedImg.src.substring(0, 100),
-        size: `${selectedImg.naturalWidth}x${selectedImg.naturalHeight}`
+  async function processAndDownloadFromDataUrl(dataUrl) {
+    try {
+      showProcessingToast();
+      const res = await fetch(dataUrl);
+      const blob = await res.blob();
+      const bitmap = await createImageBitmap(blob);
+      console.log("[CleanMark] Fetch-intercepted image loaded via bitmap:", bitmap.width, "x", bitmap.height);
+      const canvas = document.createElement("canvas");
+      canvas.width = bitmap.width;
+      canvas.height = bitmap.height;
+      canvas.getContext("2d").drawImage(bitmap, 0, 0);
+      bitmap.close();
+      const newImg = new Image();
+      newImg.src = canvas.toDataURL();
+      await new Promise((resolve, reject) => {
+        newImg.onload = resolve;
+        newImg.onerror = reject;
       });
-      return selectedImg;
+      console.log("[CleanMark] Starting watermark removal (fetch path)...");
+      const result = await removeWatermarkFromImage(newImg, { multiPass: true });
+      let outBlob;
+      if (result.canvas instanceof HTMLCanvasElement) {
+        outBlob = await new Promise((resolve) => result.canvas.toBlob(resolve, "image/png", 1));
+      } else {
+        outBlob = await result.canvas.convertToBlob({ type: "image/png", quality: 1 });
+      }
+      const reader = new FileReader();
+      const dataUrlOut = await new Promise((resolve, reject) => {
+        reader.onloadend = () => resolve(reader.result);
+        reader.onerror = reject;
+        reader.readAsDataURL(outBlob);
+      });
+      await chrome.runtime.sendMessage({
+        action: "downloadDataUrl",
+        dataUrl: dataUrlOut,
+        filename: `cleanmark-${Date.now()}.png`
+      });
+      hideProcessingToast();
+      console.log("[CleanMark] Download complete (fetch path)!");
+    } catch (error) {
+      console.error("[CleanMark] Failed to process fetch-intercepted image:", error);
+      hideProcessingToast();
+      alert("Failed to remove watermark: " + error.message);
     }
-    console.log("[CleanMark] No valid image found");
-    return null;
   }
   async function processAndDownloadImage(img, fullSizeUrl, isBlobUrl = false) {
     try {
@@ -3130,14 +3019,17 @@
         blob = await result.canvas.convertToBlob({ type: "image/png", quality: 1 });
       }
       console.log("[CleanMark] Blob created, size:", blob.size, "bytes");
-      const blobUrl = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = blobUrl;
-      link.download = `cleanmark-${Date.now()}.png`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      setTimeout(() => URL.revokeObjectURL(blobUrl), 1e3);
+      const reader2 = new FileReader();
+      const dataUrlOut2 = await new Promise((resolve, reject) => {
+        reader2.onloadend = () => resolve(reader2.result);
+        reader2.onerror = reject;
+        reader2.readAsDataURL(blob);
+      });
+      await chrome.runtime.sendMessage({
+        action: "downloadDataUrl",
+        dataUrl: dataUrlOut2,
+        filename: `cleanmark-${Date.now()}.png`
+      });
       hideProcessingToast();
       console.log("[CleanMark] Download complete!");
     } catch (error) {
@@ -3190,6 +3082,8 @@
       const link = document.createElement("a");
       link.href = blobUrl;
       link.download = "cleanmark-removed.png";
+      link.__cleanmark_processed = true;
+      link.dataset.cleanmarkProcessed = "true";
       link.click();
       setTimeout(() => URL.revokeObjectURL(blobUrl), 1e3);
     } catch (error) {

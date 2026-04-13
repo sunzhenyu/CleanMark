@@ -96,6 +96,9 @@ export default function Footer() {
             <a href="https://showmebest.ai" target="_blank" rel="noopener noreferrer">
               <img src="https://showmebest.ai/badge/feature-badge-white.webp" alt="Featured on ShowMeBestAI" width={220} height={60} />
             </a>
+            <a href="https://turbo0.com/item/clean-watermark-gemini-watermark-remover" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" style={{ height: '54px', width: 'auto' }} />
+            </a>
           </div>
         </div>
 

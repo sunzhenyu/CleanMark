@@ -157,41 +157,41 @@ export default function WatermarkRemover() {
         {/* Resize controls */}
         <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
           <h3 className="text-sm font-semibold text-gray-900 mb-3">
-            {t('gemini.resize.title')}
+            {t('resize.title')}
           </h3>
           {originalDimensions && (
             <p className="text-xs text-gray-500 mb-3">
-              {t('gemini.resize.original')}: {originalDimensions.width} × {originalDimensions.height}px
+              {t('resize.original')}: {originalDimensions.width} × {originalDimensions.height}px
             </p>
           )}
           <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-end">
             <div className="flex-1">
               <label className="block text-xs text-gray-600 mb-1">
-                {t('gemini.resize.width')} (px)
+                {t('resize.width')} (px)
               </label>
               <input
                 type="number"
                 value={resizeWidth}
                 onChange={(e) => setResizeWidth(e.target.value)}
-                placeholder={t('gemini.resize.placeholder')}
+                placeholder={t('resize.placeholder')}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
             <div className="flex-1">
               <label className="block text-xs text-gray-600 mb-1">
-                {t('gemini.resize.height')} (px)
+                {t('resize.height')} (px)
               </label>
               <input
                 type="number"
                 value={resizeHeight}
                 onChange={(e) => setResizeHeight(e.target.value)}
-                placeholder={t('gemini.resize.placeholder')}
+                placeholder={t('resize.placeholder')}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>
           <p className="text-xs text-gray-500 mt-2">
-            {t('gemini.resize.placeholder')}
+            {t('resize.placeholder')}
           </p>
         </div>
 

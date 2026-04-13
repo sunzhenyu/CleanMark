@@ -112,6 +112,13 @@
         "description": "使用 Gemini Watermark Remover 清理 AI 生成图片，用于演示文稿和教学材料"
       }
     },
+    "resize": {
+      "title": "调整尺寸（可选）",
+      "original": "原始尺寸",
+      "width": "宽度",
+      "height": "高度",
+      "placeholder": "留空保持原样"
+    },
     "faq": {
       "title": "Gemini Watermark Remover 常见问题",
       "q1": "什么是 Gemini 水印？",

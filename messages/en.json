@@ -112,6 +112,13 @@
         "description": "Use Gemini Watermark Remover to clean AI-generated images for presentations and teaching materials"
       }
     },
+    "resize": {
+      "title": "Resize (Optional)",
+      "original": "Original Size",
+      "width": "Width",
+      "height": "Height",
+      "placeholder": "Leave empty to keep original"
+    },
     "faq": {
       "title": "Gemini Watermark Remover FAQ",
       "q1": "What is the Gemini watermark?",

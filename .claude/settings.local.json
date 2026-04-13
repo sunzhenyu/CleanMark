@@ -40,7 +40,9 @@
       "Bash(bash:*)",
       "Bash(cat /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/src/app/[locale]/gemini-watermark-remover/page.tsx)",
       "Bash(curl -s http://localhost:3000/gemini-watermark-remover)",
-      "Bash(sips --getProperty pixelWidth /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/public/images/Before.png)"
+      "Bash(sips --getProperty pixelWidth /Users/sunhaoyu/haoyu/CodeX/cleanmark/website/public/images/Before.png)",
+      "Bash(cat:*)",
+      "Bash(sips --resampleWidth 1024 \"/Users/sunhaoyu/haoyu/CodeX/cleanmark/website/public/images/resize-example.png\")"
     ]
   }
 }

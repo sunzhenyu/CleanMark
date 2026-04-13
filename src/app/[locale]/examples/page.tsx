@@ -87,6 +87,32 @@ export default async function ExamplesPage({ params }: { params: Promise<{ local
         </div>
       </section>
 
+      {/* Resize feature showcase */}
+      <section className="py-16 px-4">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-8">
+            <span className="text-xs font-semibold text-blue-600 border border-blue-200 rounded-full px-3 py-1 uppercase tracking-wide">
+              {isZh ? '尺寸调整' : 'Resize Feature'}
+            </span>
+            <h2 className="text-2xl font-bold text-gray-900 mt-4 mb-3">
+              {isZh ? '去除水印的同时调整输出尺寸' : 'Remove Watermark & Resize in One Step'}
+            </h2>
+            <p className="text-gray-500 text-sm max-w-xl mx-auto">
+              {isZh
+                ? '无需额外工具 — 去除水印后直接设置目标尺寸，填写宽度或高度自动等比缩放，也可同时指定两个值。'
+                : 'No extra tools needed — set your target size right after removing the watermark. Fill one dimension to auto-scale, or specify both for exact output.'}
+            </p>
+          </div>
+          <div className="rounded-2xl overflow-hidden shadow-lg border border-gray-100">
+            <img
+              src="/images/resize-example.png"
+              alt={isZh ? '去除水印后调整图片尺寸示例' : 'Resize image after watermark removal example'}
+              className="w-full h-auto block"
+            />
+          </div>
+        </div>
+      </section>
+
       {/* Why results are this good */}
       <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-4xl mx-auto">

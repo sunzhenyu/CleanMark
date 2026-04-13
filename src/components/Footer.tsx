@@ -99,6 +99,9 @@ export default function Footer() {
             <a href="https://toolfame.com/item/cleanmark-watermark-remover" target="_blank" rel="noopener noreferrer">
               <img src="https://toolfame.com/badge-light.svg" alt="Featured on toolfame.com" style={{ height: '54px', width: 'auto' }} />
             </a>
+            <a href="https://dofollow.tools" target="_blank" rel="noopener noreferrer">
+              <img src="https://dofollow.tools/badge/badge_transparent.svg" alt="Featured on Dofollow.Tools" width={200} height={54} />
+            </a>
           </div>
         </div>
 

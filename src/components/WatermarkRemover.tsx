@@ -10,6 +10,9 @@ export default function WatermarkRemover() {
   const [processedImage, setProcessedImage] = useState<string | null>(null);
   const [isProcessing, setIsProcessing] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
+  const [resizeWidth, setResizeWidth] = useState<string>('');
+  const [resizeHeight, setResizeHeight] = useState<string>('');
+  const [originalDimensions, setOriginalDimensions] = useState<{ width: number; height: number } | null>(null);
 
   const processImage = async (file: File) => {
     setIsProcessing(true);
@@ -23,6 +26,7 @@ export default function WatermarkRemover() {
 
         img.onload = async () => {
           try {
+            setOriginalDimensions({ width: img.width, height: img.height });
             const result = await removeWatermarkFromImage(img);
 
             // Handle both Canvas and OffscreenCanvas
@@ -81,18 +85,62 @@ export default function WatermarkRemover() {
     setIsDragging(false);
   }, []);
 
-  const handleDownload = () => {
-    if (processedImage) {
+  const handleDownload = async () => {
+    if (!processedImage) return;
+
+    const width = parseInt(resizeWidth);
+    const height = parseInt(resizeHeight);
+
+    // No resize - direct download
+    if (!width && !height) {
       const link = document.createElement('a');
       link.href = processedImage;
       link.download = 'cleanmark-removed.png';
       link.click();
+      return;
     }
+
+    // Resize before download
+    const img = new Image();
+    img.src = processedImage;
+    await new Promise((resolve) => { img.onload = resolve; });
+
+    const aspectRatio = img.width / img.height;
+    let targetWidth = width || 0;
+    let targetHeight = height || 0;
+
+    // Calculate missing dimension
+    if (targetWidth && !targetHeight) {
+      targetHeight = Math.round(targetWidth / aspectRatio);
+    } else if (targetHeight && !targetWidth) {
+      targetWidth = Math.round(targetHeight * aspectRatio);
+    }
+
+    const canvas = document.createElement('canvas');
+    canvas.width = targetWidth;
+    canvas.height = targetHeight;
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    ctx.drawImage(img, 0, 0, targetWidth, targetHeight);
+
+    canvas.toBlob((blob) => {
+      if (!blob) return;
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'cleanmark-removed.png';
+      link.click();
+      URL.revokeObjectURL(url);
+    }, 'image/png');
   };
 
   const handleReset = () => {
     setImage(null);
     setProcessedImage(null);
+    setResizeWidth('');
+    setResizeHeight('');
+    setOriginalDimensions(null);
   };
 
   if (processedImage) {
@@ -105,6 +153,48 @@ export default function WatermarkRemover() {
             className="max-w-full h-auto mx-auto rounded"
           />
         </div>
+
+        {/* Resize controls */}
+        <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
+          <h3 className="text-sm font-semibold text-gray-900 mb-3">
+            {t('gemini.resize.title')}
+          </h3>
+          {originalDimensions && (
+            <p className="text-xs text-gray-500 mb-3">
+              {t('gemini.resize.original')}: {originalDimensions.width} × {originalDimensions.height}px
+            </p>
+          )}
+          <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-end">
+            <div className="flex-1">
+              <label className="block text-xs text-gray-600 mb-1">
+                {t('gemini.resize.width')} (px)
+              </label>
+              <input
+                type="number"
+                value={resizeWidth}
+                onChange={(e) => setResizeWidth(e.target.value)}
+                placeholder={t('gemini.resize.placeholder')}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+            <div className="flex-1">
+              <label className="block text-xs text-gray-600 mb-1">
+                {t('gemini.resize.height')} (px)
+              </label>
+              <input
+                type="number"
+                value={resizeHeight}
+                onChange={(e) => setResizeHeight(e.target.value)}
+                placeholder={t('gemini.resize.placeholder')}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+              />
+            </div>
+          </div>
+          <p className="text-xs text-gray-500 mt-2">
+            {t('gemini.resize.placeholder')}
+          </p>
+        </div>
+
         <div className="flex gap-4 justify-center">
           <button
             onClick={handleDownload}

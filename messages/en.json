@@ -200,6 +200,23 @@
     "description": "Remove watermarks with one click - right from your browser",
     "install": "Install Extension"
   },
+  "gemini": {
+    "title": "Gemini Watermark Remover",
+    "description": "Free online tool to remove watermarks from Google Gemini and AI Studio images",
+    "upload": "Upload Image",
+    "processing": "Processing...",
+    "download": "Download",
+    "dragDrop": "Drag and drop an image here or click to upload",
+    "chromeExtension": "Install Chrome Extension",
+    "chromeExtensionDesc": "Automatically remove watermarks when downloading from Gemini and AI Studio",
+    "resize": {
+      "title": "Resize (Optional)",
+      "original": "Original Size",
+      "width": "Width",
+      "height": "Height",
+      "placeholder": "Leave empty to keep original"
+    }
+  },
   "privacy": {
     "title": "Privacy Policy",
     "lastUpdated": "Last updated: April 2, 2026",

@@ -155,42 +155,34 @@ export default function WatermarkRemover() {
         </div>
 
         {/* Resize controls */}
-        <div className="bg-gray-50 rounded-lg p-6 border border-gray-200">
-          <h3 className="text-sm font-semibold text-gray-900 mb-3">
-            {t('resize.title')}
-          </h3>
-          {originalDimensions && (
-            <p className="text-xs text-gray-500 mb-3">
-              {t('resize.original')}: {originalDimensions.width} × {originalDimensions.height}px
-            </p>
-          )}
-          <div className="flex flex-col sm:flex-row gap-3 items-start sm:items-end">
-            <div className="flex-1">
-              <label className="block text-xs text-gray-600 mb-1">
-                {t('resize.width')} (px)
-              </label>
+        <div className="bg-gray-50 rounded-lg px-4 py-3 border border-gray-200">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+            <span className="text-xs font-semibold text-gray-700 shrink-0">{t('resize.title')}</span>
+            {originalDimensions && (
+              <span className="text-xs text-gray-400 shrink-0">{originalDimensions.width} × {originalDimensions.height}px</span>
+            )}
+            <div className="flex items-center gap-2">
+              <label className="text-xs text-gray-500 shrink-0">{t('resize.width')}</label>
               <input
                 type="number"
                 value={resizeWidth}
                 onChange={(e) => setResizeWidth(e.target.value)}
-                placeholder={t('resize.placeholder')}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="px"
+                className="w-20 px-2 py-1 border border-gray-300 rounded text-sm text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
-            <div className="flex-1">
-              <label className="block text-xs text-gray-600 mb-1">
-                {t('resize.height')} (px)
-              </label>
+            <div className="flex items-center gap-2">
+              <label className="text-xs text-gray-500 shrink-0">{t('resize.height')}</label>
               <input
                 type="number"
                 value={resizeHeight}
                 onChange={(e) => setResizeHeight(e.target.value)}
-                placeholder={t('resize.placeholder')}
-                className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+                placeholder="px"
+                className="w-20 px-2 py-1 border border-gray-300 rounded text-sm text-center focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
           </div>
-          <p className="text-xs text-gray-500 mt-2">
+          <p className="text-xs text-gray-400 mt-1.5">
             {t('resize.placeholder')}
           </p>
         </div>

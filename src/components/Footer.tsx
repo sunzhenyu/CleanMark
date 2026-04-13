@@ -82,7 +82,7 @@ export default function Footer() {
           <p className="text-center text-xs text-gray-500 uppercase tracking-widest mb-5">Featured On</p>
           <div className="overflow-hidden">
             <div className="animate-marquee" style={{ display: 'flex', alignItems: 'center', gap: '24px', whiteSpace: 'nowrap' }}>
-              {([
+              {(([
                 { key: 'ph', href: 'https://www.producthunt.com/products/cleanmark-2/launches/cleanmark-2', src: 'https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=cleanmark-2&theme=dark', alt: 'Featured on Product Hunt' },
                 { key: 'dev', href: 'https://dev.to/dan_dan_26ba75efedd611b1f/how-i-built-a-free-browser-based-watermark-remover-using-canvas-api-1if3', src: 'https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg', alt: 'Listed on DEV.to' },
                 { key: 'tf', href: 'https://toolfame.com/item/cleanmark-watermark-remover', src: 'https://toolfame.com/badge-light.svg', alt: 'Featured on ToolFame' },
@@ -90,7 +90,7 @@ export default function Footer() {
                 { key: 'smb', href: 'https://showmebest.ai', src: 'https://showmebest.ai/badge/feature-badge-white.webp', alt: 'Featured on ShowMeBestAI' },
                 { key: 't0', href: 'https://turbo0.com/item/clean-watermark-gemini-watermark-remover', src: 'https://img.turbo0.com/badge-listed-light.svg', alt: 'Listed on Turbo0' },
                 { key: 'sf', href: 'https://startupfa.me/s/-18?utm_source=cleanmark.org', src: 'https://startupfa.me/badges/featured/default.webp', alt: 'Featured on Startup Fame' },
-              ] as const).concat([
+              ] as { key: string; href: string; src: string; alt: string }[]).concat([
                 { key: 'ph2', href: 'https://www.producthunt.com/products/cleanmark-2/launches/cleanmark-2', src: 'https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=cleanmark-2&theme=dark', alt: 'Featured on Product Hunt' },
                 { key: 'dev2', href: 'https://dev.to/dan_dan_26ba75efedd611b1f/how-i-built-a-free-browser-based-watermark-remover-using-canvas-api-1if3', src: 'https://d2fltix0v2e0sb.cloudfront.net/dev-badge.svg', alt: 'Listed on DEV.to' },
                 { key: 'tf2', href: 'https://toolfame.com/item/cleanmark-watermark-remover', src: 'https://toolfame.com/badge-light.svg', alt: 'Featured on ToolFame' },
@@ -98,7 +98,7 @@ export default function Footer() {
                 { key: 'smb2', href: 'https://showmebest.ai', src: 'https://showmebest.ai/badge/feature-badge-white.webp', alt: 'Featured on ShowMeBestAI' },
                 { key: 't02', href: 'https://turbo0.com/item/clean-watermark-gemini-watermark-remover', src: 'https://img.turbo0.com/badge-listed-light.svg', alt: 'Listed on Turbo0' },
                 { key: 'sf2', href: 'https://startupfa.me/s/-18?utm_source=cleanmark.org', src: 'https://startupfa.me/badges/featured/default.webp', alt: 'Featured on Startup Fame' },
-              ] as const).map(({ key, href, src, alt }) => (
+              ])).map(({ key, href, src, alt }) => (
                 <a key={key} href={href} target="_blank" rel="noopener noreferrer" style={{ display: 'inline-flex', alignItems: 'center', flexShrink: 0 }}>
                   <img src={src} alt={alt} style={{ height: '54px', width: 'auto', display: 'block' }} />
                 </a>

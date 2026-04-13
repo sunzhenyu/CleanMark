@@ -101,6 +101,9 @@ export default function Footer() {
                 <a key="t0" href="https://turbo0.com/item/clean-watermark-gemini-watermark-remover" target="_blank" rel="noopener noreferrer">
                   <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" style={{ height: '54px', width: 'auto' }} />
                 </a>,
+                <a key="sf" href="https://startupfa.me/s/-18?utm_source=cleanmark.org" target="_blank" rel="noopener noreferrer">
+                  <img src="https://startupfa.me/badges/featured/default.webp" alt="Featured on Startup Fame" style={{ height: '54px', width: 'auto' }} />
+                </a>,
               ].concat([
                 <a key="ph2" href="https://www.producthunt.com/products/cleanmark-2/launches/cleanmark-2" target="_blank" rel="noopener noreferrer">
                   <img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=cleanmark-2&theme=dark" alt="Featured on Product Hunt" style={{ height: '54px', width: 'auto' }} />
@@ -119,6 +122,9 @@ export default function Footer() {
                 </a>,
                 <a key="t02" href="https://turbo0.com/item/clean-watermark-gemini-watermark-remover" target="_blank" rel="noopener noreferrer">
                   <img src="https://img.turbo0.com/badge-listed-light.svg" alt="Listed on Turbo0" style={{ height: '54px', width: 'auto' }} />
+                </a>,
+                <a key="sf2" href="https://startupfa.me/s/-18?utm_source=cleanmark.org" target="_blank" rel="noopener noreferrer">
+                  <img src="https://startupfa.me/badges/featured/default.webp" alt="Featured on Startup Fame" style={{ height: '54px', width: 'auto' }} />
                 </a>,
               ])}
             </div>

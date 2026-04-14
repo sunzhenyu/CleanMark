@@ -7,14 +7,11 @@ const pages = [
   // Core money pages — highest priority
   { path: '',                         priority: 1.0, freq: 'daily'   as const },
   { path: '/gemini-watermark-remover', priority: 1.0, freq: 'weekly'  as const },
-  { path: '/ai-studio-guide',          priority: 0.9, freq: 'weekly'  as const },
-  { path: '/how-to-use',               priority: 0.9, freq: 'weekly'  as const },
   { path: '/examples',                 priority: 0.8, freq: 'weekly'  as const },
   { path: '/technology',               priority: 0.8, freq: 'monthly' as const },
   { path: '/features',                 priority: 0.8, freq: 'monthly' as const },
   { path: '/faq',                      priority: 0.8, freq: 'weekly'  as const },
   // Supporting pages
-  { path: '/download',                 priority: 0.7, freq: 'weekly'  as const },
   { path: '/blog',                     priority: 0.7, freq: 'weekly'  as const },
   { path: '/about',                    priority: 0.6, freq: 'monthly' as const },
   { path: '/contact',                  priority: 0.5, freq: 'monthly' as const },
@@ -27,7 +24,6 @@ const pages = [
 const blogSlugs = [
   'what-is-gemini-watermark',
   'nano-banana-watermark-explained',
-  'chrome-extension-vs-online-tool',
 ];
 
 const lastMod = new Date('2026-04-11');

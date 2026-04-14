@@ -11,6 +11,9 @@ const nextConfig: NextConfig = {
       '/chatgpt-watermark-remover',
       '/manual-eraser',
       '/logo-overlay',
+      '/download',
+      '/how-to-use',
+      '/ai-studio-guide',
     ];
 
     return oldPages.flatMap((path) => [

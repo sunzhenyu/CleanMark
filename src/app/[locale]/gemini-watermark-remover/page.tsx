@@ -22,8 +22,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   });
 }
 
-const CHROME_EXTENSION_URL = 'https://chromewebstore.google.com/detail/cleanmark-watermark-remov/omfabachjmfmikmdnnlpfchejphmaiim';
-
 export default async function GeminiPage({
   params
 }: {
@@ -69,55 +67,6 @@ export default async function GeminiPage({
 
         <WatermarkRemover />
 
-        {/* Chrome Extension banner */}
-        <div className="mt-6 rounded-2xl border border-gray-200 bg-gray-50 p-6">
-          <p className="text-xs font-semibold text-blue-600 uppercase tracking-wide mb-2">
-            {locale === 'zh' ? '需要更快的工作流？' : 'Need a faster workflow?'}
-          </p>
-          <div className="flex flex-col sm:flex-row sm:items-center gap-6">
-            <div className="flex-1">
-              <h2 className="text-lg font-bold text-gray-900 mb-3">
-                {locale === 'zh'
-                  ? '安装 Chrome 扩展，自动处理 Gemini 和 Google AI Studio 下载的图片'
-                  : 'Install the Chrome extension for automatic Gemini and Google AI Studio downloads'}
-              </h2>
-              <ul className="space-y-1.5">
-                {(locale === 'zh' ? [
-                  '从 gemini.google.com 或 aistudio.google.com 下载图片时，即时去除 Gemini 水印。',
-                  '完全在浏览器内运行 — 无上传、无服务器、100% 隐私。',
-                  '保持在 Gemini 和 AI Studio 内的创作流程 — 无需手动操作。',
-                ] : [
-                  'Removes Gemini watermarks the moment you download images from gemini.google.com or aistudio.google.com.',
-                  'Runs entirely in your browser — no uploads, no servers, 100% private.',
-                  'Keeps your creative flow inside Gemini and AI Studio — no manual steps needed.',
-                ]).map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-gray-600">
-                    <span className="mt-1 w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <a
-              href={CHROME_EXTENSION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex-shrink-0 inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-5 py-4 rounded-xl transition shadow-md"
-            >
-              <svg className="w-8 h-8 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="12" r="10" fill="white"/>
-                <circle cx="12" cy="12" r="4" fill="#4285F4"/>
-                <path d="M12 8h8.5a10 10 0 0 0-17 0H12z" fill="#EA4335"/>
-                <path d="M5.27 16.5L1.02 9A10 10 0 0 0 9.5 21.9L5.27 16.5z" fill="#34A853"/>
-                <path d="M18.73 16.5L14.5 21.9A10 10 0 0 0 22.98 9L18.73 16.5z" fill="#FBBC05"/>
-              </svg>
-              <div className="text-left">
-                <div className="font-bold text-sm leading-tight">Chrome Extension</div>
-                <div className="text-xs text-blue-200 leading-tight mt-0.5">{locale === 'zh' ? '立即安装 · 免费' : 'Ready to install · Free'}</div>
-              </div>
-            </a>
-          </div>
-        </div>
 
         <div className="mt-12 grid grid-cols-1 md:grid-cols-4 gap-4">
           {(['privacy', 'free', 'fast', 'resize'] as const).map((key) => (

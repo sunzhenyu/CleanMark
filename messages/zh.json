@@ -7,7 +7,7 @@
     "hero": {
       "title": "Gemini Watermark Remover",
       "titleSub": "最佳免费 Gemini Watermark Remover 工具",
-      "titleDesc": "去除 Gemini 水印和 Gemini Nano Banana 水印",
+      "titleDesc": "免费在线 AI 工具，即时去除照片中的 Gemini 水印和 Nano Banana 标志。",
       "subtitle": "专为 Google Gemini 和 Google AI Studio 设计的智能浏览器扩展和免费在线工具 — 在您下载图片的瞬间自动检测并去除 Nano Banana 水印。无论您在寻找如何去除 Gemini AI 图片水印的方法，CleanMark 都能提供完全透明、无缝衔接的水印去除体验，零质量损失。",
       "badge": "完全免费 · 无需注册 · 隐私优先",
       "ctaExtension": "Chrome 扩展",
@@ -18,20 +18,20 @@
     "howItWorks": {
       "title": "Gemini Watermark Remover 使用方法",
       "step1": {
-        "title": "安装扩展",
-        "description": "从 Chrome 网上应用店一键将 CleanMark 添加到 Chrome"
+        "title": "上传图片",
+        "description": "拖放或选择任意带水印的 Gemini 或 AI Studio 图片"
       },
       "step2": {
-        "title": "访问 Gemini 或 AI Studio",
-        "description": "像往常一样浏览 gemini.google.com 或 aistudio.google.com"
+        "title": "自动检测",
+        "description": "CleanMark 自动检测 Gemini 和 Nano Banana 水印图案"
       },
       "step3": {
-        "title": "下载图片",
-        "description": "点击任意 Gemini 图片的下载按钮 — CleanMark 自动拦截处理"
+        "title": "即时去除",
+        "description": "使用反向 Alpha 混合算法，毫秒内去除水印"
       },
       "step4": {
-        "title": "获得干净图片",
-        "description": "水印在毫秒内去除，保存到您的设备前完成处理"
+        "title": "下载干净图片",
+        "description": "获得无水印图片，零质量损失"
       }
     },
     "stats": {
@@ -130,11 +130,11 @@
       "q2": "这个 Gemini Watermark Remover 真的完全免费吗？",
       "a2": "是的，完全免费。无需账号、无订阅、无使用限制。所有处理在您的浏览器中运行，零成本。",
       "q3": "支持 Google AI Studio 的图片吗？",
-      "a3": "支持。您可以通过在线工具去除 Google AI Studio 图片的 Nano Banana 水印 — 从 AI Studio 下载图片后，上传到 CleanMark 即可即时处理。Chrome 扩展的自动去除功能目前支持 gemini.google.com，AI Studio 自动支持即将推出。",
+      "a3": "支持。您可以通过在线工具去除 Google AI Studio 图片的 Nano Banana 水印 — 从 AI Studio 下载图片后，上传到 CleanMark 即可即时处理。",
       "q4": "我的图片数据安全吗？",
       "a4": "绝对安全。所有处理在您的浏览器中通过 JavaScript 本地完成，图片永远不会上传到任何服务器。",
-      "q5": "不安装 Chrome 扩展也能用吗？",
-      "a5": "可以。您可以直接在 cleanmark.org 使用免费在线 Gemini Watermark Remover 上传并清理任意 Gemini 图片，无需安装扩展。"
+      "q5": "不安装也能用吗？",
+      "a5": "可以。您可以直接在 cleanmark.org 使用免费在线 Gemini Watermark Remover 上传并清理任意 Gemini 图片，无需安装。"
     },
     "cta": {
       "title": "开始免费去除 Gemini 水印",

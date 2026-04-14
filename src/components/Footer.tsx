@@ -17,7 +17,6 @@ export default function Footer() {
         { href: '/gemini-watermark-remover', label: 'Gemini Watermark Remover', title: 'Free Online Gemini Watermark Remover Tool' },
         { href: '/examples', label: t('examples'), title: 'Gemini Watermark Remover Examples' },
         { href: '/about', label: t('about'), title: 'About CleanMark Gemini Watermark Remover' },
-        { href: '/download', label: t('download'), title: 'Download Gemini Watermark Remover Chrome Extension' },
       ],
     },
     {
@@ -33,8 +32,6 @@ export default function Footer() {
     {
       title: t('col3'),
       links: [
-        { href: '/how-to-use', label: t('howToUse'), title: 'How to Remove Gemini Watermarks' },
-        { href: '/ai-studio-guide', label: t('aiStudio'), title: 'Google AI Studio Watermark Remover Guide' },
         { href: '/contact', label: t('contact'), title: 'Contact CleanMark' },
         { href: '/privacy', label: t('privacy'), title: 'CleanMark Privacy Policy' },
         { href: '/terms', label: t('terms'), title: 'CleanMark Terms of Service' },

@@ -38,13 +38,6 @@ const posts = {
       excerpt: 'Google AI Studio uses a watermark called "Nano Banana." Learn what makes it different from the standard Gemini watermark and how to remove it for free.',
       tag: 'Guide',
     },
-    {
-      slug: 'chrome-extension-vs-online-tool',
-      title: 'Chrome Extension vs Online Tool: Which Should You Use?',
-      date: '2026-03-01',
-      excerpt: "CleanMark offers two ways to remove Gemini watermarks. Here's when to use the Chrome extension for automatic removal and when the online tool is the better choice.",
-      tag: 'Tips',
-    },
   ],
   zh: [
     {
@@ -60,13 +53,6 @@ const posts = {
       date: '2026-03-15',
       excerpt: 'Google AI Studio 使用一种名为"Nano Banana"的水印。了解它与标准 Gemini 水印的区别，以及如何免费去除。',
       tag: '指南',
-    },
-    {
-      slug: 'chrome-extension-vs-online-tool',
-      title: 'Chrome 扩展 vs 在线工具：该用哪个？',
-      date: '2026-03-01',
-      excerpt: 'CleanMark 提供两种去除 Gemini 水印的方式。本文介绍何时使用 Chrome 扩展自动去除，何时在线工具是更好的选择。',
-      tag: '技巧',
     },
   ],
 };

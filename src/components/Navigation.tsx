@@ -28,14 +28,6 @@ export default function Navigation() {
         { href: '/blog', label: isZh ? '博客' : 'Blog', title: 'Gemini Watermark Remover Blog' },
       ],
     },
-    support: {
-      label: isZh ? '支持' : 'Support',
-      items: [
-        { href: '/how-to-use', label: isZh ? '使用教程' : 'How to Use', title: 'How to Remove Gemini Watermarks' },
-        { href: '/ai-studio-guide', label: isZh ? 'AI Studio 指南' : 'AI Studio Guide', title: 'Google AI Studio Watermark Remover Guide' },
-        { href: '/contact', label: isZh ? '联系我们' : 'Contact', title: 'Contact CleanMark' },
-      ],
-    },
   };
 
   return (
@@ -64,18 +56,6 @@ export default function Navigation() {
           }`}
         >
           {isZh ? '效果示例' : 'Examples'}
-        </a>
-
-        <a
-          href={href('/download')}
-          title="Download Gemini Watermark Remover Chrome Extension"
-          className={`px-3 py-2 text-sm rounded-md transition ${
-            isActive('/download')
-              ? 'text-blue-600 bg-blue-50'
-              : 'text-gray-600 hover:text-gray-900'
-          }`}
-        >
-          {isZh ? '下载' : 'Download'}
         </a>
 
         {(Object.entries(dropdowns) as [keyof typeof dropdowns, { label: string; items: { href: string; label: string; title: string }[] }][]).map(([key, { label, items }]) => (
@@ -120,6 +100,18 @@ export default function Navigation() {
             )}
           </div>
         ))}
+
+        <a
+          href={href('/contact')}
+          title="Contact CleanMark"
+          className={`px-3 py-2 text-sm rounded-md transition ${
+            isActive('/contact')
+              ? 'text-blue-600 bg-blue-50'
+              : 'text-gray-600 hover:text-gray-900'
+          }`}
+        >
+          {isZh ? '联系我们' : 'Contact'}
+        </a>
       </nav>
 
       {/* Mobile Menu Button */}
@@ -163,17 +155,6 @@ export default function Navigation() {
             >
               {isZh ? '效果示例' : 'Examples'}
             </a>
-            <a
-              href={href('/download')}
-              className={`block px-3 py-2 text-sm rounded-md ${
-                isActive('/download')
-                  ? 'text-blue-600 bg-blue-50 font-medium'
-                  : 'text-gray-600'
-              }`}
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              {isZh ? '下载' : 'Download'}
-            </a>
 
             {(Object.entries(dropdowns) as [keyof typeof dropdowns, { label: string; items: { href: string; label: string; title: string }[] }][]).map(([key, { label, items }]) => (
               <div key={key}>
@@ -194,6 +175,18 @@ export default function Navigation() {
                 ))}
               </div>
             ))}
+
+            <a
+              href={href('/contact')}
+              className={`block px-3 py-2 text-sm rounded-md ${
+                isActive('/contact')
+                  ? 'text-blue-600 bg-blue-50 font-medium'
+                  : 'text-gray-600'
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              {isZh ? '联系我们' : 'Contact'}
+            </a>
           </div>
         </div>
       )}

@@ -10,7 +10,6 @@ export function generateStaticParams() {
   const slugs = [
     'what-is-gemini-watermark',
     'nano-banana-watermark-explained',
-    'chrome-extension-vs-online-tool',
   ];
   return routing.locales.flatMap((locale) =>
     slugs.map((slug) => ({ locale, slug }))
@@ -49,23 +48,7 @@ const posts: Record<string, {
       content: null,
     },
   },
-  'chrome-extension-vs-online-tool': {
-    en: {
-      title: 'Chrome Extension vs Online Tool: Which Should You Use?',
-      date: '2026-03-01',
-      tag: 'Tips',
-      content: null,
-    },
-    zh: {
-      title: 'Chrome 扩展 vs 在线工具：该用哪个？',
-      date: '2026-03-01',
-      tag: '技巧',
-      content: null,
-    },
-  },
 };
-
-const CHROME_EXTENSION_URL = 'https://chromewebstore.google.com/detail/cleanmark-watermark-remov/omfabachjmfmikmdnnlpfchejphmaiim';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string; slug: string }> }) {
   const { locale, slug } = await params;
@@ -287,16 +270,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ local
         <div className="mt-16 p-6 bg-blue-50 rounded-2xl">
           <h2 className="font-bold text-gray-900 mb-2">{isZh ? '立即免费体验 CleanMark' : 'Try CleanMark for Free'}</h2>
           <p className="text-gray-600 text-sm mb-4">{isZh ? '去除 Gemini 和 AI Studio 图片的水印 — 免费、即时、100% 隐私。' : 'Remove watermarks from Gemini and AI Studio images — free, instant, 100% private.'}</p>
-          <div className="flex flex-wrap gap-3">
-            <Link href="/gemini-watermark-remover"
-              className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-xl transition font-medium text-sm">
-              {isZh ? '打开在线工具 →' : 'Open Online Tool →'}
-            </Link>
-            <a href={CHROME_EXTENSION_URL} target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white px-5 py-2.5 rounded-xl transition font-medium text-sm">
-              {isZh ? '安装 Chrome 扩展' : 'Get Chrome Extension'}
-            </a>
-          </div>
+          <Link href="/gemini-watermark-remover"
+            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-xl transition font-semibold">
+            {isZh ? '打开在线工具 →' : 'Open Online Tool →'}
+          </Link>
         </div>
       </article>
 

@@ -161,15 +161,9 @@ export default async function ExamplesPage({ params }: { params: Promise<{ local
         <div className="max-w-2xl mx-auto bg-blue-600 rounded-2xl p-10 text-center">
           <h2 className="text-2xl font-bold text-white mb-3">{isZh ? '立即免费体验' : 'Try It Yourself — Free'}</h2>
           <p className="text-blue-200 mb-6 text-sm">{isZh ? '上传任意 Gemini 或 AI Studio 图片，几秒内获得干净结果。无需注册，不上传到服务器。' : 'Upload any Gemini or AI Studio image and get a clean result in seconds. No registration, no upload to servers.'}</p>
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Link href="/gemini-watermark-remover" className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-blue-600 px-6 py-3 rounded-xl transition font-semibold justify-center">
-              {isZh ? '打开在线工具 →' : 'Open Online Tool →'}
-            </Link>
-            <a href="https://chromewebstore.google.com/detail/cleanmark-watermark-remov/omfabachjmfmikmdnnlpfchejphmaiim" target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-blue-500 hover:bg-blue-400 text-white px-6 py-3 rounded-xl transition font-medium justify-center">
-              {isZh ? '安装 Chrome 扩展' : 'Get Chrome Extension'}
-            </a>
-          </div>
+          <Link href="/gemini-watermark-remover" className="inline-flex items-center gap-2 bg-white hover:bg-gray-50 text-blue-600 px-8 py-3.5 rounded-xl transition font-semibold">
+            {isZh ? '打开在线工具 →' : 'Open Online Tool →'}
+          </Link>
         </div>
       </section>
 

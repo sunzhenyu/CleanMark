@@ -5,6 +5,7 @@ import { setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { generateMetadata as genMeta } from '@/lib/metadata';
 import Header from '@/components/Header';
+import WatermarkRemover from '@/components/WatermarkRemover';
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -19,20 +20,6 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
     locale,
     keywords: 'Gemini Watermark Remover, Gemini Watermark Cleaner, remove Gemini watermark, Nano Banana watermark remover, Google AI Studio watermark remover, free watermark remover',
   });
-}
-
-const CHROME_EXTENSION_URL = 'https://chromewebstore.google.com/detail/cleanmark-watermark-remov/omfabachjmfmikmdnnlpfchejphmaiim';
-
-function ChromeIcon() {
-  return (
-    <svg className="w-7 h-7 flex-shrink-0" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="12" cy="12" r="10" fill="white"/>
-      <circle cx="12" cy="12" r="4" fill="#4285F4"/>
-      <path d="M12 8h8.5a10 10 0 0 0-17 0H12z" fill="#EA4335"/>
-      <path d="M5.27 16.5L1.02 9A10 10 0 0 0 9.5 21.9L5.27 16.5z" fill="#34A853"/>
-      <path d="M18.73 16.5L14.5 21.9A10 10 0 0 0 22.98 9L18.73 16.5z" fill="#FBBC05"/>
-    </svg>
-  );
 }
 
 export default async function HomePage({
@@ -50,7 +37,6 @@ export default async function HomePage({
     { icon: '🔒', key: 'privacy' },
     { icon: '💯', key: 'free' },
     { icon: '⚡', key: 'fast' },
-    { icon: '🌐', key: 'extension' },
     { icon: '🖼️', key: 'online' },
     { icon: '📐', key: 'resize' },
   ] as const;
@@ -102,57 +88,18 @@ export default async function HomePage({
 
       {/* Hero */}
       <section className="bg-gradient-to-b from-gray-50 to-white py-20 px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl font-bold text-blue-600 mb-3 leading-tight">
-            {t('hero.title')}
-          </h1>
-          <h2 className="text-2xl font-bold text-gray-800 mb-4">
+        <div className="max-w-4xl mx-auto text-center mb-10">
+          <h1 className="text-4xl font-bold text-blue-600 mb-4">
             {t('hero.titleSub')}
-          </h2>
-          <p className="text-lg text-gray-500 font-medium mb-6">
+          </h1>
+          <p className="text-lg text-gray-600">
             {t('hero.titleDesc')}
           </p>
-          <p className="text-base text-gray-600 mb-10 max-w-2xl mx-auto">
-            {t('hero.subtitle')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href={CHROME_EXTENSION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              title="Install CleanMark Chrome Extension — Auto Gemini Watermark Remover"
-              className="inline-flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-6 py-4 rounded-xl transition shadow-md w-full sm:w-64 justify-center"
-            >
-              <ChromeIcon />
-              <div className="text-left">
-                <div className="font-bold text-sm leading-tight">{t('hero.ctaExtension')}</div>
-                <div className="text-xs text-blue-200 leading-tight">{t('hero.ctaExtensionDesc')}</div>
-              </div>
-            </a>
-            <a
-              href={locale === 'zh' ? '/zh/gemini-watermark-remover' : '/gemini-watermark-remover'}
-              title="Gemini Watermark Remover — Free Online Tool"
-              className="inline-flex items-center gap-3 bg-orange-500 hover:bg-orange-600 text-white px-6 py-4 rounded-xl transition shadow-md w-full sm:w-64 justify-center"
-            >
-              <span className="text-2xl">🌐</span>
-              <div className="text-left">
-                <div className="font-bold text-sm leading-tight">{t('hero.ctaOnline')}</div>
-                <div className="text-xs text-orange-200 leading-tight">{t('hero.ctaOnlineDesc')}</div>
-              </div>
-            </a>
-          </div>
-          <p className="mt-6 text-sm text-gray-400">{t('hero.badge')}</p>
+        </div>
 
-          {/* Auxiliary links */}
-          <div className="mt-8 inline-flex items-center gap-4 border border-gray-200 rounded-xl px-6 py-3 text-sm bg-white shadow-sm">
-            <a href={locale === 'zh' ? '/zh/how-to-use' : '/how-to-use'} title="How to Remove Gemini Watermarks — Step by Step Guide" className="flex items-center gap-2 text-blue-600 hover:text-blue-700 font-medium transition">
-              <span>📖</span> {locale === 'zh' ? '如何去除 Gemini 水印' : 'How to Remove Gemini Watermark'} <span>›</span>
-            </a>
-            <span className="text-gray-300">|</span>
-            <a href={locale === 'zh' ? '/zh/ai-studio-guide' : '/ai-studio-guide'} title="Google AI Studio Watermark Remover Guide" className="flex items-center gap-2 text-purple-600 hover:text-purple-700 font-medium transition">
-              <span>🎯</span> {locale === 'zh' ? 'AI Studio 水印去除' : 'AI Studio Watermark Remover'} <span>›</span>
-            </a>
-          </div>
+        {/* Watermark Remover Tool */}
+        <div className="max-w-7xl mx-auto">
+          <WatermarkRemover />
         </div>
       </section>
 
@@ -270,24 +217,13 @@ export default async function HomePage({
         <div className="max-w-2xl mx-auto text-center">
           <h2 className="text-3xl font-bold text-white mb-3">{t('cta.title')}</h2>
           <p className="text-blue-200 mb-8">{t('cta.subtitle')}</p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a
-              href={CHROME_EXTENSION_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-3 bg-white hover:bg-gray-50 text-blue-600 px-6 py-3.5 rounded-xl transition shadow-md font-medium w-full sm:w-auto justify-center"
-            >
-              <ChromeIcon />
-              <span>{t('hero.ctaExtension')}</span>
-            </a>
-            <a
-              href={locale === 'zh' ? '/zh/gemini-watermark-remover' : '/gemini-watermark-remover'}
-              title="Gemini Watermark Remover — Free Online Tool"
-              className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-6 py-3.5 rounded-xl transition font-medium w-full sm:w-auto justify-center"
-            >
-              {t('hero.ctaOnline')} →
-            </a>
-          </div>
+          <a
+            href={locale === 'zh' ? '/zh/gemini-watermark-remover' : '/gemini-watermark-remover'}
+            title="Gemini Watermark Remover — Free Online Tool"
+            className="inline-flex items-center gap-2 bg-orange-500 hover:bg-orange-400 text-white px-8 py-4 rounded-xl transition font-semibold text-lg shadow-lg"
+          >
+            {t('hero.ctaOnline')} →
+          </a>
         </div>
       </section>
 

@@ -146,11 +146,11 @@ export default function WatermarkRemover() {
   if (processedImage) {
     return (
       <div className="space-y-6">
-        <div className="bg-white rounded-lg shadow-lg p-6">
+        <div className="bg-white rounded-lg shadow-lg p-6 flex justify-center items-center">
           <img
             src={processedImage}
             alt="Processed"
-            className="max-w-full h-auto mx-auto rounded"
+            className="max-w-full max-h-[600px] h-auto object-contain mx-auto rounded"
           />
         </div>
 

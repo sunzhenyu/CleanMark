@@ -190,7 +190,7 @@ export default function WatermarkRemover() {
               />
             </div>
             {(() => {
-              if (!originalDimensions) return null;
+              if (!originalDimensions || !originalFileSize) return null;
               const w = parseInt(resizeWidth);
               const h = parseInt(resizeHeight);
               const aspect = originalDimensions.width / originalDimensions.height;
@@ -199,7 +199,18 @@ export default function WatermarkRemover() {
               if (tw && !th) th = Math.round(tw / aspect);
               else if (th && !tw) tw = Math.round(th * aspect);
               if (!tw || !th) return null;
-              const estimatedMB = (tw * th * 4 * 0.3) / 1024 / 1024;
+
+              // Calculate compression ratio from original file
+              const originalPixels = originalDimensions.width * originalDimensions.height;
+              const originalUncompressed = originalPixels * 4; // RGBA bytes
+              const compressionRatio = originalFileSize / originalUncompressed;
+
+              // Estimate new file size using same compression ratio
+              const newPixels = tw * th;
+              const newUncompressed = newPixels * 4;
+              const estimatedBytes = newUncompressed * compressionRatio;
+              const estimatedMB = estimatedBytes / 1024 / 1024;
+
               return (
                 <span className="text-xs text-blue-600 shrink-0">
                   ≈ {estimatedMB.toFixed(2)} MB ({tw} × {th}px)

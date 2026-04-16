@@ -13,9 +13,11 @@ export default function WatermarkRemover() {
   const [resizeWidth, setResizeWidth] = useState<string>('');
   const [resizeHeight, setResizeHeight] = useState<string>('');
   const [originalDimensions, setOriginalDimensions] = useState<{ width: number; height: number } | null>(null);
+  const [originalFileSize, setOriginalFileSize] = useState<number | null>(null); // bytes
 
   const processImage = async (file: File) => {
     setIsProcessing(true);
+    setOriginalFileSize(file.size);
     try {
       const img = new Image();
       const reader = new FileReader();
@@ -141,6 +143,7 @@ export default function WatermarkRemover() {
     setResizeWidth('');
     setResizeHeight('');
     setOriginalDimensions(null);
+    setOriginalFileSize(null);
   };
 
   if (processedImage) {
@@ -160,6 +163,11 @@ export default function WatermarkRemover() {
             <span className="text-xs font-semibold text-gray-700 shrink-0">{t('resize.title')}</span>
             {originalDimensions && (
               <span className="text-xs text-gray-400 shrink-0">{originalDimensions.width} × {originalDimensions.height}px</span>
+            )}
+            {originalFileSize !== null && (
+              <span className="text-xs text-gray-400 shrink-0">
+                {(originalFileSize / 1024 / 1024).toFixed(2)} MB
+              </span>
             )}
             <div className="flex items-center gap-2">
               <label className="text-xs text-gray-500 shrink-0">{t('resize.width')}</label>
@@ -181,6 +189,23 @@ export default function WatermarkRemover() {
                 className="w-28 px-3 py-1.5 bg-white border border-gray-400 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
             </div>
+            {(() => {
+              if (!originalDimensions) return null;
+              const w = parseInt(resizeWidth);
+              const h = parseInt(resizeHeight);
+              const aspect = originalDimensions.width / originalDimensions.height;
+              let tw = w || 0;
+              let th = h || 0;
+              if (tw && !th) th = Math.round(tw / aspect);
+              else if (th && !tw) tw = Math.round(th * aspect);
+              if (!tw || !th) return null;
+              const estimatedMB = (tw * th * 4 * 0.3) / 1024 / 1024;
+              return (
+                <span className="text-xs text-blue-600 shrink-0">
+                  ≈ {estimatedMB.toFixed(2)} MB ({tw} × {th}px)
+                </span>
+              );
+            })()}
           </div>
           <p className="text-xs text-gray-400 mt-1.5">
             {t('resize.placeholder')}

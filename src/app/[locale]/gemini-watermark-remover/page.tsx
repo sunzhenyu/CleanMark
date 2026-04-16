@@ -13,6 +13,17 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+
+  if (locale === 'zh') {
+    return genMeta({
+      title: 'Gemini 去水印工具 - 在线免费移除 Gemini 水印 | CleanMark',
+      description: '免费在线去除 Gemini 水印和 Nano Banana 水印。一键擦除谷歌 AI 图片水印，无需注册，不上传服务器，100% 隐私保护。',
+      path: '/gemini-watermark-remover',
+      locale,
+      keywords: '去除 Gemini 水印, 移除 Gemini 水印, Gemini 在线去水印, Nano Banana 水印, 谷歌 AI Studio 去水印',
+    });
+  }
+
   return genMeta({
     title: 'Gemini Watermark Remover Online — Free Gemini Watermark Cleaner | CleanMark',
     description: 'Remove Gemini watermarks and Nano Banana watermarks free online. Erase Gemini AI watermarks instantly — no registration, no server upload, 100% private.',

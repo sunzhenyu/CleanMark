@@ -121,6 +121,8 @@
       "original": "原始尺寸",
       "width": "宽度",
       "height": "高度",
+      "quickResize": "快捷：",
+      "reset": "重置",
       "placeholder": "填写一个值自动计算另一个，填写两个值按指定尺寸调整，留空保持原样"
     },
     "faq": {
@@ -159,6 +161,8 @@
       "original": "原始尺寸",
       "width": "宽度",
       "height": "高度",
+      "quickResize": "快捷：",
+      "reset": "重置",
       "placeholder": "填写一个值自动计算另一个，填写两个值按指定尺寸调整，留空保持原样"
     },
     "features": {

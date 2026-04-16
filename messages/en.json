@@ -121,6 +121,8 @@
       "original": "Original Size",
       "width": "Width",
       "height": "Height",
+      "quickResize": "Quick:",
+      "reset": "Reset",
       "placeholder": "Fill one dimension to auto-calculate the other, or fill both to set exact size. Leave empty to keep original."
     },
     "faq": {
@@ -159,6 +161,8 @@
       "original": "Original Size",
       "width": "Width",
       "height": "Height",
+      "quickResize": "Quick:",
+      "reset": "Reset",
       "placeholder": "Fill one dimension to auto-calculate the other, or fill both to set exact size. Leave empty to keep original."
     },
     "features": {

@@ -159,7 +159,7 @@ export default function WatermarkRemover() {
 
         {/* Resize controls */}
         <div className="bg-gray-50 rounded-lg px-4 py-3 border border-gray-200">
-          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mb-2">
             <span className="text-xs font-semibold text-gray-700 shrink-0">{t('resize.title')}</span>
             {originalDimensions && (
               <span className="text-xs text-gray-400 shrink-0">{originalDimensions.width} × {originalDimensions.height}px</span>
@@ -169,6 +169,43 @@ export default function WatermarkRemover() {
                 {(originalFileSize / 1024 / 1024).toFixed(2)} MB
               </span>
             )}
+          </div>
+
+          {/* Quick resize buttons */}
+          {originalDimensions && (
+            <div className="flex flex-wrap gap-2 mb-3">
+              <span className="text-xs text-gray-500 shrink-0 self-center">{t('resize.quickResize')}</span>
+              {[
+                { label: '50%', ratio: 0.5 },
+                { label: '33%', ratio: 0.33 },
+                { label: '25%', ratio: 0.25 },
+              ].map(({ label, ratio }) => (
+                <button
+                  key={label}
+                  onClick={() => {
+                    const w = Math.round(originalDimensions.width * ratio);
+                    const h = Math.round(originalDimensions.height * ratio);
+                    setResizeWidth(w.toString());
+                    setResizeHeight(h.toString());
+                  }}
+                  className="px-3 py-1 text-xs bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:border-gray-400 transition"
+                >
+                  {label}
+                </button>
+              ))}
+              <button
+                onClick={() => {
+                  setResizeWidth('');
+                  setResizeHeight('');
+                }}
+                className="px-3 py-1 text-xs bg-white border border-gray-300 rounded-md hover:bg-gray-50 hover:border-gray-400 transition text-gray-500"
+              >
+                {t('resize.reset')}
+              </button>
+            </div>
+          )}
+
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
             <div className="flex items-center gap-2">
               <label className="text-xs text-gray-500 shrink-0">{t('resize.width')}</label>
               <input

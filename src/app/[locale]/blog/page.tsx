@@ -25,6 +25,20 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
 const posts = {
   en: [
     {
+      slug: 'marksweep-attack-2026-breakthrough',
+      title: 'MarkSweep Attack: 2026 Breakthrough in AI Watermark Removal',
+      date: '2026-02-20',
+      excerpt: 'New research introduces MarkSweep, a novel no-box removal attack on AI-generated image watermarking via noise intensification and frequency-aware denoising. Learn how this changes the watermark landscape.',
+      tag: 'Research',
+    },
+    {
+      slug: 'synthid-watermark-security-analysis-2026',
+      title: 'Google SynthID Watermark Security Analysis: 2026 Update',
+      date: '2026-02-15',
+      excerpt: 'Latest analysis shows Google SynthID watermark faces partial evasion challenges. Explore the current state of invisible watermark technology and its implications for AI content authentication.',
+      tag: 'Analysis',
+    },
+    {
       slug: 'what-is-gemini-watermark',
       title: 'What Is the Gemini Watermark and How to Remove It',
       date: '2026-04-01',
@@ -40,6 +54,20 @@ const posts = {
     },
   ],
   zh: [
+    {
+      slug: 'marksweep-attack-2026-breakthrough',
+      title: 'MarkSweep 攻击：2026 年 AI 水印移除技术突破',
+      date: '2026-02-20',
+      excerpt: '最新研究推出 MarkSweep，一种通过噪声增强和频率感知去噪实现的无盒 AI 图像水印移除攻击。了解这项技术如何改变水印安全格局。',
+      tag: '研究',
+    },
+    {
+      slug: 'synthid-watermark-security-analysis-2026',
+      title: 'Google SynthID 水印安全性分析：2026 年最新报告',
+      date: '2026-02-15',
+      excerpt: '最新分析显示 Google SynthID 水印面临部分规避挑战。探索隐形水印技术的现状及其对 AI 内容认证的影响。',
+      tag: '分析',
+    },
     {
       slug: 'what-is-gemini-watermark',
       title: 'Gemini 水印是什么？如何去除？',
